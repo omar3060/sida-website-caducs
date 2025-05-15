@@ -11,7 +11,6 @@ const Home = () => {
       <Features />
       <Partners />
       <FeaturesTables />
-      <FeaturesTables />
     </div>
   )
 }
