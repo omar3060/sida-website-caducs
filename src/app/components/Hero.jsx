@@ -3,9 +3,14 @@ import React from "react";
 import Image from "next/image";
 import RotatingGradientCircle from "./RotatingGradientCircle";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import ClickDashes from "./manageHoverOnHeroButton/ClickDashes";
+import ClickCursor from "./manageHoverOnHeroButton/ClickCursor";
+
 
 const Hero = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false);
+  const [isSubscribeHovered, setIsSubscribeHovered] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -17,6 +22,21 @@ const Hero = () => {
 
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
+
+  // Animation variants for the dashes
+  const dashAnimation = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: .75,
+        repeat: Infinity,
+        repeatType: "reverse",
+        ease: "easeInOut",
+      },
+    },
+  };
 
   return (
     <section className="flex relative flex-col x-spacing pt-18 md:pt-36 lg:pt-40 mb-0 w-full">
@@ -50,17 +70,24 @@ const Hero = () => {
               >
                 Get Demo
               </button>
-              <button className="w-full md:w-60 lg:w-80 py-4 md:py-6 lg:py-8 rounded-3xl hover:bg-sky-600 hover:text-white transition-colors border-sky-600 border-solid border-[1.85px]">
+              <button
+                className="w-full md:w-60 lg:w-80 py-4 md:py-6 lg:py-8 rounded-3xl hover:bg-sky-600 hover:text-white transition-colors border-sky-600 border-solid border-[1.85px]"
+                onMouseEnter={() => setIsSubscribeHovered(true)}
+                onMouseLeave={() => setIsSubscribeHovered(false)}
+              >
                 Subscribe
               </button>
-              <Image
-                src="/svgs/click-here-hero.svg"
-                // className="object-contain absolute z-0 shrink-0 self-start rounded-none aspect-[0.92] bottom-[-42PX] h-[90px] right-[182px] w-[83px]"
-                className="absolute -bottom-8 -right-4 md:-right-6 lg:right-30 w-[60px] md:w-[70px] lg:w-[83px] h-auto aspect-[0.92]"
-                alt="cursor click"
-                width={83}
-                height={90}
-              />
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={dashAnimation}
+                className="absolute bottom-0 xl:bottom-2 -right-0 md:-right-0 lg:right-32 xl:right-60"
+              >
+                <ClickDashes fillColor={isSubscribeHovered ? "#FFFFFF" : "#018ED5"} />
+              </motion.div>
+              <div className="absolute -bottom-10 -right-7 md:-right-8 lg:right-30 xl:right-50">
+                <ClickCursor fillColor={isSubscribeHovered ? "#FFFFFF" : "#018ED5"} strokeColor={isSubscribeHovered ? "#018ED5" : "white"} />
+              </div>
             </div>
           </div>
         </div>
@@ -73,14 +100,20 @@ const Hero = () => {
             width={500}
             height={300}
           />
-          <Image
-            src="/svgs/dashes.svg"
-            // className="object-contain absolute z-0 shrink-0 self-start rounded-none aspect-[0.92] bottom-[62px] h-[90px] right-[837PX] w-[83px]"
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={dashAnimation}
             className="absolute z-0 w-[60px] md:w-[60px] lg:w-[75px] h-auto aspect-[0.92] bottom-[3%] md:bottom-[55%] lg:bottom-[10%] -left-[10%] md:-left-[10%] lg:-left-[5%]"
-            alt="Decorative element"
-            width={83}
-            height={90}
-          />
+          >
+            <Image
+              src="/svgs/dashes.svg"
+              alt="Decorative element"
+              width={83}
+              height={90}
+              className="w-full h-full"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
