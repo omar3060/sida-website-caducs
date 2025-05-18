@@ -13,7 +13,7 @@ const WhoWeServe = () => {
     return (
         <section className="w-full x-spacing py-16">
             <div className="flex flex-col items-center">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold md:block mb-12">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold hidden md:block mb-12">
                     Who <span className="text-[#018ED5]">We</span> Serve{" "}
                     <span className="text-[#018ED5]">?</span>
                 </h2>
