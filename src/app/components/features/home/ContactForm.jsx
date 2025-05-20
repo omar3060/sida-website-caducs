@@ -4,97 +4,97 @@ import styles from './contactVector.module.css';
 
 const ContactForm = () => {
   return (
-    <section className="flex flex-col w-full x-spacing xl:px-40 mx-auto">
-      <div className="flex flex-col-reverse md:flex-row gap-10 items-center mt-20 md:mt-32 lg:mt-40">
+    <section className="section-style x-spacing xl:px-40 mx-auto">
+      <div className="flex flex-col-reverse md:flex-row gap-10 items-center">
         <div className="w-full md:w-[50%] lg:w-[45%] order-2 md:order-1 relative z-10">
-          <form className="flex flex-col gap-4 p-6 md:p-8 bg-white rounded-[24px] shadow-xl relative">
+          <form className="flex flex-col gap-4 p-6 md:p-8 bg-textWhite rounded-[24px] shadow-xl relative">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-900 mb-1">
+                <label className="block text-sm font-medium text-secondaryColor mb-1">
                   First Name
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600"
+                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
               </div>
               <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-900 mb-1">
+                <label className="block text-sm font-medium text-secondaryColor mb-1">
                   First Name
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600"
+                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1">
+              <label className="block text-sm font-medium text-secondaryColor mb-1">
                 Email
               </label>
               <input
                 type="email"
-                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600"
+                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
               />
             </div>
 
             <div className="flex gap-4">
               <div className="w-[120px]">
-                <label className="block text-sm font-medium text-gray-900 mb-1">
+                <label className="block text-sm font-medium text-secondaryColor mb-1">
                   Phone Numbers
                 </label>
-                <select className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600 bg-white">
+                <select className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor bg-textWhite">
                   <option>Egypt (+20)</option>
                 </select>
               </div>
               <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-900 mb-1">
+                <label className="block text-sm font-medium text-secondaryColor mb-1">
                   &nbsp;
                 </label>
                 <input
                   type="tel"
-                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600"
+                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1">
+              <label className="block text-sm font-medium text-secondaryColor mb-1">
                 Email
               </label>
               <input
                 type="email"
-                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600"
+                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
               />
             </div>
 
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-900 mb-1">
+                <label className="block text-sm font-medium text-secondaryColor mb-1">
                   Business Name
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600"
+                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
               </div>
               <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-900 mb-1">
+                <label className="block text-sm font-medium text-secondaryColor mb-1">
                   Number of branches
                 </label>
                 <input
                   type="number"
-                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600"
+                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-900 mb-1">
+              <label className="block text-sm font-medium text-secondaryColor mb-1">
                 Country Name
               </label>
-              <select className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-sky-600 bg-white">
+              <select className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor bg-textWhite">
                 <option>Egypt</option>
               </select>
             </div>
@@ -117,12 +117,12 @@ const ContactForm = () => {
 
             <button
               type="submit"
-              className="w-[120px] mt-4 px-6 py-2 bg-sky-600 text-white rounded-xl hover:bg-sky-700 transition-colors"
+              className="w-[120px] mt-4 px-6 py-2 bg-mainColor text-textWhite rounded-xl hover:bg-sky-700 transition-colors"
             >
               Submit
             </button>
             <Image
-              src="/svgs/contactVector.svg"
+              src="/assets/images/home/svgs/contactVector.svg"
               width={500}
               height={300}
               alt="Contact Vector"
@@ -134,16 +134,16 @@ const ContactForm = () => {
 
         <div className="w-full md:w-[50%] lg:w-[55%] order-2 flex flex-col items-center">
           <Image
-            src="/svgs/sida-logo.svg"
+            src="/assets/images/home/svgs/sida-logo.svg"
             width={500}
             height={300}
             alt="Sida-Logo"
             className="w-[200px] md:w-[292px] h-auto mb-8"
           />
           {/* className="w-[180px] h-auto mb-8" */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center">
-            <span className="text-[#018ED5]">Request</span> a free demo of{" "}
-            <span className="text-[#018ED5]">SIDA</span> restaurant management
+          <h2 className="main-heading text-center">
+            <span className="text-mainColor">Request</span> a free demo of{" "}
+            <span className="text-mainColor">SIDA</span> restaurant management
             system
           </h2>
         </div>

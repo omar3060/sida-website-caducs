@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const PricingSection = () => {
   return (
-    <section className="flex flex-col w-full x-spacing my-20">
+    <section className="section-style my-20">
 
-      <div className="flex flex-col items-center justify-center w-full pt-20 pb-40 bg-gradient-to-r from-sky-600 to-sky-900">
+      <div className="flex flex-col items-center justify-center w-full pt-20 pb-40 gradient-bg">
         <div className="max-w-[992px] w-full flex flex-col items-center">
-          <div className="text-center text-white mb-8 mx-2">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <div className="text-center text-textWhite mb-8 mx-2">
+            <h2 className="main-heading mb-4">
               Simple pricing for your business
             </h2>
             <p className="text-small md:text-xl opacity-90">
@@ -19,15 +19,15 @@ const PricingSection = () => {
       </div>
 
       <div className="max-w-[992px] w-full mx-auto -mt-40 px-4">
-        <div className="w-full bg-white rounded-2xl shadow-xl p-8 flex flex-col md:flex-row gap-8">
+        <div className="w-full bg-textWhite rounded-2xl shadow-xl p-8 flex flex-col md:flex-row gap-8">
 
-          <div className="w-full md:w-[40%] bg-[#F7FAFC] rounded-xl p-8 flex flex-col items-center">
-            <h3 className="text-xl font-bold text-gray-900">Start With</h3>
+          <div className="w-full md:w-[40%] bg-cardColor rounded-xl p-8 flex flex-col items-center">
+            <h3 className="text-xl font-bold text-secondaryColor">Start With</h3>
             <div className="mt-4 flex items-baseline">
-              <span className="text-5xl font-bold text-gray-900">$50</span>
+              <span className="text-5xl font-bold text-secondaryColor">$50</span>
             </div>
             <p className="mt-2 text-sm font-bold text-gray-800">billed just once</p>
-            <button className="mt-6 w-full bg-sky-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-700 transition-colors">
+            <button className="mt-6 w-full bg-mainColor text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-700 transition-colors">
               Get Started
             </button>
           </div>
@@ -45,11 +45,11 @@ const PricingSection = () => {
               ].map((feature, index) => (
                 <li key={index} className="flex items-center gap-3 text-gray-700">
                   <Image
-                    src="/pricingSection/check.svg"
+                    src="/assets/images/home/pricingSection/check.svg"
                     alt="Checkmark"
                     width={20}
                     height={20}
-                    className="text-sky-600"
+                    className="text-mainColor"
                   />
                   {feature}
                 </li>
@@ -58,24 +58,24 @@ const PricingSection = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-left md:justify-center gap-8 mt-8 text-gray-900">
+        <div className="flex flex-wrap justify-left md:justify-center gap-8 mt-8 text-secondaryColor">
           <div className="flex items-center gap-4">
             <Image
-              src="/pricingSection/icon1.svg"
+              src="/assets/images/home/pricingSection/icon1.svg"
               alt="Guarantee icon"
               width={20}
               height={20}
-              className="text-sky-600 w-[33px] h-[33px]"
+              className="text-mainColor w-[33px] h-[33px]"
             />
             <span className="font-medium">30 days money back Guarantee</span>
           </div>
           <div className="flex items-center gap-4">
             <Image
-              src="/pricingSection/icon2.svg"
+              src="/assets/images/home/pricingSection/icon2.svg"
               alt="Setup icon"
               width={20}
               height={20}
-              className="text-sky-600 w-[33px] h-[33px]"
+              className="text-mainColor w-[33px] h-[33px]"
             />
             <span className="font-medium">
               No setup fees
@@ -85,11 +85,11 @@ const PricingSection = () => {
           </div>
           <div className="flex items-center gap-4">
             <Image
-              src="/pricingSection/icon3.svg"
+              src="/assets/images/home/pricingSection/icon3.svg"
               alt="Subscription icon"
               width={20}
               height={20}
-              className="text-sky-600 w-[33px] h-[33px]"
+              className="text-mainColor w-[33px] h-[33px]"
             />
             <span className="font-medium">
               No monthly subscription

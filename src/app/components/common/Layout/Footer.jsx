@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="overflow-hidden self-stretch pb-6 mt-3.5 w-full bg-white">
+    <footer className="overflow-hidden self-stretch pb-6 mt-3.5 w-full bg-textWhite">
       <hr className="w-full h-px bg-gray-100 border border-gray-100 border-solid" />
 
       <div className="x-spacing flex flex-col items-start mt-28 w-full max-md:mt-10">
@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="flex flex-col min-w-60 w-[310px]">
             <Link href="/">
               <Image
-                src="/svgs/sida-logo.svg"
+                src="/assets/images/home/svgs/sida-logo.svg"
                 width={500}
                 height={300}
                 alt="Sida-Logo"
@@ -25,35 +25,35 @@ const Footer = () => {
             </p>
             <div className="flex gap-6 items-center self-start mt-6 ">
               <Image
-                src="/svgs/social-icons/facebook.svg"
+                src="/assets/images/home/svgs/social-icons/facebook.svg"
                 className="object-contain shrink-0 self-stretch my-auto aspect-[0.58] w-[11px]"
                 alt="Facebook"
                 width={11}
                 height={21}
               />
               <Image
-                src="/svgs/social-icons/x.svg"
+                src="/assets/images/home/svgs/social-icons/x.svg"
                 className="object-contain shrink-0 self-stretch my-auto aspect-[1.27] w-[19px]"
                 alt="Twitter"
                 width={11}
                 height={21}
               />
               <Image
-                src="/svgs/social-icons/insta.svg"
+                src="/assets/images/home/svgs/social-icons/insta.svg"
                 className="object-contain shrink-0 self-stretch my-auto aspect-square w-[19px]"
                 alt="Instagram"
                 width={11}
                 height={21}
               />
               <Image
-                src="/svgs/social-icons/linkedin.svg"
+                src="/assets/images/home/svgs/social-icons/linkedin.svg"
                 className="object-contain shrink-0 self-stretch my-auto aspect-[1.06] w-[19px]"
                 alt="LinkedIn"
                 width={11}
                 height={21}
               />
               <Image
-                src="/svgs/social-icons/youtube.svg"
+                src="/assets/images/home/svgs/social-icons/youtube.svg"
                 className="object-contain shrink-0 self-stretch my-auto aspect-[1.4] w-[21px]"
                 alt="YouTube"
                 width={11}
@@ -69,27 +69,27 @@ const Footer = () => {
             </h3>
             <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-slate-500">
               <li>
-                <Link href="#features" className="hover:text-sky-600">
+                <Link href="#features" className="hover:text-mainColor">
                   Features
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#pricing" className="hover:text-sky-600">
+                <Link href="#pricing" className="hover:text-mainColor">
                   Pricing
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#case-studies" className="hover:text-sky-600">
+                <Link href="#case-studies" className="hover:text-mainColor">
                   Case studies
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#reviews" className="hover:text-sky-600">
+                <Link href="#reviews" className="hover:text-mainColor">
                   Reviews
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#updates" className="hover:text-sky-600">
+                <Link href="#updates" className="hover:text-mainColor">
                   Updates
                 </Link>
               </li>
@@ -102,27 +102,27 @@ const Footer = () => {
             </h3>
             <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-slate-500">
               <li>
-                <Link href="#about" className="hover:text-sky-600">
+                <Link href="#about" className="hover:text-mainColor">
                   About
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#contact" className="hover:text-sky-600">
+                <Link href="#contact" className="hover:text-mainColor">
                   Contact us
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#careers" className="hover:text-sky-600">
+                <Link href="#careers" className="hover:text-mainColor">
                   Careers
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#culture" className="hover:text-sky-600">
+                <Link href="#culture" className="hover:text-mainColor">
                   Culture
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#blog" className="hover:text-sky-600">
+                <Link href="#blog" className="hover:text-mainColor">
                   Blog
                 </Link>
               </li>
@@ -135,27 +135,27 @@ const Footer = () => {
             </h3>
             <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-slate-500">
               <li>
-                <Link href="#getting-started" className="hover:text-sky-600">
+                <Link href="#getting-started" className="hover:text-mainColor">
                   Getting started
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#help" className="hover:text-sky-600">
+                <Link href="#help" className="hover:text-mainColor">
                   Help center
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#status" className="hover:text-sky-600">
+                <Link href="#status" className="hover:text-mainColor">
                   Server status
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#report" className="hover:text-sky-600">
+                <Link href="#report" className="hover:text-mainColor">
                   Report a bug
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#chat" className="hover:text-sky-600">
+                <Link href="#chat" className="hover:text-mainColor">
                   Chat support
                 </Link>
               </li>
@@ -169,13 +169,13 @@ const Footer = () => {
             </h3>
             <Link
               href="mailto:contact@company.com"
-              className="flex items-center mt-11 hover:text-sky-600 max-md:mt-10"
+              className="flex items-center mt-11 hover:text-mainColor max-md:mt-10"
             >
               contact@company.com
             </Link>
             <Link
               href="tel:(414)687-5892"
-              className="flex items-center mt-6 hover:text-sky-600"
+              className="flex items-center mt-6 hover:text-mainColor"
             >
               (414) 687 - 5892
             </Link>
@@ -190,7 +190,7 @@ const Footer = () => {
           <div className="download flex flex-row md:flex-col gap-4 ">
             <Link href="#">
             <Image
-              src="/svgs/google-apple/apple.svg"
+              src="/assets/images/home/svgs/google-apple/apple.svg"
               className="object-contain w-[160px] md:w-full rounded-[22px] md:rounded-[30px] lg:rounded-[20px] bg-black"
               width={100}
               height={100}
@@ -201,7 +201,7 @@ const Footer = () => {
                         <Link href="#">
 
                           <Image
-              src="/svgs/google-apple/google.svg"
+              src="/assets/images/home/svgs/google-apple/google.svg"
               className="object-contain w-[160px] md:w-full rounded-[22px] md:rounded-[34px] lg:rounded-[20px] bg-black"
               width={100}
               height={100}
@@ -218,11 +218,11 @@ const Footer = () => {
           <p className="text-slate-500">Copyright © 2022 BRIX Templates</p>
           <div className="text-center md:text-right text-slate-500 mr-[84px] ">
             All Rights Reserved |{" "}
-            <Link href="#terms" className="underline text-sky-600">
+            <Link href="#terms" className="underline text-mainColor">
               Terms and Conditions
             </Link>{" "}
             |{" "}
-            <Link href="#privacy" className="underline text-sky-600">
+            <Link href="#privacy" className="underline text-mainColor">
               Privacy Policy
             </Link>
           </div>

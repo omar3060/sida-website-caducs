@@ -4,29 +4,34 @@ import React from "react";
 
 const RotatingGradientCircle = () => {
   return (
-    <div className="absolute overflow-hidden w-[900px] h-[1000px] top-0 right-0 ">
+    <div className="absolute overflow-hidden w-[900px] h-[1000px] top-0 right-0">
       <motion.div
-        className="w-[2600px] h-[2600px] rounded-full absolute top-[-1580px] left-[-38px]"
+        className="rounded-full absolute"
         style={{
           background: 'conic-gradient(from 0deg, #01537c, #3b82f6, #01537c)',
           WebkitMask: 'radial-gradient(transparent 40%, black 40%)',
-          mask: 'radial-gradient(transparent 40%, black 40%)',
+          mask: 'radial-gradient(transparent 50%, black 50%)',
+          width: 'min(2600px, calc(1600px + 50vw))',
+          height: 'min(2600px, calc(1600px + 40vw))',
+          top: 'min(1580px, calc(-950px - 30vw))',
+          left: 'min(230px, calc(900px - 2vw))',
         }}
         animate={{
           rotate: 360,
-          y: [0, 5, 0, -5, 0],
+          y: [0, 1, 0]
         }}
         transition={{
           rotate: {
-            duration: 8,
+            duration: 25,
             repeat: Infinity,
-            ease: "linear",
+            ease: "linear"
           },
           y: {
-            duration: 2,
+            duration: 12,
             repeat: Infinity,
-            ease: "linear",
-          },
+            ease: "easeInOut",
+            repeatType: "reverse"
+          }
         }}
       />
     </div>

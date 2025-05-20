@@ -19,11 +19,19 @@ const ServicesSlider = () => {
     }
 
     emblaApi.on('select', onSelect)
-    // Initial selection
     onSelect()
+
+    const autoplay = setInterval(() => {
+      if (emblaApi.canScrollNext()) {
+        emblaApi.scrollNext()
+      } else {
+        emblaApi.scrollTo(0)
+      }
+    }, 3000)
 
     return () => {
       emblaApi.off('select', onSelect)
+      clearInterval(autoplay) // Cleanup interval on unmount
     }
   }, [emblaApi])
 
@@ -39,34 +47,34 @@ const ServicesSlider = () => {
     {
       title: "Delivery",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut",
-      image: "/ServicesSlider/service1.svg"
+      image: "/assets/images/home/ServicesSlider/service1.svg"
     },
     {
       title: "Table Management",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut",
-      image: "/ServicesSlider/service2.svg"
+      image: "/assets/images/home/ServicesSlider/service2.svg"
     },
     {
       title: "Statistics",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut",
-      image: "/ServicesSlider/service3.svg"
+      image: "/assets/images/home/ServicesSlider/service3.svg"
     },
     {
       title: "Warehouse Management",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut",
-      image: "/ServicesSlider/service4.svg"
+      image: "/assets/images/home/ServicesSlider/service4.svg"
     },
     {
       title: "Orders Management",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut",
-      image: "/ServicesSlider/service5.svg"
+      image: "/assets/images/home/ServicesSlider/service5.svg"
     },
   ]
 
   return (
-    <section className="flex flex-col items-center w-full x-spacing">
+    <section className="section-style items-center x-spacing">
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8 text-center">
-        <span className="text-[#0099FF]">SIDA</span> Provides <span className="text-[#0099FF]">A lot</span> of Features
+        <span className="text-mainColor">SIDA</span> Provides <span className="text-mainColor">A lot</span> of Features
       </h1>
       
       <div 
@@ -82,7 +90,7 @@ const ServicesSlider = () => {
                   alt={`${slide.title} background`}
                   className="object-cover absolute inset-0 size-full"
                 />
-                <div className="relative max-w-full w-full md:w-[800px] text-white">
+                <div className="relative max-w-full w-full md:w-[800px] text-textWhite">
                   <h2 className="text-xl md:text-3xl font-extrabold">{slide.title}</h2>
                   <p className="mt-2 md:mt-4 text-base md:text-2xl font-semibold max-md:max-w-full">
                     {slide.description}

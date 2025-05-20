@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const Partners = () => {
@@ -30,33 +30,33 @@ const Partners = () => {
   const partners = [
     {
       id: 1,
-      src: "/svgs/partners/partner-1.svg",
+      src: "/assets/images/home/svgs/partners/partner-1.svg",
     },
     {
       id: 2,
-      src: "/svgs/partners/partner-2.svg",
+      src: "/assets/images/home/svgs/partners/partner-2.svg",
     },
     {
       id: 3,
-      src: "/svgs/partners/partner-3.svg",
+      src: "/assets/images/home/svgs/partners/partner-3.svg",
     },
     {
       id: 4,
-      src: "/svgs/partners/partner-4.svg",
+      src: "/assets/images/home/svgs/partners/partner-4.svg",
     },
     {
       id: 5,
-      src: "/svgs/partners/partner-5.svg",
+      src: "/assets/images/home/svgs/partners/partner-5.svg",
     },
   ];
 
   return (
-    <section className="flex flex-col w-full x-spacing">
-      <h2 className="self-center mt-20 md:mt-32 lg:mt-44 text-3xl md:text-4xl lg:text-5xl font-bold text-sky-600 text-center">
-        Partnering <span className="text-gray-900">with</span> Restaurants{" "}
-        <span className="text-gray-900 relative inline-block">Everywhere
+    <section className="section-style x-spacing">
+      <h2 className="main-heading self-center text-mainColor text-center">
+        Partnering <span className="text-secondaryColor">with</span> Restaurants{" "}
+        <span className="text-secondaryColor relative inline-block">Everywhere
         <Image
-        src="/svgs/partners/partners-vector.svg"
+        src="/assets/images/home/svgs/partners/partners-vector.svg"
         className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px]"
         alt="underline element vector"
         width={50}
@@ -67,7 +67,7 @@ const Partners = () => {
 
 
 
-      <p className="self-center mt-3 md:mt-4 lg:mt-5 text-lg md:text-xl lg:text-2xl text-center text-gray-900 w-full md:w-[70%] lg:w-[50%]">
+      <p className="main-paragraph self-center text-center text-secondaryColor w-full md:w-[70%] lg:w-[50%]">
         Thousands of local and international F&B brands trust SIDA to manage
         their operations from orders to payments, inventory, and beyond—all in
         one seamless, cloud-based, POS-RMS system

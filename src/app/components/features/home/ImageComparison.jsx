@@ -80,18 +80,18 @@ const ImageComparison = () => {
     <div className="flex items-center justify-center mt-10 md:h-[1250px] bg-gray-50 px-2">
       <div
         ref={imageContainer}
-        className="relative w-full max-w-4xl aspect-[0.77] rounded-[40px] overflow-hidden shadow-xl bg-white"
+        className="relative w-full max-w-4xl aspect-[0.77] rounded-[40px] overflow-hidden shadow-xl bg-textWhite"
         onClick={handleClick}
       >
         <Image
-          src="/imageComparison/after.svg"
+          src="/assets/images/home/imageComparison/after.svg"
           alt="After"
           fill
           className="object-cover select-none pointer-events-none"
           sizes="(max-width: 768px) 100vw, 800px"
         />
         <Image
-          src="/imageComparison/before.svg"
+          src="/assets/images/home/imageComparison/before.svg"
           alt="Before"
           fill
           className="object-cover select-none pointer-events-none absolute top-0 left-0"
@@ -102,7 +102,7 @@ const ImageComparison = () => {
           sizes="(max-width: 768px) 100vw, 800px"
         />
         {slideAmount.frac === 1 && (
-          <div className="absolute right-0 top-0 h-full w-[5px] bg-sky-600" />
+          <div className="absolute right-0 top-0 h-full w-[5px] bg-mainColor" />
         )}
         <div
           style={{
@@ -111,7 +111,7 @@ const ImageComparison = () => {
           }}
           className="absolute top-0 h-full flex flex-col items-center z-10"
         >
-          <div className="w-[5px] h-full bg-sky-600" />
+          <div className="w-[5px] h-full bg-mainColor" />
           <div
             onMouseDown={handleMouseDown}
             onTouchStart={handleMouseDown}
@@ -121,7 +121,7 @@ const ImageComparison = () => {
             {slideAmount.frac === 0 && (
               <div className="w-full h-full flex items-center justify-end">
                 <Image
-                  src="/imageComparison/separator.svg"
+                  src="/assets/images/home/imageComparison/separator.svg"
                   alt="Right Arrow"
                   width={48}
                   height={48}
@@ -133,7 +133,7 @@ const ImageComparison = () => {
             {slideAmount.frac === 1 && (
               <div className="w-full h-full flex items-center justify-start">
                 <Image
-                  src="/imageComparison/separator.svg"
+                  src="/assets/images/home/imageComparison/separator.svg"
                   alt="Left Arrow"
                   width={48}
                   height={48}
@@ -145,7 +145,7 @@ const ImageComparison = () => {
             {slideAmount.frac !== 0 && slideAmount.frac !== 1 && (
               <div className="w-full h-full flex items-center justify-between">
                 <Image
-                  src="/imageComparison/separator.svg"
+                  src="/assets/images/home/imageComparison/separator.svg"
                   alt="Left Arrow"
                   width={48}
                   height={48}
@@ -154,7 +154,7 @@ const ImageComparison = () => {
                   
                 />
                 <Image
-                  src="/imageComparison/separator.svg"
+                  src="/assets/images/home/imageComparison/separator.svg"
                   alt="Right Arrow"
                   width={48}
                   height={48}
