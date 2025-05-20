@@ -51,7 +51,7 @@ const SidaOffers = () => {
         <p className="main-paragraph text-gray-600 max-w-2xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
           placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit
-          commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut
+          commodo. Vestibulum sodales neque erat.
         </p>
       </div>
 
@@ -62,22 +62,19 @@ const SidaOffers = () => {
               <div className="grid grid-cols-2 gap-4 md:gap-8 items-start">
                 <div className="space-y-4 md:mb-15 flex flex-col md:self-center basis-[45%]">
                   <div className="relative ">
-                    <h3 className="text-[51px] md:text-[75px] lg:text-[100px] font-bold text-mainColor">
+                    <h3 className="text-[40px] md:text-[55px] lg:text-[65px] font-bold text-mainColor">
                       {slide.title}
                     </h3>
                     <div 
-                      className="absolute top-[-120px] left-[210px] w-[900px] h-[200px]"
-                      style={{
-                        zIndex: 50,
-                        pointerEvents: "none"
-                      }}
+                      className="absolute top-[-20px] md:top-[-42px] lg:top-[-53px] xl:top-[-105px] left-[80px] md:left-[115px] lg:left-[127px] xl:left-[150px] w-[918px] h-[251px]"
+                      // className="absolute top-[-120px] left-[210px] w-[900px] h-[200px]"
                     >
                       <Image 
                         height={200} 
                         width={700} 
                         src="/assets/images/home/SidaOffers/slant.svg"
                         alt="line" 
-                        className="w-[900px] hidden lg:block"
+                        className="w-[225px] md:w-[400px] lg:w-[480px] xl:w-[700px] md:block"
                         priority
                       />
                     </div>
@@ -100,7 +97,6 @@ const SidaOffers = () => {
                   </div>
                 </div>
 
-                {/* Right side - Image */}
                 <div className="basis-[55%]">
                   <Image
                     src={slide.image}
