@@ -66,7 +66,7 @@ const SidaOffers = () => {
                       {slide.title}
                     </h3>
                     <div 
-                      className="absolute top-[-20px] md:top-[-42px] lg:top-[-53px] xl:top-[-105px] left-[80px] md:left-[115px] lg:left-[127px] xl:left-[150px] w-[918px] h-[251px]"
+                      className="absolute top-[-25px] md:top-[-42px] lg:top-[-40px] xl:top-[-100px] left-[80px] md:left-[115px] lg:left-[127px] xl:left-[150px] w-[918px] h-[251px]"
                       // className="absolute top-[-120px] left-[210px] w-[900px] h-[200px]"
                     >
                       <Image 
@@ -74,7 +74,7 @@ const SidaOffers = () => {
                         width={700} 
                         src="/assets/images/home/SidaOffers/slant.svg"
                         alt="line" 
-                        className="w-[225px] md:w-[400px] lg:w-[480px] xl:w-[700px] md:block"
+                        className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[800px] md:block"
                         priority
                       />
                     </div>

@@ -65,8 +65,6 @@ const Partners = () => {
         </span>
       </h2>
 
-
-
       <p className="main-paragraph self-center text-center text-secondaryColor w-full md:w-[70%] lg:w-[50%]">
         Thousands of local and international F&B brands trust SIDA to manage
         their operations from orders to payments, inventory, and beyond—all in

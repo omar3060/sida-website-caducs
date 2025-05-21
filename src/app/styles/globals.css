@@ -15,6 +15,10 @@
   --color-blackColor: #000000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .section-style {
     @apply flex flex-col w-full pt-18 md:pt-36 lg:pt-40;

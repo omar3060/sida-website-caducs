@@ -28,7 +28,7 @@ const WhoWeServe = () => {
 }
 
 const ServiceCard = ({ icon, title, description }) => (
-    <article className="flex flex-col justify-center items-center p-8 rounded-xl bg-cardColor relative group overflow-hidden cursor-pointer min-h-[200px]">
+    <article className="flex flex-col justify-center items-center p-8 rounded-xl bg-[#018ED50A] relative group overflow-hidden cursor-pointer min-h-[200px]">
         {/* Default View */}
         <div className="relative z-10 group-hover:opacity-0 transition-opacity duration-300">
             {typeof icon === 'string' ? (

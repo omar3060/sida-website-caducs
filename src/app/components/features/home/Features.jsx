@@ -3,7 +3,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <section className="section-style x-spacing">
+    <section id="services" className="section-style x-spacing">
       <div className="">
         <div className="flex flex-col md:flex-row gap-5">
           <div className="w-full md:w-[50%] order-2 md:order-1">

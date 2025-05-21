@@ -18,20 +18,19 @@ const RotatingGradientCircle = () => {
         }}
         animate={{
           rotate: 360,
-          y: [0, 1, 0]
+          y: [0, 3, 0],
         }}
         transition={{
           rotate: {
-            duration: 25,
+            duration: 15,
             repeat: Infinity,
-            ease: "linear"
+            ease: "linear",
           },
           y: {
-            duration: 12,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut",
-            repeatType: "reverse"
-          }
+          },
         }}
       />
     </div>
