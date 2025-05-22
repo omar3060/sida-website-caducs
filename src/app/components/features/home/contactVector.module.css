@@ -7,9 +7,3 @@
       filter: brightness(0) invert(1); /* Makes it white */
     }
   }
-
-/* @media (min-width: 768px) {
-  .vectorIcon {
-    filter: brightness(0) saturate(100%) invert(39%) sepia(98%) saturate(1369%) hue-rotate(182deg) brightness(95%) contrast(101%); /* Makes it #018ED5 
-  }
-} */

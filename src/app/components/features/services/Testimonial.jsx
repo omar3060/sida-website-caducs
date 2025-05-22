@@ -51,7 +51,7 @@ const Testimonial = () => {
     },
   ];
   return (
-    <section className="section-style x-spacing">
+    <section className="section-style x-spacing pt-10 md:pt-16 lg:pt-20">
       <h2 className="mt-10 text-4xl font-bold text-secondaryColor max-md:max-w-full text-center">
         Be Part of <span className="text-mainColor">30,000+</span> Restaurants
         Thriving with <span className="text-mainColor">SIDA</span>!

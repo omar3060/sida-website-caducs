@@ -1,35 +1,21 @@
 import React from "react";
-import ProductCard from "./ProductCard";
+import Link from "next/link";
+
+import { servicesData } from "../../../../data/servicesData";
+import ProductCard from "../service/ProductCard";
 
 const ServicesSection = () => {
-  const productCards = [
-    {
-      title: "POS",
-      image:
-        "/assets/images/services/service1.svg",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut ed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut",
-    },
-    {
-      title: "CDS",
-      image:
-        "/assets/images/services/service2.svg",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut ed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut",
-    },
-    {
-      title: "KDS",
-      image:
-        "/assets/images/services/service3.svg",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut ed fringilla. Etiam vestibulum ex non elit blandit commodo. Vestibulum sodales neque erat, a porta diam aliquet vel. Ut",
-    },
-  ];
   return (
-    <section className="section-style">
+    <section className="section-style pt-10 md:pt-16 lg:pt-20">
       <div className="flex flex-wrap gap-10 justify-center items-center w-full max-md:max-w-full x-spacing">
-        {productCards.map((card, index) => (
-          <ProductCard key={index} {...card} />
+        {servicesData.map((card, index) => (
+          <ProductCard
+            key={index}
+            title={card.hero.title}
+            image={card.hero.image}
+            description={card.hero.description}
+            serviceId={card.id}
+          />
         ))}
       </div>
     </section>

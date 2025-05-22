@@ -1,8 +1,10 @@
-import React from 'react'
-import HeroServices from '../components/features/services/HeroServices'
-import Features from '../components/features/home/Features'
-import ServicesSection from '../components/features/services/ServicesSection'
-import Testimonial from '../components/features/services/Testimonial'
+import React from 'react';
+
+
+import ServicesSection from '../components/features/services/ServicesSection';
+import Testimonial from '../components/features/services/Testimonial';
+import Features from '../components/features/home/Features';
+import HeroServices from '../components/features/services/HeroServices';
 
 const ServicesPage = () => {
   return (
@@ -12,7 +14,7 @@ const ServicesPage = () => {
       <ServicesSection />
       <Testimonial />
     </main>
-  )
-}
+  );
+};
 
-export default ServicesPage
+export default ServicesPage;
