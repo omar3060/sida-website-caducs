@@ -29,21 +29,17 @@ const WhoWeServe = () => {
 
 const ServiceCard = ({ icon, title, description }) => (
     <article className="flex flex-col justify-center items-center p-8 rounded-xl bg-[#018ED50A] relative group overflow-hidden cursor-pointer min-h-[200px]">
-        {/* Default View */}
         <div className="relative z-10 group-hover:opacity-0 transition-opacity duration-300">
-            {typeof icon === 'string' ? (
+            {
                 <img
                     src={icon}
                     alt={`${title} icon`}
                     className="object-contain aspect-square w-[41px] justify-self-center"
                 />
-            ) : (
-                <div className="flex min-h-[41px] w-[41px] self-center">{icon}</div>
-            )}
+            }
             <h3 className="mt-5 text-xl font-bold">{title}</h3>
         </div>
 
-        {/* Hover Overlay */}
         <div className="absolute inset-0 bg-[#018ED5] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out p-6 flex flex-col">
             <div className="flex items-center gap-4 mb-4">
                 {typeof icon === 'string' ? (

@@ -17,8 +17,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Service({ params }) {
-  const { serviceId } = await params;
-  const service =  servicesData.find((s) => s.id === serviceId);
+  const service = servicesData.find((s) => s.id === params.serviceId);
 
   return (
     <main>

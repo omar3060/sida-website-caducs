@@ -8,7 +8,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Products", path: "/products" },
     { name: "Services", path: "/services" },
-    { name: "About Us", path: "/about" },
+    { name: "About Us", path: "/aboutUs" },
     { name: "Pricing", path: "/pricing" },
     { name: "Resources", path: "/resources" },
   ];
@@ -49,12 +49,14 @@ const Navbar = () => {
             width={50}
             height={30}
           />
-          <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-4 lg:px-10 py-1 border rounded-xl text-sm lg:text-base">
+          <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-4 lg:px-10 py-1 border rounded-xl text-sm lg:text-base cursor-pointer">
             Subscribe
           </button>
-          <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-4 lg:px-10 py-1 border rounded-xl text-sm lg:text-base">
-            Log In
-          </button>
+          <Link href="https://sida-2002.web.app/auth/login" target="_blank">
+            <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-4 lg:px-10 py-1 border rounded-xl text-sm lg:text-base cursor-pointer">
+              Login
+            </button>
+          </Link>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             type="button"
