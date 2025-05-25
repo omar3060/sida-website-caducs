@@ -1,8 +1,4 @@
 import React from "react";
-
-
-
-
 import { servicesData } from "../../../data/servicesData";
 import FeaturesService from "@/app/components/features/service/FeaturesService";
 import HeroService from "@/app/components/features/service/HeroService";
