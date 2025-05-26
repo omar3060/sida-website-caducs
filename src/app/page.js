@@ -1,15 +1,15 @@
-import React from 'react'
-import Hero from '@/app/components/features/home/Hero'
-import Features from '@/app/components/features/home/Features'
-import Partners from '@/app/components/features/home/Partners'
-import FeaturesTables from '@/app/components/features/home/FeaturesTables'
-import ServicesSlider from '@/app/components/features/home/ServicesSlider'
-import WhoWeServe from '@/app/components/features/home/WhoWeServe'
-import ImageComparison from '@/app/components/features/home/ImageComparison'
-import DownloadSida from '@/app/components/features/home/DownloadSida'
-import ContactForm from '@/app/components/features/home/ContactForm'
-import PricingSection from '@/app/components/features/home/PricingSection'
-import SidaOffers from './components/features/home/SidaOffers'
+import React from "react";
+import Hero from "./components/features/home/Hero";
+import Features from "@/app/components/features/home/Features";
+import Partners from "@/app/components/features/home/Partners";
+import FeaturesTables from "@/app/components/features/home/FeaturesTables";
+import ServicesSlider from "@/app/components/features/home/ServicesSlider";
+import WhoWeServe from "@/app/components/features/home/WhoWeServe";
+import ImageComparison from "@/app/components/features/home/ImageComparison";
+import DownloadSida from "@/app/components/features/home/DownloadSida";
+import ContactForm from "@/app/components/features/home/ContactForm";
+import PricingSection from "@/app/components/features/home/PricingSection";
+import SidaOffers from "./components/features/home/SidaOffers";
 
 const Home = () => {
   return (
@@ -26,7 +26,7 @@ const Home = () => {
       <ContactForm />
       <PricingSection />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

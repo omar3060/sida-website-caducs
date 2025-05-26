@@ -8,7 +8,6 @@ export async function generateStaticParams() {
 }
 
 export default async function HelpPage({ params }) {
-  
   const help = helpPageData.find((help) => help.id === Number(params.helpId));
   if (!help) {
     return <div>Help page not found</div>;

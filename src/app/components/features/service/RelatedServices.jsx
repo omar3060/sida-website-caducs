@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 
 import ProductCard from "./ProductCard";
 import { servicesData } from "@/data/servicesData";

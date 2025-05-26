@@ -1,42 +1,9 @@
-"use client";
 import React from "react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import HeroClientWrapper from "./HeroClientWrapper";
 import RotatingGradientCircle from "./RotatingGradientCircle";
-import ClickDashes from "./manageHoverOnHeroButton/ClickDashes";
-import ClickCursor from "./manageHoverOnHeroButton/ClickCursor";
-
 
 const Hero = () => {
-  const [isLargeScreen, setIsLargeScreen] = useState(false);
-  const [isSubscribeHovered, setIsSubscribeHovered] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth > 992);
-    };
-
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-
-    return () => window.removeEventListener("resize", checkScreenSize);
-  }, []);
-
-  const dashAnimation = {
-    hidden: { opacity: 0, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.75,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
     <section className="section-style relative x-spacing pt-18 md:pt-36 lg:pt-40 mb-0">
       <div className="flex flex-col md:flex-row gap-6">
@@ -68,35 +35,13 @@ const Hero = () => {
               <button role="button" className="primary-button flex-1">
                 Get Demo
               </button>
-              <div className="relative flex-1">
-                <button
-                  className="primary-button w-full group"
-                  onMouseEnter={() => setIsSubscribeHovered(true)}
-                  onMouseLeave={() => setIsSubscribeHovered(false)}
-                >
-                  Subscribe
-                </button>
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={dashAnimation}
-                  className="absolute bottom-[5px] right-[15px] pointer-events-none"
-                >
-                  <ClickDashes
-                    fillColor={isSubscribeHovered ? "#FFFFFF" : "#018ED5"}
-                  />
-                </motion.div>
-                <div className="absolute bottom-[-40px] md:bottom-[-45px] right-[-20px] pointer-events-none">
-                  <ClickCursor
-                    fillColor={isSubscribeHovered ? "#FFFFFF" : "#018ED5"}
-                    strokeColor={isSubscribeHovered ? "#018ED5" : "white"}
-                  />
-                </div>
-              </div>
+              <HeroClientWrapper />
             </div>
           </div>
         </div>
-        {isLargeScreen && <RotatingGradientCircle />}
+        <div className="hidden lg:block">
+          <RotatingGradientCircle />
+        </div>
         <div className="w-full md:w-[50%] md:ml-5 relative md:mt-0">
           <div className="relative">
             <Image
@@ -106,24 +51,11 @@ const Hero = () => {
               width={500}
               height={300}
             />
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={dashAnimation}
-              className="absolute z-0 w-[50px] sm:w-[60px] lg:w-[75px] h-auto aspect-[0.92] bottom-[9%] left-[-6%] transform translate-x-0 translate-y-0 pointer-events-none"
-            >
-              <Image
-                src="/assets/images/home/svgs/dashes.svg"
-                alt="Decorative element"
-                width={83}
-                height={90}
-                className="w-full h-full"
-              />
-            </motion.div>
+            <HeroClientWrapper isDashes />
           </div>
           <Image
             src="/assets/images/home/svgs/halfCircleLeft.svg"
-            className="absolute w-[250px] sm:w-[300px] right-[-32px] sm:right-[-32px] bottom-0 sm:bottom-50  md:w-[1000px] md:top-[-115px] lg:hidden block overflow-hidden -z-10"
+            className="absolute w-[250px] sm:w-[300px] right-[-32px] sm:right-[-32px] bottom-0 sm:bottom-50 md:w-[1000px] md:top-[-115px] lg:hidden block overflow-hidden -z-10"
             alt="Hero illustration"
             width={500}
             height={300}

@@ -61,3 +61,22 @@ html {
   flex: 0 0 var(--slide-size);
   padding-left: var(--slide-spacing);
 }
+
+
+.group {
+  --fill-color: #018ED5;
+  --stroke-color: white;
+}
+.group:hover {
+  --fill-color: #FFFFFF;
+  --stroke-color: #018ED5;
+}
+
+
+/* Hide static list when carousel is rendered */
+.static-partners {
+  display: flex;
+}
+.embla ~ .static-partners {
+  display: none;
+}
