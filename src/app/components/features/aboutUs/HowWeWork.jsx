@@ -1,23 +1,9 @@
-"use client";
 import Image from "next/image";
 import React from "react";
+import ClientDashWrapper from "../service/ClientDashWrapper";
 
-import { motion } from "framer-motion";
 
 const HowWeWork = () => {
-  const dashAnimation = {
-    hidden: { opacity: 0, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.75,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    },
-  };
   return (
     <section id="services" className="section-style x-spacing">
       <div className="">
@@ -55,20 +41,7 @@ const HowWeWork = () => {
                 width={100}
                 height={100}
               />
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={dashAnimation}
-                className="absolute z-0 w-[25px] sm:w-[30px] lg:w-[45px] h-auto aspect-[0.92] -top-7 -right-[5%] transform translate-x-0 translate-y-0 pointer-events-none "
-              >
-                <Image
-                  src="/assets/images/aboutUs/dashes.svg"
-                  alt="Decorative element"
-                  width={83}
-                  height={90}
-                  className="w-full h-full"
-                />
-              </motion.div>
+              <ClientDashWrapper className="absolute z-0 w-[35px] sm:w-[45px] lg:w-[55px] h-auto aspect-[0.92] -top-7 -right-[5%] transform translate-x-0 translate-y-0 pointer-events-none rotate-180"></ClientDashWrapper>
             </div>
           </div>
         </div>

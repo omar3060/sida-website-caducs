@@ -11,6 +11,11 @@ import ContactForm from "@/app/components/features/home/ContactForm";
 import PricingSection from "@/app/components/features/home/PricingSection";
 import SidaOffers from "./components/features/home/SidaOffers";
 
+export const metadata = {
+  title: 'SIDA',
+  description: 'Discover SIDA\'s innovative POS and restaurant management solutions designed to simplify your operations and boost efficiency. Streamline your restaurant operations with our all-in-one platform.',
+}
+
 const Home = () => {
   return (
     <div>

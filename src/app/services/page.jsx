@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
 
+import ServicesSection from "../components/features/services/ServicesSection";
+import Testimonial from "../components/features/services/Testimonial";
+import Features from "../components/features/home/Features";
+import HeroServices from "../components/features/services/HeroServices";
 
-import ServicesSection from '../components/features/services/ServicesSection';
-import Testimonial from '../components/features/services/Testimonial';
-import Features from '../components/features/home/Features';
-import HeroServices from '../components/features/services/HeroServices';
+export const metadata = {
+  title: 'SIDA - Services',
+  description: 'Explore SIDA\'s comprehensive suite of restaurant management services. From POS systems to inventory management, discover solutions designed to streamline your operations.',
+}
 
 const ServicesPage = () => {
   return (

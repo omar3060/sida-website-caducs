@@ -1,12 +1,17 @@
-import React from 'react'
-import PricingSection from '../components/features/pricing/PricingSection'
+import React from "react";
+import PricingSection from "../components/features/pricing/PricingSection";
 
-const Pricing = () => {
-  return (
-    <main>
-        <PricingSection />
-    </main>
-  )
+export const metadata = {
+  title: 'SIDA - Pricing Plans',
+  description: 'Choose the perfect pricing plan for your restaurant management needs with SIDA. Explore our flexible pricing options designed to fit businesses of all sizes.',
 }
 
-export default Pricing
+const Pricing = ({ searchParams }) => {
+  return (
+    <main>
+      <PricingSection searchParams={searchParams} />
+    </main>
+  );
+};
+
+export default Pricing;

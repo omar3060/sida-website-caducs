@@ -1,22 +1,8 @@
-"use client";
 import Image from "next/image";
 import React from "react";
+import ClientDashWrapper from "./ClientDashWrapper";
 
-import { motion } from "framer-motion";
 const MoreFeaturesServices = () => {
-  const dashAnimation = {
-    hidden: { opacity: 0, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.75,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "easeInOut",
-      },
-    },
-  };
   return (
     <section className="section-style x-spacing text-center pt-2 md:pt-6 lg:pt-8">
       <div className="flex flex-wrap gap-10 items-center mt-20 text-secondaryColor max-md:max-w-full">
@@ -26,12 +12,12 @@ const MoreFeaturesServices = () => {
               CRM <span className="text-secondaryColor">(Customer</span>{" "}
               Relationship
               <span className="text-secondaryColor relative inline-block">
-                Manager​)
+                Manager)
                 <Image
                   src="/assets/images/home/svgs/partners/partners-vector.svg"
                   className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px]"
-                  alt="underline element vector"
-                  width={50}
+                  alt="CRM underline vector"
+                  width={250}
                   height={30}
                 />
               </span>
@@ -46,25 +32,14 @@ const MoreFeaturesServices = () => {
             <div className="relative">
               <Image
                 src="/assets/images/service/moreFeature1.svg"
-                alt="Feature illustration"
+                alt="CRM feature illustration"
                 className="object-contain self-stretch my-auto w-full"
-                width={100}
-                height={100}
+                width={500}
+                height={500}
               />
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={dashAnimation}
+              <ClientDashWrapper
                 className="absolute z-0 w-[50px] sm:w-[60px] lg:w-[85px] h-auto aspect-[0.92] -bottom-10 left-[-7%] transform translate-x-0 translate-y-0 pointer-events-none"
-              >
-                <Image
-                  src="/assets/images/home/svgs/dashes.svg"
-                  alt="Decorative element"
-                  width={83}
-                  height={90}
-                  className="w-full h-full"
-                />
-              </motion.div>
+              />
             </div>
           </div>
         </div>
@@ -80,8 +55,8 @@ const MoreFeaturesServices = () => {
                 <Image
                   src="/assets/images/home/svgs/partners/partners-vector.svg"
                   className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] justify-self-end"
-                  alt="underline element vector"
-                  width={50}
+                  alt="Menu Engineering underline vector"
+                  width={250}
                   height={30}
                 />
               </span>
@@ -97,10 +72,10 @@ const MoreFeaturesServices = () => {
           <div className="relative order-2 md:order-1 w-full md:w-[45%] lg:w-[40%]">
             <Image
               src="/assets/images/service/moreFeature2.svg"
-              alt="Feature illustration"
+              alt="Menu Engineering feature illustration"
               className="object-contain self-stretch my-auto w-full"
-              width={100}
-              height={100}
+              width={500}
+              height={500}
             />
           </div>
         </div>

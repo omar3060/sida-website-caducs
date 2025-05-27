@@ -1,10 +1,9 @@
-"use client"
-import React, { useState } from "react";
+import React from "react";
 import { PricingToggle } from "./PricingToggle";
 import PricingCard from "./PricingCard";
 
-const PricingSection = () => {
-  const [isYearly, setIsYearly] = useState(false);
+const PricingSection = ({ searchParams }) => {
+  const isYearly = searchParams.billing === "yearly";
   const pricingPlans = [
     {
       title: "Start",
@@ -53,11 +52,10 @@ const PricingSection = () => {
           for you
         </span>
       </h2>
-
       <p className="main-paragraph self-center text-center text-secondaryColor w-full md:w-[70%] lg:w-[30%] mr-0">
-      We designed our billing plans & features to fit your financial and operational requirements.
+        We designed our billing plans & features to fit your financial and operational requirements.
       </p>
-      <PricingToggle isYearly={isYearly} onToggle={() => setIsYearly(!isYearly)}/>
+      <PricingToggle />
       <div className="box-border flex flex-wrap relative gap-6 justify-center p-0 m-0 max-md:flex-col max-md:items-center">
         {pricingPlans.map((plan, index) => (
           <PricingCard

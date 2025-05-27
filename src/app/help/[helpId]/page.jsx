@@ -1,6 +1,22 @@
 import React from "react";
 import { helpPageData } from "@/data/helpPageData";
 
+export async function generateMetadata({ params }) {
+  const help = helpPageData.find((help) => help.id === Number(params.helpId));
+
+  if (!help) {
+    return {
+      title: 'Help Article Not Found - SIDA',
+      description: 'The requested help article could not be found.',
+    }
+  }
+
+  return {
+    title: `${help.title} - SIDA Help Center`,
+    description: help.description.slice(0, 155) + '...',
+  }
+}
+
 export async function generateStaticParams() {
   return helpPageData.map((help) => ({
     helpId: help.id.toString(),
@@ -13,6 +29,7 @@ export default async function HelpPage({ params }) {
     return <div>Help page not found</div>;
   }
   return (
+<>
     <section className="section-style x-spacing mb-15">
       <h2 className="main-heading self-center text-mainColor text-center mb-10">
         {help.title.split(" ").map((word, index) =>
@@ -56,5 +73,6 @@ export default async function HelpPage({ params }) {
         />
       </figure>
     </section>
+</>
   );
 }

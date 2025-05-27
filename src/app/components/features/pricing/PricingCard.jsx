@@ -11,9 +11,9 @@ const PricingCard = ({
   activeFeatures,
 }) => {
   return (
-    <article className="box-border  rounded-2xl   bg-opacity-0  w-[297px] text-center">
+    <article className="box-border rounded-2xl bg-opacity-0 w-[297px] text-center">
       <div
-        className={`box-border p-8 m-0 text-center  border-gray-200 border-solid border-[1.607px] rounded-2xl ${
+        className={`box-border p-8 m-0 text-center border-gray-200 border-solid border-[1.607px] rounded-2xl ${
           isHighlighted ? "text-textWhite bg-sky-600" : ""
         }`}
       >
@@ -46,8 +46,8 @@ const PricingCard = ({
             >
               {isActive && (
                 <Image
-                  src="assets/images/pricing/checkIcon.svg"
-                  alt="checkIcon"
+                  src="/assets/images/pricing/checkIcon.svg"
+                  alt="Check icon"
                   width={16}
                   height={16}
                 />
@@ -58,7 +58,7 @@ const PricingCard = ({
         })}
       </ul>
       <button
-        className={`box-border py-3.5 px-[15px] m-0 text-lg rounded-lg border-[#EBEAED] border-solid  cursor-pointer border-[1.106px] w-1/2
+        className={`box-border py-3.5 px-[15px] m-0 text-lg rounded-lg border-[#EBEAED] border-solid cursor-pointer border-[1.106px] w-1/2
           ${isHighlighted ? "text-white bg-sky-600" : ""}`}
       >
         Subscribe
