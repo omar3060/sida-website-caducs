@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation sections */}
-          <nav className="w-[108px]">
+          <nav className="w-[115px]">
             <h3 className="text-xl font-bold leading-none text-indigo-950">
               Product
             </h3>
@@ -80,7 +80,7 @@ const Footer = () => {
               </li>
               <li className="mt-5">
                 <Link href="#case-studies" className="hover:text-mainColor">
-                  Case studies
+                  Case Studies
                 </Link>
               </li>
               <li className="mt-5">
@@ -122,7 +122,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#blog" className="hover:text-mainColor">
+                <Link href="/blog" className="hover:text-mainColor">
                   Blog
                 </Link>
               </li>
@@ -189,26 +189,24 @@ const Footer = () => {
           </div>
           <div className="download flex flex-row md:flex-col gap-4 ">
             <Link href="#">
-            <Image
-              src="/assets/images/home/svgs/google-apple/apple.svg"
-              className="object-contain w-[160px] md:w-full rounded-[22px] md:rounded-[30px] lg:rounded-[20px] bg-black"
-              width={100}
-              height={100}
-              alt="Download"
-            />
+              <Image
+                src="/assets/images/home/svgs/google-apple/apple.svg"
+                className="object-contain w-[160px] md:w-full rounded-[22px] md:rounded-[30px] lg:rounded-[20px] bg-black"
+                width={100}
+                height={100}
+                alt="Download"
+              />
             </Link>
 
-                        <Link href="#">
-
-                          <Image
-              src="/assets/images/home/svgs/google-apple/google.svg"
-              className="object-contain w-[160px] md:w-full rounded-[22px] md:rounded-[34px] lg:rounded-[20px] bg-black"
-              width={100}
-              height={100}
-              alt="Download"
-            />
+            <Link href="#">
+              <Image
+                src="/assets/images/home/svgs/google-apple/google.svg"
+                className="object-contain w-[160px] md:w-full rounded-[22px] md:rounded-[34px] lg:rounded-[20px] bg-black"
+                width={100}
+                height={100}
+                alt="Download"
+              />
             </Link>
-
           </div>
         </div>
 

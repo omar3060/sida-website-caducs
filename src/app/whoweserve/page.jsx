@@ -1,11 +1,12 @@
 import React from "react";
-import WhoWeServe from "../components/features/home/WhoWeServe";
+import WhoWeServe from "../components/common/shared/WhoWeServe";
 import ServiceLayout from "../components/features/whoweserve/ServiceLayout";
 
 export const metadata = {
-  title: 'SIDA - Who We Serve',
-  description: 'Discover how SIDA helps businesses across different industries optimize their operations with our comprehensive restaurant management solutions.',
-}
+  title: "SIDA - Who We Serve",
+  description:
+    "Discover how SIDA helps businesses across different industries optimize their operations with our comprehensive restaurant management solutions.",
+};
 
 const Page = () => {
   return (
