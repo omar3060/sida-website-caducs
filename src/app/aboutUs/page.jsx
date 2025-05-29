@@ -4,12 +4,14 @@ import CidaCircle from "../components/features/aboutUs/CidaCircle";
 import HowWeWork from "../components/features/aboutUs/HowWeWork";
 import CoFounder from "../components/features/aboutUs/CoFounder";
 import Leaders from "../components/features/aboutUs/Leaders";
-import { generateMetadata } from "../components/common/shared/SEO";
 
-export const metadata = generateMetadata({
+export const metadata = {
   title: "SIDA - About Us",
   description: "Discover SIDA about us",
-});
+  icons: {
+    icon: "/assets/images/home/svgs/S-Icon.svg",
+  },
+};
 
 const AboutUs = () => {
   return (

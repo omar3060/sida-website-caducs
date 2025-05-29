@@ -13,31 +13,35 @@ export async function generateMetadata({ params }) {
   if (!params?.slug) {
     return {
       title: "Blog",
-      description: "SIDA Blog Posts"
+      description: "SIDA Blog Posts",
     };
   }
 
   const blog = blogData.find((blog) => blog.slug === params.slug);
-  
+
   if (!blog) {
     return {
       title: "Blog Not Found",
-      description: "The requested blog post could not be found"
+      description: "The requested blog post could not be found",
     };
   }
 
   return {
     title: blog.title,
-    description: blog.description1[0].substring(0, 155)
+    description: blog.description1[0].substring(0, 155),
+    icons: {
+      icon: "/assets/images/home/svgs/S-Icon.svg",
+    },
   };
 }
+
 
 async function PostSlug({ params }) {
   const blog = blogData.find((blog) => blog.slug === params.slug);
   if (!blog) {
     notFound();
   }
-  
+
   return (
     <section className="section-style x-spacing">
       <h1 className="main-heading self-center text-mainColor text-center  my-5 sm:w-full">

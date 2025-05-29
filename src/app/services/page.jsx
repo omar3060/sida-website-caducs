@@ -9,7 +9,9 @@ export const metadata = {
   title: "SIDA - Services",
   description:
     "Explore SIDA's comprehensive suite of restaurant management services. From POS systems to inventory management, discover solutions designed to streamline your operations.",
-  icon: "/assets/images/home/svgs/S-icon.svg",
+  icons: {
+    icon: "/assets/images/home/svgs/S-Icon.svg",
+  }
 };
 
 const ServicesPage = () => {

@@ -74,7 +74,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#pricing" className="hover:text-mainColor">
+                <Link href="/pricing" className="hover:text-mainColor">
                   Pricing
                 </Link>
               </li>
@@ -102,7 +102,7 @@ const Footer = () => {
             </h3>
             <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-slate-500">
               <li>
-                <Link href="#about" className="hover:text-mainColor">
+                <Link href="/aboutus" className="hover:text-mainColor">
                   About
                 </Link>
               </li>
@@ -140,7 +140,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mt-5">
-                <Link href="#help" className="hover:text-mainColor">
+                <Link href="/help" className="hover:text-mainColor">
                   Help center
                 </Link>
               </li>

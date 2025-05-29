@@ -1,18 +1,18 @@
-"use client"
-import React, { useState } from "react";
+// src/app/components/menus/Navbar.jsx
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import MobileMenuToggle from "./MobileMenuToggle";
+import ResourcesDropdown from "./ResourcesDropdown";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navLinks = [
-    { name: "Products", path: "/products" },
-    { name: "Services", path: "/services" },
-    { name: "About Us", path: "/aboutUs" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "Resources", path: "/resources" },
-  ];
+const navLinks = [
+  { name: "Products", path: "/products" },
+  { name: "Services", path: "/services" },
+  { name: "About Us", path: "/aboutus" },
+  { name: "Pricing", path: "/pricing" },
+];
 
+export default function Navbar() {
   return (
     <nav className="bg-textWhite fixed w-full z-20 top-0 start-0 border-b border-gray-200 x-spacing">
       <div className="py-3 flex items-center justify-between">
@@ -20,34 +20,36 @@ const Navbar = () => {
           <Link href="/">
             <Image
               src="/assets/images/home/svgs/sida-logo.svg"
-              width={500}
-              height={300}
-              alt="Sida-Logo"
-              className="w-[64px] h-[25px] md:w-[150px] md:h-[58.588px] lg:w-[180px] lg:h-[77.177px]"
+              width={180}
+              height={77}
+              alt="SIDA Logo"
+              className="w-[64px] h-[25px] md:w-[150px] md:h-[59px] lg:w-[180px] lg:h-[77px]"
             />
           </Link>
-          <ul className={`md:flex items-center gap-6 ${isMenuOpen ? 'flex flex-col absolute top-full left-0 w-full bg-textWhite p-4 md:p-0 md:static md:flex-row' : 'hidden md:flex'}`}>
+          <ul className="hidden md:flex items-center gap-6">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
                   href={link.path}
                   className="text-[#17242A] hover:text-mainColor font-medium transition-colors md:text-base lg:text-2xl"
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </Link>
               </li>
             ))}
+            <li>
+              <ResourcesDropdown />
+            </li>
           </ul>
         </div>
 
         <div className="flex items-center gap-2 lg:gap-10">
           <Image
             src="/assets/images/home/svgs/global-icon-svg.svg"
-            className="rounded-full border border-blackColor p-2 text-blackColor w-[40px] lg:w-[50px]"
-            alt="underline element vector"
-            width={50}
-            height={30}
+            width={40}
+            height={40}
+            alt="Language Selector Icon"
+            className="rounded-full border border-blackColor p-2 w-[40px] lg:w-[50px]"
           />
           <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-4 lg:px-10 py-1 border rounded-xl text-sm lg:text-base cursor-pointer">
             Subscribe
@@ -57,20 +59,9 @@ const Navbar = () => {
               Login
             </button>
           </Link>
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            type="button"
-            className="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-mainColor hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-          >
-            <span className="sr-only">Toggle menu</span>
-            <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path  stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-          </button>
+          <MobileMenuToggle navLinks={navLinks} />
         </div>
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

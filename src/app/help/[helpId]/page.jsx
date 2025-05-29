@@ -14,6 +14,9 @@ export async function generateMetadata({ params }) {
   return {
     title: `${help.title} - SIDA Help Center`,
     description: help.description.slice(0, 155) + '...',
+    icons: {
+      icon: "/assets/images/home/svgs/S-Icon.svg",
+    },
   }
 }
 

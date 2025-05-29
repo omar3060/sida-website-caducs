@@ -46,7 +46,7 @@ const ServicesSlider = () => {
               <Image
                 src={slide.image}
                 alt={`${slide.title} background`}
-                width={800}
+                width={1200}
                 height={600}
                 className="object-cover absolute inset-0 size-full"
                 priority={index === 0}

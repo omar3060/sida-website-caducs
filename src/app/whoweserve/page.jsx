@@ -6,6 +6,9 @@ export const metadata = {
   title: "SIDA - Who We Serve",
   description:
     "Discover how SIDA helps businesses across different industries optimize their operations with our comprehensive restaurant management solutions.",
+  icons: {
+    icon: "/assets/images/home/svgs/S-Icon.svg",
+  },
 };
 
 const Page = () => {

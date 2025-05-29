@@ -19,6 +19,9 @@ export async function generateMetadata({ params }) {
   return {
     title: `${service.hero.title} - SIDA Services`,
     description: service.hero.description,
+    icons: {
+      icon: "/assets/images/home/svgs/S-Icon.svg",
+    },
   };
 }
 

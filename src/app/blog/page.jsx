@@ -2,14 +2,14 @@ import React from "react";
 import PostCard from "../components/features/blog/PostCard";
 import { blogData } from "@/data/blogData";
 import SEO from "../components/common/shared/SEO";
-import { generateMetadata } from "../components/common/shared/SEO";
 
-// Export the metadata for this page
-export const metadata = generateMetadata({
+export const metadata = {
   title: "SIDA - Blog",
   description: "Discover SIDA blog",
-});
-
+  icons: {
+    icon: "/assets/images/home/svgs/S-Icon.svg",
+  },
+};
 const Blog = () => {
   return (
     <section className="section-style x-spacing mb-15">
