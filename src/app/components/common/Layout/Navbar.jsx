@@ -8,7 +8,7 @@ import ResourcesDropdown from "./ResourcesDropdown";
 const navLinks = [
   { name: "Products", path: "/products" },
   { name: "Services", path: "/services" },
-  { name: "About Us", path: "/aboutus" },
+  { name: "About Us", path: "/aboutUs" },
   { name: "Pricing", path: "/pricing" },
 ];
 
