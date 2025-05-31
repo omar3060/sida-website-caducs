@@ -14,7 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-textWhite fixed w-full z-20 top-0 start-0 border-b border-gray-200 x-spacing">
+    <nav className="bg-textWhite fixed w-full z-20 top-0 start-0 border-b border-gray-200 x-spacing z-100">
       <div className="py-3 flex items-center justify-between">
         <div className="flex items-center gap-16">
           <Link href="/">

@@ -25,7 +25,7 @@ export default function MobileMenuToggle({ navLinks }) {
           <li key={index}>
             <Link
               href={link.path}
-              className="block py-2 text-[#17242A] hover:text-mainColor font-medium transition-colors text-base"
+              className="block py-2 text-secondaryColor hover:text-mainColor font-medium transition-colors text-base"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.name}

@@ -16,7 +16,7 @@ export default function ResourcesDropdown() {
         onClick={toggleDropdown}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
-        className="flex items-center text-[#17242A] hover:text-mainColor font-medium transition-colors md:text-base lg:text-2xl"
+        className="flex items-center text-secondaryColor hover:text-mainColor font-medium transition-colors md:text-base lg:text-2xl"
       >
         Resources
         <svg

@@ -13,6 +13,9 @@ export async function generateMetadata({ params }) {
     return {
       title: "Service Not Found - SIDA",
       description: "The requested service could not be found.",
+      icons: {
+        icon: "/assets/images/home/svgs/S-Icon.svg",
+      },
     };
   }
 
