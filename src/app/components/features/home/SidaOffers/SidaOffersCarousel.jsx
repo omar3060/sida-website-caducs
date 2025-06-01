@@ -41,7 +41,7 @@ const SidaOffersCarousel = ({ sliderData }) => {
                     <h3 className="text-[40px] md:text-[55px] lg:text-[65px] font-bold text-mainColor">
                       {slide.title}
                     </h3>
-                    <div
+                    {/* <div
                       className="absolute top-[-25px] md:top-[-42px] lg:top-[-40px] xl:top-[-100px] left-[80px] md:left-[115px] lg:left-[127px] xl:left-[150px] w-[918px] h-[251px]"
                     >
                       <Image
@@ -52,7 +52,7 @@ const SidaOffersCarousel = ({ sliderData }) => {
                         className="w-[300px] md:w-[400px] lg:w-[500px] xl:w-[800px] md:block"
                         priority
                       />
-                    </div>
+                    </div> */}
                   </div>
 
                   <p className="text-secondaryColor text-[18.5px] md:text-2xl lg:text-4xl w-full max-w-[700px]">

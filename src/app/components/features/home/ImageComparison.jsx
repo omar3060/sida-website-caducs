@@ -22,14 +22,16 @@ const ImageComparison = () => {
     const rect = imageContainer.current.getBoundingClientRect();
     let frac = (clientX - rect.left) / rect.width;
     frac = Math.max(0, Math.min(1, frac));
-    
-    if ((slideAmount.frac < 0.5 && frac >= 0.5) || 
-        (slideAmount.frac > 0.5 && frac <= 0.5)) {
+
+    if (
+      (slideAmount.frac < 0.5 && frac >= 0.5) ||
+      (slideAmount.frac > 0.5 && frac <= 0.5)
+    ) {
       setSlideAmount({ frac: 0.5 });
-      window.dispatchEvent(new MouseEvent('mouseup'));
+      window.dispatchEvent(new MouseEvent("mouseup"));
       return;
     }
-    
+
     setSlideAmount({ frac });
   };
 
@@ -74,13 +76,11 @@ const ImageComparison = () => {
     });
   };
 
-
-
   return (
-    <div className="flex items-center justify-center mt-10 md:h-[1250px] bg-gray-50 px-2">
+    <div className="flex items-center justify-center mt-10  bg-gray-50 px-7 x-spacing">
       <div
         ref={imageContainer}
-        className="relative w-full max-w-4xl aspect-[0.77] rounded-[40px] overflow-hidden shadow-xl bg-textWhite"
+        className="relative w-full max-w-lg aspect-[.77] md:aspect-[.95]  rounded-[40px] overflow-hidden shadow-xl bg-textWhite"
         onClick={handleClick}
       >
         <Image
@@ -88,7 +88,7 @@ const ImageComparison = () => {
           alt="After"
           fill
           className="object-cover select-none pointer-events-none"
-          sizes="(max-width: 768px) 100vw, 800px"
+          // sizes="(max-width: 768px) 100vw, 800px"
         />
         <Image
           src="/assets/images/home/imageComparison/before.svg"
@@ -96,10 +96,14 @@ const ImageComparison = () => {
           fill
           className="object-cover select-none pointer-events-none absolute top-0 left-0"
           style={{
-            clipPath: `polygon(0 0, ${slideAmount.frac * 100}% 0, ${slideAmount.frac * 100}% 100%, 0 100%)`,
-            transition: dragging ? "none" : "clip-path 0.5s cubic-bezier(.4,2,.6,1)",
+            clipPath: `polygon(0 0, ${slideAmount.frac * 100}% 0, ${
+              slideAmount.frac * 100
+            }% 100%, 0 100%)`,
+            transition: dragging
+              ? "none"
+              : "clip-path 0.5s cubic-bezier(.4,2,.6,1)",
           }}
-          sizes="(max-width: 768px) 100vw, 800px"
+          // sizes="(max-width: 768px) 100vw, 800px"
         />
         {slideAmount.frac === 1 && (
           <div className="absolute right-0 top-0 h-full w-[5px] bg-mainColor" />
@@ -151,7 +155,6 @@ const ImageComparison = () => {
                   height={48}
                   className="rotate-180 relative right-[18px]"
                   draggable={false}
-                  
                 />
                 <Image
                   src="/assets/images/home/imageComparison/separator.svg"

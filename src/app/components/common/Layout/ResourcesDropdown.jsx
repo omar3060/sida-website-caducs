@@ -4,11 +4,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-export default function ResourcesDropdown() {
+export default function ResourcesDropdown({ closeMobileMenu }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
-  const closeDropdown = () => setIsOpen(false);
+  const closeDropdown = () => {
+    setIsOpen(false);
+    if (closeMobileMenu) closeMobileMenu();
+  };
 
   return (
     <li className="relative">
@@ -16,7 +19,7 @@ export default function ResourcesDropdown() {
         onClick={toggleDropdown}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
-        className="flex items-center text-secondaryColor hover:text-mainColor font-medium transition-colors md:text-base lg:text-2xl"
+        className="flex items-center text-secondaryColor hover:text-mainColor font-medium transition-colors md:text-base lg:text-xl"
       >
         Resources
         <svg
@@ -36,7 +39,9 @@ export default function ResourcesDropdown() {
         </svg>
       </button>
       <div
-        className={`absolute z-10 ${isOpen ? 'block' : 'hidden'} font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 mt-0`}
+        className={`absolute z-10 ${
+          isOpen ? "block" : "hidden"
+        } font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 mt-0`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >

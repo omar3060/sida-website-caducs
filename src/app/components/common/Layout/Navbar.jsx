@@ -8,7 +8,8 @@ import ResourcesDropdown from "./ResourcesDropdown";
 const navLinks = [
   { name: "Products", path: "/products" },
   { name: "Services", path: "/services" },
-  { name: "About Us", path: "/aboutUs" },
+  { name: "About Us", path: "/aboutus" },
+  { name: "Who We Serve", path: "/whoweserve" },
   { name: "Pricing", path: "/pricing" },
 ];
 
@@ -16,7 +17,7 @@ export default function Navbar() {
   return (
     <nav className="bg-textWhite fixed w-full z-20 top-0 start-0 border-b border-gray-200 x-spacing z-100">
       <div className="py-3 flex items-center justify-between">
-        <div className="flex items-center gap-16">
+        <div className="flex items-center gap-16 flex-1">
           <Link href="/">
             <Image
               src="/assets/images/home/svgs/sida-logo.svg"
@@ -26,12 +27,12 @@ export default function Navbar() {
               className="w-[64px] h-[25px] md:w-[150px] md:h-[59px] lg:w-[180px] lg:h-[77px]"
             />
           </Link>
-          <ul className="hidden md:flex items-center gap-6">
+          <ul className="hidden md:flex items-center gap-6 te">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
                   href={link.path}
-                  className="text-[#17242A] hover:text-mainColor font-medium transition-colors md:text-base lg:text-2xl"
+                  className="text-secondaryColor hover:text-mainColor font-medium transition-colors text-sm md:text-base lg:text-xl flex flex-nowrap"
                 >
                   {link.name}
                 </Link>
@@ -54,7 +55,7 @@ export default function Navbar() {
           <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-4 lg:px-10 py-1 border rounded-xl text-sm lg:text-base cursor-pointer">
             Subscribe
           </button>
-          <Link href="https://sida-2002.web.app/auth/login" target="_blank">
+          <Link href="https://sida-2025.netlify.app/auth/login" target="_blank">
             <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-4 lg:px-10 py-1 border rounded-xl text-sm lg:text-base cursor-pointer">
               Login
             </button>

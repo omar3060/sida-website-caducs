@@ -18,12 +18,12 @@ const CidaCircleAnimation = () => {
       if (width < 640) {
         // mobile
         setMoveDistance({
-          topLeft: 80,
-          bottomRight: 80,
-          topRight: 70,
-          bottomLeft: 65,
+          topLeft: 85,
+          bottomRight: 90,
+          topRight: 85,
+          bottomLeft: 80,
         });
-      } else if (width < 768) {
+      } else if (width < 992) {
         // sm
         setMoveDistance({
           topLeft: 100,
@@ -31,11 +31,19 @@ const CidaCircleAnimation = () => {
           topRight: 90,
           bottomLeft: 85,
         });
+      } else if (width >= 992 && width <= 1080) {
+        // between md and lg (problematic range)
+        setMoveDistance({
+          topLeft: 120,
+          bottomRight: 130,
+          topRight: 115,
+          bottomLeft: 110,
+        });
       } else {
-        // md and above
+        // larger screens
         setMoveDistance({
           topLeft: 160,
-          bottomRight: 160,
+          bottomRight: 170,
           topRight: 145,
           bottomLeft: 140,
         });
@@ -56,7 +64,7 @@ const CidaCircleAnimation = () => {
     <div className="relative w-full aspect-square overflow-hidden">
       {/* Small SIDA circle that fades away to right */}
       <motion.div
-        className="absolute inset-0 m-auto w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[273px] md:h-[273px] z-27"
+        className="absolute inset-0 m-auto w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[160px] md:h-[160px] xl:w-[273px] xl:h-[273px] z-27"
         initial={{ opacity: 1, x: 0 }}
         animate={{
           opacity: [1, 0, 0, 0, 0, 1],
@@ -74,7 +82,7 @@ const CidaCircleAnimation = () => {
           alt="Small SIDA Circle"
           width={100}
           height={100}
-          className="object-contain w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[273px] md:h-[273px]"
+          className="object-contain w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[160px] md:h-[160px] xl:w-[273px] xl:h-[273px]"
         />
         <motion.div
           className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl"
@@ -92,14 +100,14 @@ const CidaCircleAnimation = () => {
             alt="SIDA Logo"
             width={200}
             height={80}
-            className="object-contain w-[80px] h-[30px] sm:w-[100px] sm:h-[40px] md:w-[200px] md:h-[80px]"
+            className="object-contain w-[80px] h-[30px] sm:w-[100px] sm:h-[40px] md:w-[100px] md:h-[60px] xl:w-[200px] xl:h-[80px]"
           />
         </motion.div>
       </motion.div>
 
       {/* Main image that appears after small SIDA circle fades away */}
       <motion.div
-        className="absolute inset-0 m-auto w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[273px] md:h-[273px] z-25"
+        className="absolute inset-0 m-auto w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[160px] md:h-[160px] xl:w-[273px] xl:h-[273px] z-25"
         initial={{ opacity: 0 }}
         animate={{
           opacity: [1, 1, 1, 0, 0, 0],
@@ -116,13 +124,13 @@ const CidaCircleAnimation = () => {
           alt="Main Circle"
           width={100}
           height={100}
-          className="object-contain w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[273px] md:h-[273px]"
+          className="object-contain w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[160px] md:h-[160px] xl:w-[273px] xl:h-[273px]"
         />
       </motion.div>
 
       {/* Image 1 - Top Left (First pair) */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[154px] md:h-[154px] z-20"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[100px] md:h-[100px] xl:w-[154px] xl:h-[154px] z-20"
         initial={{ x: 0, y: 0, opacity: 0 }}
         animate={{
           x: [0, -moveDistance.topLeft, -moveDistance.topLeft, 0, 0, 0],
@@ -141,13 +149,13 @@ const CidaCircleAnimation = () => {
           alt="Top Left Image"
           width={100}
           height={100}
-          className="object-contain rounded-full w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[154px] md:h-[154px]"
+          className="object-contain rounded-full w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[100px] md:h-[100px] xl:w-[154px] xl:h-[154px]"
         />
       </motion.div>
 
       {/* Image 2 - Bottom Right (First pair) */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] md:w-[184px] md:h-[184px] z-20"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] md:w-[110px] md:h-[110px] xl:w-[184px] xl:h-[184px] z-20"
         initial={{ x: 0, y: 0, opacity: 0 }}
         animate={{
           x: [0, moveDistance.bottomRight, moveDistance.bottomRight, 0, 0, 0],
@@ -166,13 +174,13 @@ const CidaCircleAnimation = () => {
           alt="Bottom Right Image"
           width={100}
           height={100}
-          className="object-contain rounded-full w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] md:w-[184px] md:h-[184px]"
+          className="object-contain rounded-full w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] md:w-[110px] md:h-[110px] xl:w-[184px] xl:h-[184px]"
         />
       </motion.div>
 
       {/* Image 3 - Top Right (Second pair) */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75px] h-[75px] sm:w-[90px] sm:h-[90px] md:w-[121px] md:h-[121px] z-20"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75px] h-[75px] sm:w-[90px] sm:h-[90px] md:w-[90px] md:h-[90px] xl:w-[121px] xl:h-[121px] z-20"
         initial={{ x: 0, y: 0, opacity: 0 }}
         animate={{
           x: [0, moveDistance.topRight, moveDistance.topRight, 0, 0, 0],
@@ -191,13 +199,13 @@ const CidaCircleAnimation = () => {
           alt="Top Right Image"
           width={100}
           height={100}
-          className="object-contain rounded-full w-[75px] h-[75px] sm:w-[90px] sm:h-[90px] md:w-[121px] md:h-[121px]"
+          className="object-contain rounded-full w-[75px] h-[75px] sm:w-[90px] sm:h-[90px] md:w-[90px] md:h-[90px] xl:w-[121px] xl:h-[121px]"
         />
       </motion.div>
 
       {/* Image 4 - Bottom Left (Second pair) */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65px] h-[65px] sm:w-[75px] sm:h-[75px] md:w-[103px] md:h-[103px] z-20"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65px] h-[65px] sm:w-[75px] sm:h-[75px] md:w-[85px] md:h-[85px] xl:w-[103px] xl:h-[103px] z-20"
         initial={{ x: 0, y: 0, opacity: 0 }}
         animate={{
           x: [0, -moveDistance.bottomLeft, -moveDistance.bottomLeft, 0, 0, 0],
@@ -216,13 +224,13 @@ const CidaCircleAnimation = () => {
           alt="Bottom Left Image"
           width={100}
           height={100}
-          className="object-contain rounded-full w-[65px] h-[65px] sm:w-[75px] sm:h-[75px] md:w-[103px] md:h-[103px]"
+          className="object-contain rounded-full w-[65px] h-[65px] sm:w-[75px] sm:h-[75px] md:w-[85px] md:h-[85px] xl:w-[103px] xl:h-[103px]"
         />
       </motion.div>
 
       {/* Big circle that comes from the right */}
       <motion.div
-        className="absolute inset-0 m-auto md:w-[537px] md:h-[537px] z-30 w-full h-full"
+        className="absolute inset-0 m-auto md:w-[300px] md:h-[300px] xl:w-[537px] xl:h-[537px] z-30 w-full h-full"
         initial={{ x: "100%", opacity: 0 }}
         animate={{
           x: ["50%", "0%", "0%", "0%"],
@@ -236,13 +244,12 @@ const CidaCircleAnimation = () => {
           repeatDelay: 0.5,
         }}
       >
-
         <div className="relative w-full h-full flex items-center justify-center">
           <Image
             src="/assets/images/aboutUs/animation/bigCircle.svg"
             alt="Big Circle"
-            width={537}
-            height={537}
+            width={300}
+            height={300}
             className="object-contain max-w-full max-h-full"
           />
         </div>
@@ -268,7 +275,7 @@ const CidaCircleAnimation = () => {
           alt="SIDA Logo"
           width={100}
           height={100}
-          className="object-contain md:w-[200px] md:h-[80px]"
+          className="object-contain md:w-[100px] md:h-[60px] xl:w-[200px] xl:h-[80px]"
         />
       </motion.div>
     </div>

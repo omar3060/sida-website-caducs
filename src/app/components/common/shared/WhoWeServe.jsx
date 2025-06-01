@@ -77,7 +77,7 @@ const ServiceCard = ({ icon, title, description }) => (
           alt={`${title} icon`}
           className="object-contain w-[41px] filter brightness-0 invert"
         />
-        <h3 className="text-xl font-bold text-white">{title}</h3>
+        <h3 className="text-lg font-bold text-white">{title}</h3>
       </div>
       <p className="text-white text-lg text-center leading-relaxed">
         {description}
