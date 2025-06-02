@@ -250,7 +250,7 @@ const CidaCircleAnimation = () => {
             alt="Big Circle"
             width={300}
             height={300}
-            className="object-contain max-w-full max-h-full"
+            className="object-contain max-w-full max-h-full md:w-[300px] md:h-[300px] xl:w-[537px] xl:h-[537px]"
           />
         </div>
       </motion.div>

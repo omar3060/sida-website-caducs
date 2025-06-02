@@ -1,4 +1,3 @@
-// src/app/components/menus/MobileMenuToggle.jsx
 "use client";
 
 import React, { useState } from "react";
@@ -13,7 +12,7 @@ export default function MobileMenuToggle({ navLinks }) {
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         type="button"
-        className="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-mainColor rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-700"
+        className="lg:hidden inline-flex items-center p-1 pr-0 focus:pr-1 w-10 h-10 justify-center text-sm text-mainColor rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-mainColor"
         aria-label="Toggle menu"
       >
         <svg
@@ -32,26 +31,30 @@ export default function MobileMenuToggle({ navLinks }) {
           />
         </svg>
       </button>
-      <ul
-        className={`md:hidden ${
+      <div
+        className={`lg:hidden fixed top-[60px] sm:top-[70px] md:top-[80px] left-0 w-full bg-textWhite shadow-md transition-all duration-300 z-40  ${
           isMenuOpen
-            ? "flex flex-col absolute top-full left-0 w-full bg-textWhite p-4"
-            : "hidden"
+            ? "translate-y-0 opacity-100"
+            : "translate-y-[-20px] opacity-0 pointer-events-none"
         }`}
       >
-        {navLinks.map((link, index) => (
-          <li key={index}>
-            <Link
-              href={link.path}
-              className="block py-2 text-secondaryColor hover:text-mainColor font-medium transition-colors text-base"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
+        <ul className="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 divide-y divide-gray-100">
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <Link
+                href={link.path}
+                className="block py-3 text-secondaryColor hover:text-mainColor font-medium transition-colors text-base"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+          <li className="py-3">
+            <ResourcesDropdown closeMobileMenu={() => setIsMenuOpen(false)} />
           </li>
-        ))}
-        <ResourcesDropdown closeMobileMenu={() => setIsMenuOpen(false)} />
-      </ul>
+        </ul>
+      </div>
     </>
   );
 }

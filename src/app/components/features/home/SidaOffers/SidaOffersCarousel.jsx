@@ -53,6 +53,7 @@ const SidaOffersCarousel = ({ sliderData }) => {
                         priority
                       />
                     </div> */}
+                    
                   </div>
 
                   <p className="text-secondaryColor text-[18.5px] md:text-2xl lg:text-4xl w-full max-w-[700px]">

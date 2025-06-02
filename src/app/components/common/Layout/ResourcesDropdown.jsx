@@ -1,4 +1,3 @@
-// src/app/components/menus/ResourcesDropdown.jsx
 "use client";
 
 import React, { useState } from "react";
@@ -19,11 +18,14 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
         onClick={toggleDropdown}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
-        className="flex items-center text-secondaryColor hover:text-mainColor font-medium transition-colors md:text-base lg:text-xl"
+        className="flex items-center text-secondaryColor hover:text-mainColor font-medium transition-colors 
+          md:text-base lg:text-lg 2xl:text-xl
+
+         w-full"
       >
         Resources
         <svg
-          className="w-2.5 h-2.5 ml-2.5"
+          className="w-2.5 h-2.5 ml-2.5 transition-transform"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -39,13 +41,13 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
         </svg>
       </button>
       <div
-        className={`absolute z-10 ${
+        className={`absolute z-10 mt-0 ${
           isOpen ? "block" : "hidden"
-        } font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 mt-0`}
+        } font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-md w-44`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
-        <ul className="py-2 text-sm text-gray-700 ">
+        <ul className="py-2 text-sm text-gray-700">
           <li>
             <Link
               href="/help"
