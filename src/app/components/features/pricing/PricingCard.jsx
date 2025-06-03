@@ -41,7 +41,9 @@ const PricingCard = ({
             <li
               key={index}
               className={`box-border flex gap-2.5 items-center p-0 m-0 mb-4 text-sm ${
-                isActive ? "font-bold text-black" : "font-normal text-gray-500 ps-5"
+                isActive
+                  ? "font-bold text-black"
+                  : "font-normal text-gray-500 ps-5"
               }`}
             >
               {isActive && (
@@ -50,6 +52,7 @@ const PricingCard = ({
                   alt="Check icon"
                   width={16}
                   height={16}
+                  style={{ width: "16px", height: "16px" }}
                 />
               )}
               <span>{feature}</span>

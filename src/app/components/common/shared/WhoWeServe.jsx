@@ -1,4 +1,5 @@
 import React from "react";
+import SVG from "react-inlinesvg";
 
 const WhoWeServe = () => {
   const services = [
@@ -61,10 +62,10 @@ const ServiceCard = ({ icon, title, description }) => (
   <article className="flex flex-col justify-center items-center p-8 rounded-xl relative group overflow-hidden cursor-pointer min-h-[200px]">
     <div className="relative z-10 group-hover:opacity-0 transition-opacity duration-300">
       {
-        <img
+        <SVG
           src={icon}
           alt={`${title} icon`}
-          className="object-contain aspect-square w-[41px] justify-self-center"
+          className="object-contain aspect-square w-[41px] justify-self-center svg-main-color"
         />
       }
       <h3 className="mt-5 text-xl font-bold">{title}</h3>

@@ -1,3 +1,4 @@
+// src/app/components/menus/MobileMenuToggle.jsx
 "use client";
 
 import React, { useState } from "react";
@@ -50,9 +51,9 @@ export default function MobileMenuToggle({ navLinks }) {
               </Link>
             </li>
           ))}
-          <li className="py-3">
+          <div className="py-3">
             <ResourcesDropdown closeMobileMenu={() => setIsMenuOpen(false)} />
-          </li>
+          </div>
         </ul>
       </div>
     </>

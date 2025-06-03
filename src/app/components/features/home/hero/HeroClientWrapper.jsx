@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Image from "next/image";
 import ClickDashes from "./manageHoverOnHeroButton/ClickDashes";
 import ClickCursor from "./manageHoverOnHeroButton/ClickCursor";
+import SVG from "react-inlinesvg";
 
 const dashAnimation = {
   hidden: { opacity: 0, scale: 0 },
@@ -31,12 +31,10 @@ const HeroClientWrapper = ({  isDashes }) => {
         variants={dashAnimation}
         className="absolute z-0 w-[50px] sm:w-[60px] lg:w-[75px] h-auto aspect-[0.92] bottom-[9%] left-[-6%] transform translate-x-0 translate-y-0 pointer-events-none"
       >
-        <Image
+        <SVG
           src="/assets/images/home/svgs/dashes.svg"
           alt="Decorative element"
-          width={83}
-          height={90}
-          className="w-full h-full"
+          className="w-full h-full svg-main-color"
         />
       </motion.div>
     );

@@ -18,6 +18,7 @@ const Footer = () => {
                 height={300}
                 alt="Sida-Logo"
                 className="w-[120px] h-[50px] md:w-[150px] md:h-[58.588px] lg:w-[180px] lg:h-[77.177px]"
+                style={{ width: "auto", height: "auto" }}
               />
             </Link>
             <p className="text-lg leading-8 text-slate-500">
@@ -30,6 +31,7 @@ const Footer = () => {
                 alt="Facebook"
                 width={11}
                 height={21}
+                style={{ width: "11px", height: "21px" }}
               />
               <Image
                 src="/assets/images/home/svgs/social-icons/x.svg"
@@ -37,6 +39,7 @@ const Footer = () => {
                 alt="Twitter"
                 width={11}
                 height={21}
+                style={{ width: "auto", height: "auto" }}
               />
               <Image
                 src="/assets/images/home/svgs/social-icons/insta.svg"
@@ -44,6 +47,7 @@ const Footer = () => {
                 alt="Instagram"
                 width={11}
                 height={21}
+                style={{ width: "auto", height: "auto" }}
               />
               <Image
                 src="/assets/images/home/svgs/social-icons/linkedin.svg"
@@ -51,6 +55,7 @@ const Footer = () => {
                 alt="LinkedIn"
                 width={11}
                 height={21}
+                style={{ width: "auto", height: "auto" }}
               />
               <Image
                 src="/assets/images/home/svgs/social-icons/youtube.svg"
@@ -58,6 +63,7 @@ const Footer = () => {
                 alt="YouTube"
                 width={11}
                 height={21}
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
           </div>
@@ -195,6 +201,7 @@ const Footer = () => {
                 width={100}
                 height={100}
                 alt="Download"
+                style={{ width: "a", height: "auto" }}
               />
             </Link>
 
@@ -205,6 +212,7 @@ const Footer = () => {
                 width={100}
                 height={100}
                 alt="Download"
+                style={{ width: "a", height: "auto" }}
               />
             </Link>
           </div>

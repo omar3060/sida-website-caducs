@@ -26,11 +26,11 @@ const SidaOffers = () => {
   return (
     <section className="overflow-hidden section-style py-16 x-spacing md:px-30 relative">
       <div className="relative text-center md:text-left pb-5" style={{ zIndex: 1 }}>
-        <h2 className="main-heading">
+        <h2 className="main-heading text-secondaryColor">
           What <span className="text-mainColor">SIDA</span> Offers{" "}
           <span className="text-mainColor">?</span>
         </h2>
-        <p className="main-paragraph text-gray-600 max-w-2xl">
+        <p className="main-paragraph text-secondaryColor max-w-2xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
           placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit
           commodo. Vestibulum sodales neque erat.

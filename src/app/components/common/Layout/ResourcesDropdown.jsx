@@ -1,3 +1,4 @@
+// src/app/components/menus/ResourcesDropdown.jsx
 "use client";
 
 import React, { useState } from "react";
@@ -13,7 +14,7 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
   };
 
   return (
-    <li className="relative">
+    <div className="relative">
       <button
         onClick={toggleDropdown}
         onMouseEnter={() => setIsOpen(true)}
@@ -68,6 +69,6 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
           </li>
         </ul>
       </div>
-    </li>
+    </div>
   );
 }

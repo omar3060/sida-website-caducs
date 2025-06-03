@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import PartnersClientWrapper from "./PartnersClientWrapper";
+import SVG from "react-inlinesvg";
 
 const partners = [
   {
@@ -32,9 +33,9 @@ const Partners = () => {
         Partnering <span className="text-secondaryColor">with</span> Restaurants{" "}
         <span className="text-secondaryColor relative inline-block">
           Everywhere
-          <Image
+          <SVG
             src="/assets/images/home/svgs/partners/partners-vector.svg"
-            className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px]"
+            className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] svg-main-color"
             alt="underline element vector"
             width={50}
             height={30}

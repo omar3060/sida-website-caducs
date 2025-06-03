@@ -8,7 +8,7 @@ const RotatingGradientCircleLeft = () => {
       <motion.div
         className="w-[1700px] h-[1700px] rounded-full absolute"
         style={{
-          background: 'conic-gradient(from 0deg, #01537c, #3b82f6, #01537c)',
+          background: 'conic-gradient(from 0deg, var(--color-lightBlue), var(--color-mainColor), var(--color-lightBlue))',
           WebkitMask: 'radial-gradient(transparent 40%, black 40%)',
           mask: 'radial-gradient(transparent 40%, black 40%)',
         }}

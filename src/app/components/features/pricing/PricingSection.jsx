@@ -2,46 +2,50 @@ import React from "react";
 import { PricingToggle } from "./PricingToggle";
 import PricingCard from "./PricingCard";
 
-const PricingSection = ({ searchParams }) => {
-  const isYearly = searchParams.billing === "yearly";
+const PricingSection = async ({ searchParams }) => {
+  const billing = (await searchParams)?.billing ?? "quarterly"; 
+  const isYearly = billing === "yearly";
   const pricingPlans = [
     {
       title: "Start",
       price: "19",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
       features: [
         "Lorem ipsum dolor",
         "Lorem ipsum dolor",
         "Lorem ipsum dolor",
-        "Lorem ipsum dolor"
+        "Lorem ipsum dolor",
       ],
-      activeFeatures: [0, 1]
+      activeFeatures: [0, 1],
     },
     {
       title: "Enterprise",
       price: "49",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
       features: [
         "Lorem ipsum dolor",
         "Lorem ipsum dolor",
         "Lorem ipsum dolor",
-        "Lorem ipsum dolor"
+        "Lorem ipsum dolor",
       ],
       isHighlighted: true,
-      activeFeatures: [0, 1, 2]
+      activeFeatures: [0, 1, 2],
     },
     {
       title: "Enterprise",
       price: "99",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
       features: [
         "Lorem ipsum dolor",
         "Lorem ipsum dolor",
         "Lorem ipsum dolor",
-        "Lorem ipsum dolor"
+        "Lorem ipsum dolor",
       ],
-      activeFeatures: [0, 1, 2, 3]
-    }
+      activeFeatures: [0, 1, 2, 3],
+    },
   ];
 
   return (
@@ -53,7 +57,8 @@ const PricingSection = ({ searchParams }) => {
         </span>
       </h2>
       <p className="main-paragraph self-center text-center text-secondaryColor w-full md:w-[70%] lg:w-[30%] mr-0">
-        We designed our billing plans & features to fit your financial and operational requirements.
+        We designed our billing plans & features to fit your financial and
+        operational requirements.
       </p>
       <PricingToggle />
       <div className="box-border flex flex-wrap relative gap-6 justify-center p-0 m-0 max-md:flex-col max-md:items-center">

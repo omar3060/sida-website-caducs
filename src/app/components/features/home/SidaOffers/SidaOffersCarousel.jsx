@@ -2,6 +2,7 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import SVG from "react-inlinesvg";
 
 const SidaOffersCarousel = ({ sliderData }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -97,12 +98,12 @@ const SidaOffersCarousel = ({ sliderData }) => {
           className="flex items-center justify-center cursor-pointer"
           aria-label="Previous slide"
         >
-          <Image
+          <SVG
             src="/assets/images/home/SidaOffers/leftArrow.svg"
             alt="Previous"
             width={100}
             height={100}
-            className="object-contain shrink-0 aspect-square w-[67px]"
+            className="object-contain shrink-0 aspect-square w-[67px] svg-main-color svg-main-color"
           />
         </button>
         <button
@@ -110,12 +111,12 @@ const SidaOffersCarousel = ({ sliderData }) => {
           className="flex items-center justify-center cursor-pointer"
           aria-label="Next slide"
         >
-          <Image
+          <SVG
             src="/assets/images/home/SidaOffers/rightArrow.svg"
             alt="Next"
             width={100}
             height={100}
-            className="object-contain shrink-0 aspect-[0.99] w-[66px]"
+            className="object-contain shrink-0 aspect-[0.99] w-[66px] svg-main-color"
           />
         </button>
       </div>
