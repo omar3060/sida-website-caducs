@@ -44,7 +44,7 @@ const WhoWeServe = () => {
   return (
     <section className="section-style x-spacing py-6">
       <div className="flex flex-col items-center">
-        <h2 className="main-heading mb-12">
+        <h2 className="main-heading mb-12 text-secondaryColor">
           Who <span className="text-mainColor">We</span> Serve{" "}
           <span className="text-mainColor">?</span>
         </h2>
@@ -68,10 +68,10 @@ const ServiceCard = ({ icon, title, description }) => (
           className="object-contain aspect-square w-[41px] justify-self-center svg-main-color"
         />
       }
-      <h3 className="mt-5 text-xl font-bold">{title}</h3>
+      <h3 className="mt-5 text-xl font-bold text-secondaryColor">{title}</h3>
     </div>
 
-    <div className="absolute inset-0 bg-[#018ED5] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out p-6 flex flex-col">
+    <div className="absolute inset-0 bg-mainColor opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out p-6 flex flex-col">
       <div className="flex items-center gap-4 mb-4">
         <img
           src={icon}

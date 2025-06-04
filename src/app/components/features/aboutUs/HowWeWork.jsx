@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import ClientDashWrapper from "../service/ClientDashWrapper";
-
+import SVG from "react-inlinesvg";  
 
 const HowWeWork = () => {
   return (
@@ -15,9 +15,9 @@ const HowWeWork = () => {
                 We{" "}
                 <span className="relative inline-block">
                   Work
-                  <Image
+                  <SVG
                     src="/assets/images/aboutUs/vector.svg"
-                    className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%]"
+                    className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%] svg-main-color"
                     alt="underline element vector"
                     width={50}
                     height={30}

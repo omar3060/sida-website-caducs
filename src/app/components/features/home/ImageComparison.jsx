@@ -77,7 +77,7 @@ const ImageComparison = () => {
   };
 
   return (
-    <div className="flex items-center justify-center mt-10  bg-gray-50 px-7 x-spacing">
+    <div className="flex items-center justify-center mt-10   px-7 x-spacing">
       <div
         ref={imageContainer}
         className="relative w-full max-w-lg aspect-[.77] md:aspect-[.95]  rounded-[40px] overflow-hidden shadow-xl bg-textWhite"

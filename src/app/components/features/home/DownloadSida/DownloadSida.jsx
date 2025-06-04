@@ -2,14 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import RotatingGradientCircleLeft from "./RotatingGradientCircleLeft";
-
+import SVG from "react-inlinesvg";
 
 const DownloadSida = () => {
   return (
     <section className="section-style x-spacing relative">
       <div className="flex flex-col md:flex-row gap-5 items-center">
         <div className="w-full md:w-[45%] lg:w-[40%] order-2 md:order-1 relative z-10">
-        
           <Image
             src="/assets/images/home/svgs/app-preview.svg"
             alt="App preview"
@@ -28,16 +27,16 @@ const DownloadSida = () => {
               <span className="text-mainColor">SIDA</span>{" "}
               <span className="text-secondaryColor relative inline-block">
                 App
-                <Image
+                <SVG
                   src="/assets/images/home/svgs/downloadSidaVector.svg"
-                  className="object-contain mt-1 md:mt-2 pr-3 lg:mt-3 w-[100px] md:w-[150px] lg:w-[200px]"
+                  className="object-contain mt-1 md:mt-2 pr-3 lg:mt-3 w-[100px] md:w-[150px] lg:w-[200px] svg-main-color"
                   alt="underline element vector"
                   width={50}
                   height={30}
                 />
               </span>
             </h2>
-            <p className="main-paragraph md:w-[80%] text-center md:text-left">
+            <p className="main-paragraph md:w-[80%] text-center md:text-left text-secondaryColor">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               placerat eget est sed fringilla. Etiam vestibulum ex non elit
               blandit commodo. Vestibulum sodales neque erat, a porta diam
@@ -47,7 +46,7 @@ const DownloadSida = () => {
               <Link href="#" className="md:w-[500px]">
                 <Image
                   src="/assets/images/home/svgs/google-apple/apple.svg"
-                  className="object-contain w-[215px] md:w-full rounded-[22px] md:rounded-[34px] lg:rounded-[20px] bg-blackColor"
+                  className="object-contain w-[215px] md:w-full rounded-[22px] md:rounded-[34px] lg:rounded-[20px] bg-black"
                   width={100}
                   height={100}
                   alt="Download"
@@ -57,7 +56,7 @@ const DownloadSida = () => {
               <Link href="#" className="md:w-[500px]">
                 <Image
                   src="/assets/images/home/svgs/google-apple/google.svg"
-                  className="object-contain w-[215px] md:w-full rounded-[22px] md:rounded-[34px] lg:rounded-[20px] bg-blackColor"
+                  className="object-contain w-[215px] md:w-full rounded-[22px] md:rounded-[34px] lg:rounded-[20px] bg-black"
                   width={100}
                   height={100}
                   alt="Download"
@@ -67,18 +66,18 @@ const DownloadSida = () => {
           </div>
         </div>
       </div>
-      <Image
-            src="/assets/images/home/svgs/halfCircleRight.svg"
-            className="absolute w-[200px] sm:w-[250px] h-[450px] left-[-32px] sm:left-[-32px] md:left-[-383px] -bottom-10 sm:-bottom-20  md:w-[1000px] md:top-[294px] lg:hidden block overflow-hidden "
-            alt="Hero illustration"
-            width={500}
-            height={300}
-          />
-
+      <div className="absolute left-[-32px] sm:left-[-32px] md:left-[-383px] -bottom-10 sm:-bottom-20 md:top-[294px] lg:hidden block overflow-hidden -z-10">
+        <SVG
+          src="/assets/images/home/svgs/halfCircleRight.svg"
+          className="w-[200px] sm:w-[250px] md:w-[1000px] svg-gradient"
+          alt="Circle illustration"
+          width={204}
+          height={414}
+          preserveAspectRatio="xMidYMin meet"
+        />
+      </div>
     </section>
   );
 };
 
 export default DownloadSida;
-
-

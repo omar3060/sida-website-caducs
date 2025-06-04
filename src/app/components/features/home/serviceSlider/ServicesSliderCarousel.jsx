@@ -71,7 +71,7 @@ const ServicesSliderCarousel = ({ slides }) => {
                   className="object-cover absolute inset-0"
                   priority={index === 0}
                 />
-                <div className="relative max-w-full w-full md:w-[700px] md:-mt-22 text-textWhite">
+                <div className="relative max-w-full w-full md:w-[700px] md:-mt-22 text-textCard">
                   <h2 className="text-xl md:text-3xl font-extrabold">
                     {slide.title}
                   </h2>
@@ -91,7 +91,7 @@ const ServicesSliderCarousel = ({ slides }) => {
             key={index}
             onClick={() => scrollTo(index)}
             className={`flex shrink-0 h-[14px] md:h-[18px] w-[15px] md:w-[19px] rounded-full transition-colors duration-300 ${
-              selectedIndex === index ? "bg-sky-600" : "bg-zinc-300"
+              selectedIndex === index ? "bg-mainColor" : "bg-zinc-300"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

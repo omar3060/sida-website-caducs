@@ -1,13 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import styles from './contactVector.module.css';
+import SVG from "react-inlinesvg";
 
 const ContactForm = () => {
   return (
     <section className="section-style x-spacing xl:px-40 mx-auto">
       <div className="flex flex-col-reverse md:flex-row gap-10 items-center">
         <div className="w-full md:w-[50%] lg:w-[45%] order-2 md:order-1 relative z-10">
-          <form className="flex flex-col gap-4 p-6 md:p-8 bg-textWhite rounded-[24px] shadow-xl relative">
+          <form className="flex flex-col gap-4 p-6 md:p-8 bg-textWhite text-secondaryColor rounded-[24px] shadow-xl relative">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1">
@@ -80,7 +81,7 @@ const ContactForm = () => {
                 />
               </div>
               <div className="flex-1">
-                <label className="block text-sm font-medium text-secondaryColor mb-1">
+                <label className="block text-sm font-medium text-secondaryColor mb-1 whitespace-nowrap">
                   Number of branches
                 </label>
                 <input
@@ -101,7 +102,7 @@ const ContactForm = () => {
 
             <div className="flex items-start gap-2 mt-2">
               <input type="checkbox" className="mt-1" />
-              <label className="text-xs text-gray-600">
+              <label className="text-xs text-secondaryColor">
                 By checking this box, I confirm that I have read, understood and
                 agree to the Terms and Conditions.
               </label>
@@ -109,7 +110,7 @@ const ContactForm = () => {
 
             <div className="flex items-start gap-2">
               <input type="checkbox" className="mt-1" />
-              <label className="text-xs text-gray-600">
+              <label className="text-xs text-secondaryColor">
                 By using this form you agree with the storage and handling of
                 your data by this website in accordance with our Privacy Policy
               </label>
@@ -133,15 +134,15 @@ const ContactForm = () => {
         </div>
 
         <div className="w-full md:w-[50%] lg:w-[55%] order-2 flex flex-col items-center">
-          <Image
+          <SVG
             src="/assets/images/home/svgs/sida-logo.svg"
             width={500}
             height={300}
             alt="Sida-Logo"
-            className="w-[200px] md:w-[292px] h-auto mb-8"
+            className="w-[200px] md:w-[292px] h-auto mb-8 svg-main-color"
           />
           {/* className="w-[180px] h-auto mb-8" */}
-          <h2 className="main-heading text-center">
+          <h2 className="main-heading text-center text-secondaryColor">
             <span className="text-mainColor">Request</span> a free demo of{" "}
             <span className="text-mainColor">SIDA</span> restaurant management
             system

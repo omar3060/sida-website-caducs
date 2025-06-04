@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import ClientDashWrapper from "./ClientDashWrapper";
+import SVG from "react-inlinesvg";
 
 const MoreFeaturesServices = () => {
   return (
@@ -13,9 +14,9 @@ const MoreFeaturesServices = () => {
               Relationship
               <span className="text-secondaryColor relative inline-block">
                 Manager)
-                <Image
+                <SVG
                   src="/assets/images/home/svgs/partners/partners-vector.svg"
-                  className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px]"
+                  className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] svg-main-color"
                   alt="CRM underline vector"
                   width={250}
                   height={30}
@@ -52,9 +53,9 @@ const MoreFeaturesServices = () => {
               Menu{" "}
               <span className="text-secondaryColor">
                 Engineering
-                <Image
+                <SVG
                   src="/assets/images/home/svgs/partners/partners-vector.svg"
-                  className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] justify-self-end"
+                  className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] justify-self-end svg-main-color"
                   alt="Menu Engineering underline vector"
                   width={250}
                   height={30}

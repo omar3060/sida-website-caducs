@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import SVG from "react-inlinesvg";
 
 const MotionDash = ({ className }) => {
   const dashAnimation = {
@@ -24,12 +25,12 @@ const MotionDash = ({ className }) => {
       variants={dashAnimation}
       className={className}
     >
-      <Image
+      <SVG
         src="/assets/images/home/svgs/dashes.svg"
         alt="Decorative dashes"
         width={83}
         height={90}
-        className="w-full h-full"
+        className="w-full h-full svg-main-color"
       />
     </motion.div>
   );

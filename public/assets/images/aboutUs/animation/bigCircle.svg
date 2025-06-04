@@ -6,7 +6,7 @@
 <circle cx="101.937" cy="180.937" r="76.9369" fill="url(#pattern2_223_2071)"/>
 <circle cx="508.072" cy="402.072" r="92.0721" fill="url(#pattern3_223_2071)"/>
 <circle cx="315.847" cy="258.847" r="136.847" fill="url(#pattern4_223_2071)"/>
-<circle cx="451.5" cy="165.5" r="619.5" fill="#018ED5"/>
+<circle cx="451.5" cy="165.5" r="619.5" fill="currentColor"/>
 </g>
 <defs>
 <pattern id="pattern0_223_2071" patternContentUnits="objectBoundingBox" width="1" height="1">

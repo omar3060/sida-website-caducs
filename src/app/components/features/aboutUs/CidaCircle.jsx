@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import CidaCircleAnimation from "./CidaCircleAnimation";
+import SVG from "react-inlinesvg";
 
 const CidaCircle = () => {
   return (
@@ -20,9 +21,9 @@ const CidaCircle = () => {
                 Enterprise{" "}
                 <span className="relative inline-block">
                   Management.
-                  <Image
+                  <SVG
                     src="/assets/images/aboutUs/vector.svg"
-                    className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%]"
+                    className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%] svg-main-color"
                     alt="underline element vector"
                     width={50}
                     height={30}

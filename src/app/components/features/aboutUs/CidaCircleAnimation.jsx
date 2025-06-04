@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import SVG from "react-inlinesvg";
 
 const CidaCircleAnimation = () => {
   const [moveDistance, setMoveDistance] = useState({
@@ -77,12 +78,12 @@ const CidaCircleAnimation = () => {
           repeatDelay: 0.5,
         }}
       >
-        <Image
+        <SVG
           src="/assets/images/aboutUs/animation/SmallCircle.svg"
           alt="Small SIDA Circle"
           width={100}
           height={100}
-          className="object-contain w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[160px] md:h-[160px] xl:w-[273px] xl:h-[273px]"
+          className="object-contain w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] md:w-[160px] md:h-[160px] xl:w-[273px] xl:h-[273px] svg-main-color"
         />
         <motion.div
           className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl"
@@ -245,12 +246,12 @@ const CidaCircleAnimation = () => {
         }}
       >
         <div className="relative w-full h-full flex items-center justify-center">
-          <Image
+          <SVG
             src="/assets/images/aboutUs/animation/bigCircle.svg"
             alt="Big Circle"
             width={300}
             height={300}
-            className="object-contain max-w-full max-h-full md:w-[300px] md:h-[300px] xl:w-[537px] xl:h-[537px]"
+            className="object-contain max-w-full max-h-full md:w-[300px] md:h-[300px] xl:w-[537px] xl:h-[537px] svg-main-color"
           />
         </div>
       </motion.div>

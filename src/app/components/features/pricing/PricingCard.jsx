@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import SVG from "react-inlinesvg";
 
 const PricingCard = ({
   title,
@@ -11,10 +12,10 @@ const PricingCard = ({
   activeFeatures,
 }) => {
   return (
-    <article className="box-border rounded-2xl bg-opacity-0 w-[297px] text-center">
+    <article className="box-border rounded-2xl bg-opacity-0 w-[297px] text-center bg-textWhite text-secondaryColor">
       <div
         className={`box-border p-8 m-0 text-center border-gray-200 border-solid border-[1.607px] rounded-2xl ${
-          isHighlighted ? "text-textWhite bg-sky-600" : ""
+          isHighlighted ? "text-secondaryColor bg-mainColor" : ""
         }`}
       >
         <h3 className="box-border p-0 m-0 mb-10 text-xs font-bold tracking-widest uppercase">
@@ -42,14 +43,15 @@ const PricingCard = ({
               key={index}
               className={`box-border flex gap-2.5 items-center p-0 m-0 mb-4 text-sm ${
                 isActive
-                  ? "font-bold text-black"
-                  : "font-normal text-gray-500 ps-5"
+                  ? "font-bold text-blackColor"
+                  : "font-normal text-textGray ps-5"
               }`}
             >
               {isActive && (
-                <Image
+                <SVG
                   src="/assets/images/pricing/checkIcon.svg"
                   alt="Check icon"
+                  className="svg-main-color"
                   width={16}
                   height={16}
                   style={{ width: "16px", height: "16px" }}

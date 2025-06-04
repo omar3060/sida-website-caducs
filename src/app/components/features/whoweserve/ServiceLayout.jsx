@@ -5,7 +5,7 @@ import { serviceDetails } from "./serviceDetailsData";
 
 const ServiceLayout = () => {
   return (
-    <section className="section-style x-spacing text-center pt-2 md:pt-6 lg:pt-8 bg-gray-50">
+    <section className="section-style x-spacing text-center pt-2 md:pt-6 lg:pt-8 bg-cardColor">
       <div className="flex flex-wrap gap-10 items-center mt-5 text-secondaryColor max-md:max-w-full">
         {serviceDetails.map((service, index) => (
           <ServiceCard

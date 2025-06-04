@@ -43,7 +43,7 @@ async function PostSlug({ params }) {
   }
 
   return (
-    <section className="section-style x-spacing">
+    <section className="section-style x-spacing text-secondaryColor">
       <h1 className="main-heading self-center text-mainColor text-center  my-5 sm:w-full">
         {blog.title.split(" ").map((word, index) =>
           index % 2 !== 0 ? (

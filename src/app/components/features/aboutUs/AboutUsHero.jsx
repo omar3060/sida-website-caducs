@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
+import SVG from "react-inlinesvg";
+
 
 const AboutUsHero = () => {
   return (
@@ -14,9 +16,9 @@ const AboutUsHero = () => {
               <span className="text-mainColor">We{" "}</span>
               <span className="relative inline-block">
                 Are?
-                <Image
+                <SVG
                   src="/assets/images/aboutUs/vector.svg"
-                  className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%]"
+                  className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%] svg-main-color"
                   alt="underline element vector"
                   width={50}
                   height={30}
@@ -36,10 +38,10 @@ const AboutUsHero = () => {
               width={100}
               height={100}
             />
-            <Image
+            <SVG
               src="/assets/images/home/svgs/featuresTables/firstTableVector.svg"
               alt="Feature illustration"
-              className="object-contain w-[131.75px] h-[131.75px] absolute bottom-[-47px] left-[-46px] z-[-1]"
+              className="object-contain w-[131.75px] h-[131.75px] absolute bottom-[-47px] left-[-46px] z-[-1] svg-main-color"
               width={100}
               height={100}
             />

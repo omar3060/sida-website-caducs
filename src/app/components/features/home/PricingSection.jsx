@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import SVG from "react-inlinesvg";
 
 const PricingSection = () => {
   return (
@@ -27,7 +28,7 @@ const PricingSection = () => {
               <span className="text-5xl font-bold text-secondaryColor">$50</span>
             </div>
             <p className="mt-2 text-sm font-bold text-gray-800">billed just once</p>
-            <button className="mt-6 w-full bg-mainColor text-white py-3 px-6 rounded-lg font-medium hover:bg-sky-700 transition-colors">
+            <button className="mt-6 w-full bg-mainColor text-white py-3 px-6 rounded-lg font-medium hover:bg-lightBlue transition-colors">
               Get Started
             </button>
           </div>
@@ -43,13 +44,13 @@ const PricingSection = () => {
                 "Automated messages via Zapier",
                 "24/7 support and consulting",
               ].map((feature, index) => (
-                <li key={index} className="flex items-center gap-3 text-gray-700">
-                  <Image
+                <li key={index} className="flex items-center gap-3 text-secondaryColor">
+                  <SVG
                     src="/assets/images/home/pricingSection/check.svg"
                     alt="Checkmark"
                     width={20}
                     height={20}
-                    className="text-mainColor"
+                    className="svg-main-color"
                   />
                   {feature}
                 </li>
@@ -60,22 +61,22 @@ const PricingSection = () => {
 
         <div className="flex flex-wrap justify-left md:justify-center gap-8 mt-8 text-secondaryColor">
           <div className="flex items-center gap-4">
-            <Image
+            <SVG
               src="/assets/images/home/pricingSection/icon1.svg"
               alt="Guarantee icon"
               width={20}
               height={20}
-              className="text-mainColor w-[33px] h-[33px]"
+              className="svg-main-color w-[33px] h-[33px]"
             />
             <span className="font-medium">30 days money back Guarantee</span>
           </div>
           <div className="flex items-center gap-4">
-            <Image
+            <SVG
               src="/assets/images/home/pricingSection/icon2.svg"
               alt="Setup icon"
               width={20}
               height={20}
-              className="text-mainColor w-[33px] h-[33px]"
+              className="svg-main-color w-[33px] h-[33px]"
             />
             <span className="font-medium">
               No setup fees
@@ -84,12 +85,12 @@ const PricingSection = () => {
             </span>
           </div>
           <div className="flex items-center gap-4">
-            <Image
+            <SVG
               src="/assets/images/home/pricingSection/icon3.svg"
               alt="Subscription icon"
               width={20}
               height={20}
-              className="text-mainColor w-[33px] h-[33px]"
+              className="svg-main-color w-[33px] h-[33px]"
             />
             <span className="font-medium">
               No monthly subscription

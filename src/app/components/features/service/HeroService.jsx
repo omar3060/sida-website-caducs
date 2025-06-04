@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import SVG from "react-inlinesvg";
 
 import { motion } from "framer-motion";
 const HeroService = ({ hero }) => {
@@ -33,12 +34,12 @@ const HeroService = ({ hero }) => {
           variants={dashAnimation}
           className="absolute z-0 w-[50px] sm:w-[60px] lg:w-[85px] h-auto aspect-[0.92] bottom-0 left-[-4%] transform translate-x-0 translate-y-0 pointer-events-none"
         >
-          <Image
+          <SVG
             src="/assets/images/home/svgs/dashes.svg"
             alt="Decorative element"
             width={83}
             height={90}
-            className="w-full h-full"
+            className="w-full h-full svg-main-color"
           />
         </motion.div>
       </div>
@@ -54,7 +55,7 @@ const HeroService = ({ hero }) => {
             )
           )}
         </h1>
-        <p className="main-paragraph text-center mr-0">{hero.description}</p>
+        <p className="main-paragraph text-center mr-0 text-secondaryColor">{hero.description}</p>
       </div>
     </section>
   );

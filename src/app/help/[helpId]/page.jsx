@@ -49,14 +49,14 @@ export default async function HelpPage({ params }) {
             )
           )}
         </h2>
-        <article className="mb-10">
-          <h1 className="text-2xl font-bold text-gray-900 max-sm:text-xl mb-10">
+        <article className="mb-10 text-secondaryColor">
+          <h1 className="text-2xl font-bold max-sm:text-xl mb-10">
             Steps
           </h1>
-          <p className="text-xl text-gray-900 w-[941px] max-md:w-full max-md:text-lg max-sm:text-base mb-10">
+          <p className="text-xl w-[941px] max-md:w-full max-md:text-lg max-sm:text-base mb-10">
             {help.description}
           </p>
-          <ul className="text-xl text-gray-900 max-sm:text-base">
+          <ul className="text-xl max-sm:text-base">
             {help.steps.map((step, index) => (
               <li key={index} className="mb-5">
                 {step}

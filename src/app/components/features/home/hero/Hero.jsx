@@ -4,7 +4,6 @@ import HeroClientWrapper from "./HeroClientWrapper";
 import RotatingGradientCircle from "./RotatingGradientCircle";
 import SVG from "react-inlinesvg";
 
-
 const Hero = () => {
   return (
     <section className="section-style relative x-spacing pt-18 md:pt-36 lg:pt-40 mb-0">
@@ -55,13 +54,16 @@ const Hero = () => {
             />
             <HeroClientWrapper isDashes />
           </div>
-          <Image
-            src="/assets/images/home/svgs/halfCircleLeft.svg"
-            className="absolute w-[250px] sm:w-[300px] right-[-32px] sm:right-[-32px] bottom-0 sm:bottom-50 md:w-[1000px] md:top-[-115px] lg:hidden block overflow-hidden -z-10"
-            alt="Hero illustration"
-            width={500}
-            height={300}
-          />
+          <div className="absolute right-[-32px] md:left-[-12px] bottom-[-100px] sm:bottom-[-50px] md:bottom-[-150px] lg:hidden block overflow-hidden -z-10">
+            <SVG
+              src="/assets/images/home/svgs/halfCircleLeft.svg"
+              className="w-[250px] sm:w-[300px] md:w-[550px] svg-gradient overflow-hidden"
+              alt="Half circle illustration"
+              width={365}
+              height={779}
+              preserveAspectRatio="xMidYMin meet"
+            />
+          </div>
         </div>
       </div>
     </section>

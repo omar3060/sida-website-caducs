@@ -44,15 +44,15 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
       <div
         className={`absolute z-10 mt-0 ${
           isOpen ? "block" : "hidden"
-        } font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-md w-44`}
+        } font-normal bg-textWhite divide-y divide-gray-100 rounded-lg shadow-md w-44`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
-        <ul className="py-2 text-sm text-gray-700">
+        <ul className="py-2 text-sm text-secondaryColor">
           <li>
             <Link
               href="/help"
-              className="block px-4 py-2 hover:bg-gray-100 hover:text-mainColor"
+              className="block px-4 py-2 hover:bg-cardColor hover:text-mainColor"
               onClick={closeDropdown}
             >
               Help Center
@@ -61,7 +61,7 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
           <li>
             <Link
               href="/blog"
-              className="block px-4 py-2 hover:bg-gray-100 hover:text-mainColor"
+              className="block px-4 py-2 hover:bg-cardColor hover:text-mainColor"
               onClick={closeDropdown}
             >
               Blog

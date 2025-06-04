@@ -10,7 +10,7 @@ const VideoCard = ({ thumbnail, title, helpId }) => {
           className="object-contain self-center max-w-full rounded-3xl aspect-[1.5] w-full"
           alt={title}
         />
-        <h3 className="mt-2.5 w-full text-xl font-bold text-center">{title}</h3>
+        <h3 className="mt-2.5 w-full text-xl font-bold text-center text-secondaryColor">{title}</h3>
       </article>
     </Link>
   );

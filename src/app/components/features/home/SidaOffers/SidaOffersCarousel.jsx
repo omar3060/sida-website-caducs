@@ -54,7 +54,6 @@ const SidaOffersCarousel = ({ sliderData }) => {
                         priority
                       />
                     </div> */}
-                    
                   </div>
 
                   <p className="text-secondaryColor text-[18.5px] md:text-2xl lg:text-4xl w-full max-w-[700px]">
@@ -68,9 +67,7 @@ const SidaOffersCarousel = ({ sliderData }) => {
                     >
                       {slide.buttonText1}
                     </button>
-                    <button
-                      className="primary-button text-[14px] md:text-2xl"
-                    >
+                    <button className="primary-button text-[14px] md:text-2xl">
                       {slide.buttonText2}
                     </button>
                   </div>
@@ -103,7 +100,7 @@ const SidaOffersCarousel = ({ sliderData }) => {
             alt="Previous"
             width={100}
             height={100}
-            className="object-contain shrink-0 aspect-square w-[67px] svg-main-color svg-main-color"
+            className="object-contain shrink-0 aspect-square w-[67px] svg-gradient"
           />
         </button>
         <button
@@ -116,7 +113,7 @@ const SidaOffersCarousel = ({ sliderData }) => {
             alt="Next"
             width={100}
             height={100}
-            className="object-contain shrink-0 aspect-[0.99] w-[66px] svg-main-color"
+            className="object-contain shrink-0 aspect-[0.99] w-[66px] svg-gradient"
           />
         </button>
       </div>

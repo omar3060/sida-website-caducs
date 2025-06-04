@@ -8,28 +8,56 @@
   --breakpoint-xl: 1200px;
   --breakpoint-2xl: 1400px;
   --color-mainColor: #018ed5;
-  --color-secondaryColor: #17242A;
+  --color-secondaryColor: #17242a;
   --color-textGray: #6b7280;
   --color-textWhite: #ffffff;
+  --color-textCard: #ffffff;
   --color-cardColor: #f7fafc;
   --color-blackColor: #000000;
-  --color-lightBlue: #01537c;
+  --color-lightBlue: #014a6f;
+  --bg-gradient-color: conic-gradient(
+    from 0deg,
+    var(--color-lightBlue),
+    var(--color-mainColor),
+    var(--color-lightBlue)
+  );
 }
 
-
 .dark {
-  --color-mainColor: #53A29D;
-  --color-secondaryColor: #E0E0E2; 
-  --color-textGray: #d1d5db; 
-  --color-textWhite: #1C1C1C;
-  --color-cardColor: #1f2a30; 
-  --color-blackColor: #333333; 
+  --color-mainColor: #53a29d;
+  --color-secondaryColor: #e0e0e2;
+  --color-textGray: #d1d5db;
+  --color-textWhite: #1c1c1c;
+  --color-textCard: #ffffff;
+  --color-cardColor: #1f2a30;
+  --color-blackColor: #ffffff;
   --color-lightBlue: #66fcf1;
+  --color-gradient-color: conic-gradient(
+    from 0deg,
+    var(--color-lightBlue),
+    var(--color-mainColor),
+    var(--color-lightBlue)
+  );
 }
 
 .svg-main-color {
   color: var(--color-mainColor);
-  /* background: 'conic-gradient(from 0deg, var(--color-lightBlue), var(--color-mainColor), var(--color-lightBlue))' */
+}
+.svg-gradient-color {
+  background: conic-gradient(
+    from 0deg,
+    var(--color-lightBlue),
+    var(--color-mainColor),
+    var(--color-lightBlue)
+  );
+}
+
+.svg-gradient {
+  fill: url(#gradient);
+}
+
+.dark .svg-gradient {
+  fill: url(#gradient-dark);
 }
 
 html {

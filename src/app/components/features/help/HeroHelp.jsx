@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import HelpWrapper from "./HelpWrapper";
 import HeroAnimation from "./HeroAnimation";
+import SVG from "react-inlinesvg";
 
 const HeroHelp = () => {
   return (
@@ -35,12 +36,11 @@ const HeroHelp = () => {
               className="flex justify-end absolute end-0 -top-2.5 m-2.5 h-full w-8"
             >
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <Image
+                <SVG
                   src="/assets/images/help/search.svg"
-                  alt="search"
                   width={20}
                   height={20}
-                  className="pointer-events-none"
+                  className="pointer-events-none svg-main-color"
                 />
               </div>
             </button>

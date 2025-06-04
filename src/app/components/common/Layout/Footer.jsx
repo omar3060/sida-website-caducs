@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import SVG from "react-inlinesvg";
 
 const Footer = () => {
   return (
@@ -12,68 +13,92 @@ const Footer = () => {
           {/* Logo and social section */}
           <div className="flex flex-col min-w-60 w-[310px]">
             <Link href="/">
-              <Image
+              <SVG
                 src="/assets/images/home/svgs/sida-logo.svg"
-                width={500}
-                height={300}
+                width={180}
+                height={77}
                 alt="Sida-Logo"
-                className="w-[120px] h-[50px] md:w-[150px] md:h-[58.588px] lg:w-[180px] lg:h-[77.177px]"
-                style={{ width: "auto", height: "auto" }}
+                className="w-[120px] md:w-[150px] lg:w-[180px] svg-main-color"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  display: "block",
+                }}
               />
             </Link>
-            <p className="text-lg leading-8 text-slate-500">
+            <p className="text-lg leading-8 text-textGray">
               Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam
             </p>
             <div className="flex gap-6 items-center self-start mt-6 ">
-              <Image
+              <SVG
                 src="/assets/images/home/svgs/social-icons/facebook.svg"
-                className="object-contain shrink-0 self-stretch my-auto aspect-[0.58] w-[11px]"
+                className="object-contain shrink-0 self-stretch my-auto w-[11px] svg-main-color"
                 alt="Facebook"
                 width={11}
                 height={21}
-                style={{ width: "11px", height: "21px" }}
+                style={{
+                  width: "11px",
+                  height: "21px",
+                  display: "block",
+                }}
               />
-              <Image
+              <SVG
                 src="/assets/images/home/svgs/social-icons/x.svg"
-                className="object-contain shrink-0 self-stretch my-auto aspect-[1.27] w-[19px]"
+                className="object-contain shrink-0 self-stretch my-auto w-[19px] svg-main-color"
                 alt="Twitter"
-                width={11}
-                height={21}
-                style={{ width: "auto", height: "auto" }}
+                width={19}
+                height={15}
+                style={{
+                  width: "19px",
+                  height: "15px",
+                  display: "block",
+                }}
               />
-              <Image
+              <SVG
                 src="/assets/images/home/svgs/social-icons/insta.svg"
-                className="object-contain shrink-0 self-stretch my-auto aspect-square w-[19px]"
+                className="object-contain shrink-0 self-stretch my-auto w-[19px] svg-main-color"
                 alt="Instagram"
-                width={11}
-                height={21}
-                style={{ width: "auto", height: "auto" }}
+                width={19}
+                height={19}
+                style={{
+                  width: "19px",
+                  height: "19px",
+                  display: "block",
+                }}
               />
-              <Image
+              <SVG
                 src="/assets/images/home/svgs/social-icons/linkedin.svg"
-                className="object-contain shrink-0 self-stretch my-auto aspect-[1.06] w-[19px]"
+                className="object-contain shrink-0 self-stretch my-auto w-[19px] svg-main-color"
                 alt="LinkedIn"
-                width={11}
-                height={21}
-                style={{ width: "auto", height: "auto" }}
+                width={19}
+                height={18}
+                style={{
+                  width: "19px",
+                  height: "18px",
+                  display: "block",
+                }}
               />
-              <Image
+              <SVG
                 src="/assets/images/home/svgs/social-icons/youtube.svg"
-                className="object-contain shrink-0 self-stretch my-auto aspect-[1.4] w-[21px]"
+                className="object-contain shrink-0 self-stretch my-auto w-[21px] svg-main-color"
                 alt="YouTube"
-                width={11}
-                height={21}
-                style={{ width: "auto", height: "auto" }}
+                width={21}
+                height={15}
+                style={{
+                  width: "21px",
+                  height: "15px",
+                  display: "block",
+                }}
               />
             </div>
           </div>
 
           {/* Navigation sections */}
           <nav className="w-[115px]">
-            <h3 className="text-xl font-bold leading-none text-indigo-950">
+            <h3 className="text-xl font-bold leading-none text-secondaryColor">
               Product
             </h3>
-            <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-slate-500">
+            <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-textGray">
               <li>
                 <Link href="#features" className="hover:text-mainColor">
                   Features
@@ -103,10 +128,10 @@ const Footer = () => {
           </nav>
 
           <nav>
-            <h3 className="text-xl font-bold leading-none text-indigo-950">
+            <h3 className="text-xl font-bold leading-none text-secondaryColor">
               Company
             </h3>
-            <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-slate-500">
+            <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-textGray">
               <li>
                 <Link href="/aboutus" className="hover:text-mainColor">
                   About
@@ -136,10 +161,10 @@ const Footer = () => {
           </nav>
 
           <nav>
-            <h3 className="text-xl font-bold leading-none text-indigo-950">
+            <h3 className="text-xl font-bold leading-none text-secondaryColor">
               Support
             </h3>
-            <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-slate-500">
+            <ul className="flex flex-col items-start mt-10 text-lg leading-none text-center text-textGray">
               <li>
                 <Link href="#getting-started" className="hover:text-mainColor">
                   Getting started
@@ -169,8 +194,8 @@ const Footer = () => {
           </nav>
 
           {/* Contact section */}
-          <div className="flex flex-col text-lg leading-none text-slate-500 w-[227px]">
-            <h3 className="self-start text-xl font-bold leading-none text-indigo-950">
+          <div className="flex flex-col text-lg leading-none text-textGray w-[227px]">
+            <h3 className="self-start text-xl font-bold leading-none text-secondaryColor">
               Contact us
             </h3>
             <Link
@@ -186,7 +211,7 @@ const Footer = () => {
               (414) 687 - 5892
             </Link>
             <address className="flex gap-2 items-start mt-6 leading-8 not-italic max-md:mr-0.5">
-              <p className="text-slate-500 w-[198px]">
+              <p className="text-textGray w-[198px]">
                 794 Mcallister St
                 <br />
                 San Francisco, 94102
@@ -201,7 +226,7 @@ const Footer = () => {
                 width={100}
                 height={100}
                 alt="Download"
-                style={{ width: "a", height: "auto" }}
+                style={{ width: "auto ", height: "auto" }}
               />
             </Link>
 
@@ -212,7 +237,7 @@ const Footer = () => {
                 width={100}
                 height={100}
                 alt="Download"
-                style={{ width: "a", height: "auto" }}
+                style={{ width: "auto", height: "auto" }}
               />
             </Link>
           </div>
@@ -221,8 +246,8 @@ const Footer = () => {
         <hr className="shrink-0 mt-28 ml-7 max-w-full h-px border border-solid bg-zinc-200 border-zinc-200 w-[1241px] max-md:mt-10" />
 
         <div className="flex flex-wrap gap-5 justify-between mt-6 ml-9 max-w-full text-lg leading-loose w-[1218px]">
-          <p className="text-slate-500">Copyright © 2022 BRIX Templates</p>
-          <div className="text-center md:text-right text-slate-500 mr-[84px] ">
+          <p className="text-textGray">Copyright © 2022 BRIX Templates</p>
+          <div className="text-center md:text-right text-textGray mr-[84px] ">
             All Rights Reserved |{" "}
             <Link href="#terms" className="underline text-mainColor">
               Terms and Conditions
