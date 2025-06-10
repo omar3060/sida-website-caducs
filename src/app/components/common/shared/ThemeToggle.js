@@ -9,7 +9,9 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="bg-primary text-foreground rounded-md"
+      className={`bg-primary text-foreground rounded-full flex-shrink-0 border-2 ${
+        theme === "light" ? "border-[#018ed5]" : "border-[#53a29d]"
+      }`}
     >
       {theme === "light" ? (
         <Image
@@ -17,7 +19,7 @@ export default function ThemeToggle() {
           width={100}
           height={100}
           alt="lightTheme"
-          className="p-1 w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
+          className="p-1 w-[22px] h-[22px] sm:w-[20px] sm:h-[20px] md:w-[22px] md:h-[22px] lg:w-[25px] lg:h-[25px]"
         />
       ) : (
         <Image
@@ -25,7 +27,7 @@ export default function ThemeToggle() {
           width={100}
           height={100}
           alt="darkTheme"
-          className="p-1 w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px]"
+          className="p-1 w-[22px] h-[22px] sm:w-[20px] sm:h-[20px] md:w-[22px] md:h-[22px] lg:w-[25px] lg:h-[25px]"
         />
       )}
     </button>

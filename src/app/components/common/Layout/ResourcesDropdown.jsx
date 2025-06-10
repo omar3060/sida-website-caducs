@@ -3,9 +3,12 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function ResourcesDropdown({ closeMobileMenu }) {
   const [isOpen, setIsOpen] = useState(false);
+  const { direction } = useLanguage();
+  const isRTL = direction === "rtl";
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   const closeDropdown = () => {
@@ -19,14 +22,16 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
         onClick={toggleDropdown}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
-        className="flex items-center text-secondaryColor hover:text-mainColor font-medium transition-colors 
-          md:text-base lg:text-lg 2xl:text-xl
-
-         w-full"
+        className={`flex items-center text-secondaryColor hover:text-mainColor font-medium transition-colors 
+          md:text-base lg:text-lg 2xl:text-xl w-full ${
+            isRTL ? "justify-end" : ""
+          }`}
       >
-        Resources
+        {isRTL ? "المصادر" : "Resources"}
         <svg
-          className="w-2.5 h-2.5 ml-2.5 transition-transform"
+          className={`w-2.5 h-2.5 ${
+            isRTL ? "mr-2.5" : "ml-2.5"
+          } transition-transform`}
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -44,7 +49,9 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
       <div
         className={`absolute z-10 mt-0 ${
           isOpen ? "block" : "hidden"
-        } font-normal bg-textWhite divide-y divide-gray-100 rounded-lg shadow-md w-44`}
+        } font-normal bg-textWhite divide-y divide-gray-100 rounded-lg shadow-md w-44 ${
+          isRTL ? "right-0 text-right" : ""
+        }`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
@@ -55,7 +62,7 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
               className="block px-4 py-2 hover:bg-cardColor hover:text-mainColor"
               onClick={closeDropdown}
             >
-              Help Center
+              {isRTL ? "مركز المساعدة" : "Help Center"}
             </Link>
           </li>
           <li>
@@ -64,7 +71,7 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
               className="block px-4 py-2 hover:bg-cardColor hover:text-mainColor"
               onClick={closeDropdown}
             >
-              Blog
+              {isRTL ? "المدونة" : "Blog"}
             </Link>
           </li>
         </ul>
@@ -72,3 +79,5 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
     </div>
   );
 }
+
+

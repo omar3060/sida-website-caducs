@@ -7,13 +7,25 @@ const Features = () => {
     <section id="services" className="section-style x-spacing">
       <div className="">
         <div className="flex flex-col md:flex-row gap-5">
-          <div className="w-full md:w-[50%] order-2 md:order-1">
+          <div className="relative order-2 md:order-1 w-full md:w-[50%]">
             <Image
               src="/assets/images/home/svgs/comined.svg"
-              className="object-contain w-full rounded-[24px] md:rounded-[34px] lg:rounded-[44px]"
-              width={1000}
-              height={300}
               alt="restaurant software features"
+              className="object-contain my-auto w-full"
+              width={100}
+              height={100}
+            />
+            <SVG
+              src="/assets/images/home/svgs/featuresTables/firstTableVector.svg"
+              alt="restaurant software features"
+              className="object-contain absolute svg-main-color 
+                w-[80px] sm:w-[100px] md:w-[120px] lg:w-[131.75px] 
+                h-[80px] sm:h-[100px] md:h-[120px] lg:h-[131.75px] 
+                bottom-[10px] sm:bottom-[15px] md:bottom-[20px]
+                left-[30px] sm:left-[40px] md:left-[50px] lg:left-[60px]
+                z-[-1]"
+              width={100}
+              height={100}
             />
           </div>
           <div className="w-full md:w-[50%] md:ml-5 order-1 md:order-2">

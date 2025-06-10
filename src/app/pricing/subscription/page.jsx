@@ -1,13 +1,17 @@
+import Link from "next/link";
 import React from "react";
-import Image from "next/image";
-import styles from "./contactVector.module.css";
 
-const ContactForm = () => {
+import SVG from "react-inlinesvg";
+
+const SubscriptionForm = () => {
   return (
     <section className="section-style x-spacing xl:px-40 mx-auto">
-      <div className="flex flex-col-reverse md:flex-row gap-10 items-center">
-        <div className="w-full md:w-[50%] lg:w-[45%] order-2 md:order-1 relative z-10">
-          <form className="flex flex-col gap-4 p-6 md:p-8 bg-textWhite text-secondaryColor rounded-[24px] shadow-xl relative">
+      <h2 className="main-heading text-center text-secondaryColor mb-15">
+        Subscriptions <span className="text-mainColor">Form</span>
+      </h2>
+      <div className="flex justify-center items-center">
+        <div className="w-full md:w-[50%] lg:w-[45%] order-2 md:order-1 relative z-10 pb-10">
+          <form className="flex flex-col gap-4 p-6  md:p-8 bg-textWhite text-secondaryColor rounded-[24px] shadow-xl relative">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1">
@@ -119,37 +123,28 @@ const ContactForm = () => {
               type="submit"
               className="w-[120px] mt-4 px-6 py-2 bg-mainColor text-textWhite rounded-xl hover:bg-lightBlue transition-colors"
             >
-              Submit
+              <Link href="/pricing/subscription/verification">Submit</Link>
             </button>
-            <Image
+            <SVG
+              src="/assets/images/home/svgs/featuresTables/firstTableVector.svg"
+              alt="Contact Vector"
+              className="absolute top-[-35px] -left-[45px] md:top-[-55px] md:-left-[54px] w-[100] md:w-[132px] -z-10 svg-main-color"
+              width={100}
+              height={100}
+            />
+            {/* <Image
               src="/assets/images/home/svgs/contactVector.svg"
               width={500}
               height={300}
               alt="Contact Vector"
               unoptimized
               className={`absolute top-[-35px] -left-[45px] md:top-[-55px] md:-left-[54px] w-[100] md:w-[132px] -z-10 ${styles.vectorIcon}`}
-            />
+            /> */}
           </form>
-        </div>
-
-        <div className="w-full md:w-[50%] lg:w-[55%] order-2 flex flex-col items-center">
-          <Image
-            src="/assets/images/home/svgs/sida-logo.svg"
-            width={500}
-            height={300}
-            alt="Sida-Logo"
-            className="w-[200px] md:w-[292px] h-auto mb-8"
-          />
-          {/* className="w-[180px] h-auto mb-8" */}
-          <h2 className="main-heading text-center">
-            <span className="text-mainColor">Request</span> a free demo of{" "}
-            <span className="text-mainColor">SIDA</span> restaurant management
-            system
-          </h2>
         </div>
       </div>
     </section>
   );
 };
 
-export default ContactForm;
+export default SubscriptionForm;
