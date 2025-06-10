@@ -62,7 +62,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1 sm:gap-2 md:gap-2 lg:gap-2 xl:gap-3">
           <ThemeToggle />
           <button
-            onClick={toggleDirection}
+            // onClick={toggleDirection}
             className="flex items-center justify-center relative"
             aria-label={isRTL ? "Switch to English" : "Switch to Arabic"}
           >
