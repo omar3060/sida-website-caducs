@@ -1,9 +1,15 @@
-import React from "react";
+"use client";
+import React, { useMemo } from "react";
 import Image from "next/image";
-import styles from './contactVector.module.css';
+import styles from "./contactVector.module.css";
 import SVG from "react-inlinesvg";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import countryList from "react-select-country-list";
 
 const ContactForm = () => {
+  const options = useMemo(() => countryList().getData(), []);
+
   return (
     <section className="section-style x-spacing xl:px-40 mx-auto">
       <div className="flex flex-col-reverse md:flex-row gap-10 items-center">
@@ -12,109 +18,171 @@ const ContactForm = () => {
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1">
-                  First Name
+                  First Name *
                 </label>
                 <input
+                  name="firstName"
                   type="text"
+                  required
                   className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
+                <p
+                  className="error-message text-red-500 text-xs mt-1"
+                  id="firstName-error"
+                ></p>
               </div>
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1">
-                  First Name
+                  Last Name *
                 </label>
                 <input
+                  name="lastName"
                   type="text"
+                  required
                   className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
+                <p
+                  className="error-message text-red-500 text-xs mt-1"
+                  id="lastName-error"
+                ></p>
               </div>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-secondaryColor mb-1">
-                Email
+                Email *
               </label>
               <input
+                name="email"
                 type="email"
+                required
                 className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
               />
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-[120px]">
-                <label className="block text-sm font-medium text-secondaryColor mb-1">
-                  Phone Numbers
-                </label>
-                <select className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor bg-textWhite">
-                  <option>Egypt (+20)</option>
-                </select>
-              </div>
-              <div className="flex-1">
-                <label className="block text-sm font-medium text-secondaryColor mb-1">
-                  &nbsp;
-                </label>
-                <input
-                  type="tel"
-                  className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
-                />
-              </div>
+              <p
+                className="error-message text-red-500 text-xs mt-1"
+                id="email-error"
+              ></p>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-secondaryColor mb-1">
-                Email
+                Phone Number *
+              </label>
+              <PhoneInput
+                country={"eg"}
+                enableSearch={true}
+                inputProps={{
+                  required: true,
+                }}
+                containerClass="phone-input-container"
+                inputClass="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
+                buttonClass="phone-dropdown-button"
+                dropdownClass="phone-dropdown"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-secondaryColor mb-1">
+                Business Name *
               </label>
               <input
-                type="email"
+                name="businessName"
+                type="text"
+                required
                 className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
               />
+              <p
+                className="error-message text-red-500 text-xs mt-1"
+                id="businessName-error"
+              ></p>
             </div>
 
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1">
-                  Business Name
+                  Number of CDS *
                 </label>
                 <input
-                  type="text"
+                  name="cdsCount"
+                  type="number"
+                  required
+                  min="1"
                   className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
+                <p
+                  className="error-message text-red-500 text-xs mt-1"
+                  id="cdsCount-error"
+                ></p>
               </div>
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1 whitespace-nowrap">
-                  Number of branches
+                  Number of KDS *
                 </label>
                 <input
+                  name="kdsCount"
                   type="number"
+                  required
+                  min="1"
                   className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
+                <p
+                  className="error-message text-red-500 text-xs mt-1"
+                  id="kdsCount-error"
+                ></p>
               </div>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-secondaryColor mb-1">
-                Country Name
+                Country Name *
               </label>
-              <select className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor bg-textWhite">
-                <option>Egypt</option>
+              <select
+                name="country"
+                required
+                className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor bg-textWhite"
+              >
+                {options.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div className="flex items-start gap-2 mt-2">
-              <input type="checkbox" className="mt-1" />
+              <input
+                type="checkbox"
+                name="termsAccepted"
+                required
+                className="mt-1"
+              />
               <label className="text-xs text-secondaryColor">
                 By checking this box, I confirm that I have read, understood and
-                agree to the Terms and Conditions.
+                agree to the Terms and Conditions. *
               </label>
             </div>
+            <p
+              className="error-message text-red-500 text-xs mt-1"
+              id="termsAccepted-error"
+            ></p>
 
             <div className="flex items-start gap-2">
-              <input type="checkbox" className="mt-1" />
+              <input
+                type="checkbox"
+                name="privacyAccepted"
+                required
+                className="mt-1"
+              />
               <label className="text-xs text-secondaryColor">
                 By using this form you agree with the storage and handling of
                 your data by this website in accordance with our Privacy Policy
+                *
               </label>
             </div>
+            <p
+              className="error-message text-red-500 text-xs mt-1"
+              id="privacyAccepted-error"
+            ></p>
 
             <button
               type="submit"
@@ -141,7 +209,6 @@ const ContactForm = () => {
             alt="Sida-Logo"
             className="w-[200px] md:w-[292px] h-auto mb-8 svg-main-color"
           />
-          {/* className="w-[180px] h-auto mb-8" */}
           <h2 className="main-heading text-center text-secondaryColor">
             <span className="text-mainColor">Request</span> a free demo of{" "}
             <span className="text-mainColor">SIDA</span> restaurant management
@@ -149,6 +216,32 @@ const ContactForm = () => {
           </h2>
         </div>
       </div>
+
+      <style jsx global>{`
+        .phone-input-container {
+          width: 100%;
+        }
+        .phone-input-container .form-control {
+          width: 100%;
+          height: 42px;
+          border-radius: 0.75rem;
+          border: 1px solid #e5e7eb;
+        }
+        .phone-input-container .form-control:focus {
+          border-color: var(--color-mainColor);
+          box-shadow: none;
+          outline: none;
+        }
+        .phone-dropdown-button {
+          border-top-left-radius: 0.75rem;
+          border-bottom-left-radius: 0.75rem;
+          border: 1px solid #e5e7eb;
+          border-right: none;
+        }
+        .phone-dropdown {
+          width: 300px;
+        }
+      `}</style>
     </section>
   );
 };

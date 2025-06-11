@@ -1,12 +1,5 @@
-
-
-
-
-
-
-
 import React from "react";
-import PricingSection from "../components/features/pricing/PricingSection";
+import PricingSection from "../../components/features/pricing/PricingSection";
 
 export const metadata = {
   title: "SIDA - Pricing Plans",
@@ -26,4 +19,3 @@ const PricingPlans = async ({ searchParams }) => {
 };
 
 export default PricingPlans;
-

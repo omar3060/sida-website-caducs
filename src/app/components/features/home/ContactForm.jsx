@@ -1,8 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useMemo } from "react";
 import Image from "next/image";
 import styles from "./contactVector.module.css";
+import countryList from "react-select-country-list";
 
 const ContactForm = () => {
+  const options = useMemo(() => countryList().getData(), []);
+
   return (
     <section className="section-style x-spacing xl:px-40 mx-auto">
       <div className="flex flex-col-reverse md:flex-row gap-10 items-center">
@@ -95,7 +100,11 @@ const ContactForm = () => {
                 Country Name
               </label>
               <select className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor bg-textWhite">
-                <option>Egypt</option>
+                {options.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
               </select>
             </div>
 

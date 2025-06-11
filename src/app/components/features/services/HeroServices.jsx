@@ -5,7 +5,7 @@ import AnimatedHeroWrapper from "./AnimatedHeroWrapper";
 const HeroServices = () => {
   return (
     <AnimatedHeroWrapper>
-      <section className="relative section-style x-spacing text-secondaryColor min-h-[100vh]">
+      <section className="relative section-style x-spacing text-textCard min-h-[100vh]">
         {/* Background Image */}
         <div className="absolute inset-0 size-full hero-image">
           <Image
@@ -31,14 +31,14 @@ const HeroServices = () => {
               aliquet vel. Ut
             </p>
 
-            <div className="buttons-container text-secondaryColor w-[80%]">
+            <div className="buttons-container text-text-textCard w-[80%] ">
               <button
                 role="button"
-                className="primary-button flex-1 border-secondaryColor text-secondaryColor"
+                className="primary-button flex-1 border-text-textCard text-text-textCard border-4"
               >
                 Get Demo
               </button>
-              <button className="primary-button flex-1 border-secondaryColor text-secondaryColor">
+              <button className="primary-button flex-1 border-text-textCard text-text-textCard border-4">
                 Subscribe
               </button>
             </div>
@@ -48,7 +48,7 @@ const HeroServices = () => {
         {/* Scroll Arrow */}
         <div className="mx-auto absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 hero-arrow">
           <a href="#services">
-            <div className="border-4 border-secondaryColor rounded-[25px] w-[85px] lg:w-[108px] h-[140px] lg:h-[172px] flex items-center justify-center">
+            <div className="border-4 border-textCard rounded-[25px] w-[85px] lg:w-[108px] h-[140px] lg:h-[172px] flex items-center justify-center">
               <Image
                 src="/assets/images/services/arrowScroll.svg"
                 width={50}

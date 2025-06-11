@@ -1,25 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
-import { useLanguage } from "@/app/context/LanguageContext";
 
 const RotatingGradientCircleLeft = () => {
-  const { direction } = useLanguage();
-  const isRTL = direction === "rtl";
-
   return (
-    <div
-      className={`absolute w-[500px] h-[880px] ${
-        isRTL ? "right-[-1300px]" : "left-[-1300px]"
-      } top-[-50%] transform -translate-y-1/2`}
-    >
+    <div className="absolute w-[500px] h-[880px] left-[-1300] top-[-50%] transform -translate-y-1/2 ">
       <motion.div
         className="w-[1700px] h-[1700px] rounded-full absolute"
         style={{
-          background:
-            "conic-gradient(from 0deg, var(--color-lightBlue), var(--color-mainColor), var(--color-lightBlue))",
-          WebkitMask: "radial-gradient(transparent 40%, black 40%)",
-          mask: "radial-gradient(transparent 40%, black 40%)",
+          background: 'conic-gradient(from 0deg, var(--color-lightBlue), var(--color-mainColor), var(--color-lightBlue))',
+          WebkitMask: 'radial-gradient(transparent 40%, black 40%)',
+          mask: 'radial-gradient(transparent 40%, black 40%)',
         }}
         animate={{
           rotate: 360,
@@ -43,6 +34,7 @@ const RotatingGradientCircleLeft = () => {
 };
 
 export default RotatingGradientCircleLeft;
+
 
 // "use client";
 // import { motion } from "framer-motion";

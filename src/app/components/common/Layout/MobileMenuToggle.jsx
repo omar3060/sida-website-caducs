@@ -4,12 +4,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import ResourcesDropdown from "./ResourcesDropdown";
-import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function MobileMenuToggle({ navLinks }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { direction } = useLanguage();
-  const isRTL = direction === "rtl";
 
   return (
     <>
@@ -36,9 +33,7 @@ export default function MobileMenuToggle({ navLinks }) {
         </svg>
       </button>
       <div
-        className={`lg:hidden fixed top-[60px] sm:top-[70px] md:top-[80px] ${
-          isRTL ? "right-0" : "left-0"
-        } w-full bg-textWhite shadow-md transition-all duration-300 z-40  ${
+        className={`lg:hidden fixed top-[60px] sm:top-[70px] md:top-[80px] left-0 w-full bg-textWhite shadow-md transition-all duration-300 z-40  ${
           isMenuOpen
             ? "translate-y-0 opacity-100"
             : "translate-y-[-20px] opacity-0 pointer-events-none"
@@ -49,9 +44,7 @@ export default function MobileMenuToggle({ navLinks }) {
             <li key={index}>
               <Link
                 href={link.path}
-                className={`block py-3 text-secondaryColor hover:text-mainColor font-medium transition-colors text-base ${
-                  isRTL ? "text-right" : ""
-                }`}
+                className="block py-3 text-secondaryColor hover:text-mainColor font-medium transition-colors text-base"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}

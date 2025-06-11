@@ -17,12 +17,14 @@ const ProductCard = ({ title, image, description, serviceId }) => {
       <div className="p-5 ">
         <p className="mb-3 text-lg text-secondaryColor">{description}</p>
         <div className="buttons-container w-full text-textWhite text-[18px] md:text-xl lg:text-2xl flex gap-4">
+          <Link href="/pricing/subscription/user" className="w-1/2">
           <button
             role="button"
-            className="primary-button py-3 md:py-4 lg:py-5 flex-1 w-1/2"
+            className="primary-button py-3 md:py-4 lg:py-5 w-full"
           >
             Subscribe
           </button>
+          </Link>
           <Link href={`/service/${serviceId}`} className="w-1/2">
             <button className="primary-button py-3 md:py-4 lg:py-5 w-full">
               Learn More

@@ -16,7 +16,7 @@ const PricingCard = ({
     <article className="box-border rounded-2xl bg-opacity-0 w-[297px]  text-center bg-textWhite text-secondaryColor">
       <div
         className={`box-border p-8 m-0 text-center border-gray-200 border-solid border-[1.607px] rounded-2xl ${
-          isHighlighted ? "text-secondaryColor bg-mainColor" : ""
+          isHighlighted ? "text-textCard bg-mainColor" : ""
         }`}
       >
         <h3 className="box-border p-0 m-0 mb-10 text-xs font-bold tracking-widest uppercase">
@@ -68,7 +68,7 @@ const PricingCard = ({
         className={`box-border py-3.5 px-[15px]  text-lg rounded-lg border-[#EBEAED] border-solid cursor-pointer border-[1.106px] w-1/2
           ${isHighlighted ? "text-white bg-mainColor" : ""}`}
       >
-        <Link href="/pricing/subscription">Subscribe</Link>
+        <Link href="/pricing/subscription/user">Subscribe</Link>
       </button>
     </article>
   );

@@ -59,7 +59,7 @@ const WhoWeServe = () => {
 };
 
 const ServiceCard = ({ icon, title, description }) => (
-  <article className="flex flex-col justify-center items-center p-8 rounded-xl relative group overflow-hidden cursor-pointer min-h-[200px]">
+  <article className="flex flex-col justify-center items-center p-8 rounded-xl relative group overflow-hidden min-h-[200px]">
     <div className="relative z-10 group-hover:opacity-0 transition-opacity duration-300">
       {
         <SVG

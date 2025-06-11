@@ -1,11 +1,10 @@
-import { Inter, Noto_Sans_Arabic } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/app/styles/globals.css";
 import Navbar from "./components/common/Layout/Navbar";
 import Footer from "./components/common/Layout/Footer";
-import ClientProviders from "./components/common/Layout/ClientProviders";
+import { ThemeProvider } from "@/app/context/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
-const notoSansArabic = Noto_Sans_Arabic({ subsets: ["arabic"] });
 
 export const metadata = {
   icons: {
@@ -22,19 +21,16 @@ export default function RootLayout({ children }) {
             __html: `
               const theme = localStorage.getItem('theme') || 'light';
               document.documentElement.classList.add(theme);
-              const direction = localStorage.getItem('direction') || 'ltr';
-              document.documentElement.dir = direction;
-              document.documentElement.lang = direction === 'ltr' ? 'en' : 'ar';
             `,
           }}
         />
       </head>
       <body className={`${inter.className} bg-[var(--color-cardColor)]`}>
-        <ClientProviders>
+        <ThemeProvider>
           <Navbar />
           {children}
           <Footer />
-        </ClientProviders>
+        </ThemeProvider>
       </body>
     </html>
   );
