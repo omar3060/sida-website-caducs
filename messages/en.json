@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "services": "Services",
+    "aboutUs": "About Us",
+    "whoWeServe": "Who We Serve",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "subscribe": "Subscribe",
+    "login": "Login",
+    "helpCenter": "Help Center",
+    "blog": "Blog"
+  },
+  "home": {
+    "hero": {
+      "title": "Streamline Your Restaurant Operations",
+      "subtitle": "Discover SIDA's innovative POS and restaurant management solutions"
+    },
+    "features": {
+      "title": "Our Features",
+      "description": "Powerful tools to help you manage your restaurant efficiently"
+    },
+    "partners": {
+      "title": "Our Partners",
+      "description": "Trusted by leading restaurants and businesses"
+    }
+  },
+  "buttons": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us"
+  }
+}

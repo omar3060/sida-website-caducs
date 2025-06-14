@@ -1,0 +1,32 @@
+{
+  "navigation": {
+    "services": "الخدمات",
+    "aboutUs": "من نحن",
+    "whoWeServe": "من نخدم",
+    "pricing": "الأسعار",
+    "resources": "الموارد",
+    "subscribe": "اشترك",
+    "login": "تسجيل الدخول",
+    "helpCenter": "مركز المساعدة",
+    "blog": "المدونة"
+  },
+  "home": {
+    "hero": {
+      "title": "تبسيط عمليات مطعمك",
+      "subtitle": "اكتشف حلول SIDA المبتكرة لنقاط البيع وإدارة المطاعم"
+    },
+    "features": {
+      "title": "ميزاتنا",
+      "description": "أدوات قوية لساعدتك في إدارة مطعمك بكفاءة"
+    },
+    "partners": {
+      "title": "شركاؤنا",
+      "description": "موثوق به من قبل المطاعم والشركات الرائدة"
+    }
+  },
+  "buttons": {
+    "learnMore": "اعرف المزيد",
+    "getStarted": "ابدأ الآن",
+    "contactUs": "اتصل بنا"
+  }
+}
