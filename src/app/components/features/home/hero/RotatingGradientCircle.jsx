@@ -1,10 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
+import { useLocale } from "next-intl";
 
 const RotatingGradientCircle = () => {
+  const locale = useLocale();
+  const isArabic = locale === "ar";
+
   return (
-    <div className="absolute overflow-hidden w-[900px] h-[1000px] top-0 right-0">
+    <div className={`absolute overflow-hidden w-[900px] h-[1000px] top-0 ${isArabic ? 'left-0' : 'right-0'}`}>
       <motion.div
         className="rounded-full absolute"
         style={{
@@ -14,7 +18,8 @@ const RotatingGradientCircle = () => {
           width: 'min(2600px, calc(1600px + 50vw))',
           height: 'min(2600px, calc(1600px + 40vw))',
           top: 'min(1580px, calc(-950px - 30vw))',
-          left: 'min(230px, calc(900px - 2vw))',
+          left: isArabic ? "auto" : "min(230px, calc(900px - 2vw))",
+          right: isArabic ? "min(230px, calc(900px - 2vw))" : "auto",
         }}
         animate={{
           rotate: 360,

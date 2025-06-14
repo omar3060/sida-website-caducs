@@ -1,21 +1,26 @@
 // src/app/components/menus/Navbar.jsx
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import MobileMenuToggle from "./MobileMenuToggle";
 import ResourcesDropdown from "./ResourcesDropdown";
 import ThemeToggle from "../shared/ThemeToggle";
 import SVG from "react-inlinesvg";
+import LanguageToggle from "../shared/LanguageToggle";
 
-const navLinks = [
-  // { name: "Products", path: "/products" },
-  { name: "Services", path: "/services" },
-  { name: "About Us", path: "/aboutus" },
-  { name: "Who We Serve", path: "/whoweserve" },
-  { name: "Pricing", path: "/pricing" },
-];
 
-export default function Navbar() {
+
+export default async function Navbar() {
+  const t = await getTranslations("navigation");
+
+  const navLinks = [
+    // { name: "Products", path: "/products" },
+    { name: t("services"), path: "/services" },
+    { name: t("aboutUs"), path: "/aboutus" },
+    { name: t("whoWeServe"), path: "/whoweserve" },
+    { name: t("pricing"), path: "/pricing" },
+  ];
+
   return (
     <nav className="bg-textWhite fixed w-full top-0 start-0 border-b border-gray-200 z-50 x-spacing">
       <div className="py-2 sm:py-3 md:py-4 flex items-center justify-between mx-auto">
@@ -47,16 +52,14 @@ export default function Navbar() {
 
         <div className="flex items-center gap-1 sm:gap-2 md:gap-2 lg:gap-2 xl:gap-3">
           <ThemeToggle />
-          <SVG
-            src="/assets/images/home/svgs/global-icon-svg.svg"
-            width={40}
-            height={40}
-            alt="Language Selector Icon"
-            className="p-1 w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px] svg-main-color flex-shrink-0"
-          />
-          <Link href="/pricing/subscription">          <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-1 sm:px-2 md:px-2 lg:px-5 xl:px-8 py-2 border rounded-xl text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base cursor-pointer whitespace-nowrap">
-            Subscribe
-          </button></Link>
+          <LanguageToggle />
+          
+          <Link href="/pricing/subscription">
+            {" "}
+            <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-1 sm:px-2 md:px-2 lg:px-5 xl:px-8 py-2 border rounded-xl text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base cursor-pointer whitespace-nowrap">
+              Subscribe
+            </button>
+          </Link>
 
           <Link href="https://sida-2025.netlify.app/auth/login" target="_blank">
             <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-1 sm:px-2 md:px-2 lg:px-5 xl:px-8 py-2 border rounded-xl text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base cursor-pointer whitespace-nowrap">

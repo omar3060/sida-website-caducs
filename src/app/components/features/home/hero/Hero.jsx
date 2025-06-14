@@ -1,10 +1,14 @@
 import React from "react";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import HeroClientWrapper from "./HeroClientWrapper";
 import RotatingGradientCircle from "./RotatingGradientCircle";
 import SVG from "react-inlinesvg";
+import FixedGradientCircle from "./FixedGradientCircle";
 
-const Hero = () => {
+const Hero = async () => {
+  const t = await getTranslations("home.hero");
+  const buttonT = await getTranslations("buttons");
   return (
     <section className="section-style relative x-spacing pt-18 md:pt-36 lg:pt-40 mb-0">
       <div className="flex flex-col md:flex-row gap-6">
@@ -54,16 +58,7 @@ const Hero = () => {
             />
             <HeroClientWrapper isDashes />
           </div>
-          <div className="absolute right-[-32px] md:left-[-12px] bottom-[-100px] sm:bottom-[-50px] md:bottom-[-150px] lg:hidden block overflow-hidden -z-10">
-            <SVG
-              src="/assets/images/home/svgs/halfCircleLeft.svg"
-              className="w-[250px] sm:w-[300px] md:w-[550px] svg-gradient overflow-hidden"
-              alt="Half circle illustration"
-              width={365}
-              height={779}
-              preserveAspectRatio="xMidYMin meet"
-            />
-          </div>
+          <FixedGradientCircle />
         </div>
       </div>
     </section>

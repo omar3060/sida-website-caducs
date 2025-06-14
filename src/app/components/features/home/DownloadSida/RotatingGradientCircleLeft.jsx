@@ -1,10 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
+import { useLocale } from "next-intl";
+
 
 const RotatingGradientCircleLeft = () => {
+  const locale = useLocale();
+  const isArabic = locale === "ar";
   return (
-    <div className="absolute w-[500px] h-[880px] left-[-1300] top-[-50%] transform -translate-y-1/2 ">
+    <div className={`absolute w-[500px] h-[880px] ${
+      isArabic ? "right-[-1300px]" : "left-[-1300px]"
+    } top-[-50%] transform -translate-y-1/2`}>
       <motion.div
         className="w-[1700px] h-[1700px] rounded-full absolute"
         style={{

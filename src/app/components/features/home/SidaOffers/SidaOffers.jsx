@@ -48,6 +48,7 @@ const SidaOffers = () => {
                   <h3 className="text-[40px] md:text-[55px] lg:text-[65px] font-bold text-mainColor">
                     {slide.title}
                   </h3>
+                  {/* TODO: Add slant image */}
                   {/* <div
                     className="absolute top-[-25px] md:top-[-42px] lg:top-[-40px] xl:top-[-100px] left-[80px] md:left-[115px] lg:left-[127px] xl:left-[150px] w-[918px] h-[251px]"
                   >

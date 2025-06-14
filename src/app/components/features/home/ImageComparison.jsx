@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useRef } from "react";
+import { useLocale } from "next-intl";
 
 const SNAP_POINTS = [0, 0.5, 1];
 
@@ -11,6 +12,8 @@ function getClosestSnap(frac) {
 }
 
 const ImageComparison = () => {
+  const locale = useLocale();
+  const isArabic = locale === "ar";
   const [slideAmount, setSlideAmount] = useState({ frac: 0.5 });
   const [dragging, setDragging] = useState(false);
   const imageContainer = useRef(null);
@@ -153,7 +156,7 @@ const ImageComparison = () => {
                   alt="Left Arrow"
                   width={48}
                   height={48}
-                  className="rotate-180 relative right-[18px]"
+                  className={`relative right-[18px] rotate-180 ${isArabic ? 'right-[32px]' : 'right-[18px]'}`}
                   draggable={false}
                 />
                 <Image
@@ -161,7 +164,7 @@ const ImageComparison = () => {
                   alt="Right Arrow"
                   width={48}
                   height={48}
-                  className="relative right-[18px]"
+                  className={`relative ${isArabic ? 'left-[62px]' : 'right-[18px]'}`}
                   draggable={false}
                 />
               </div>

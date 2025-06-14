@@ -39,7 +39,7 @@ const MoreFeaturesServices = () => {
                 height={500}
               />
               <ClientDashWrapper
-                className="absolute z-0 w-[50px] sm:w-[60px] lg:w-[85px] h-auto aspect-[0.92] -bottom-10 left-[-7%] transform translate-x-0 translate-y-0 pointer-events-none"
+                className="absolute z-0 w-[50px] sm:w-[60px] lg:w-[85px] h-auto aspect-[0.92] -bottom-10 left-[-3%] md:left-[-7%] transform translate-x-0 translate-y-0 pointer-events-none"
               />
             </div>
           </div>

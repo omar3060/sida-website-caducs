@@ -28,7 +28,7 @@ const FeaturesTables = () => {
             <SVG
               src="/assets/images/home/svgs/featuresTables/firstTableVector.svg"
               alt="Feature illustration"
-              className="object-contain w-[131.75px] h-[131.75px] absolute bottom-[-47px] left-[-46px] z-[-1] svg-main-color"
+              className="object-contain w-[131.75px] h-[131.75px] absolute bottom-[-47px] left-[-20px] z-[-1] svg-main-color"
               width={100}
               height={100}
             />

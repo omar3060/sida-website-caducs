@@ -1,52 +1,65 @@
 "use client";
-import React, { useMemo } from "react";
-import Image from "next/image";
-import styles from "./contactVector.module.css";
+
+import React, { useState, useMemo } from "react";
 import SVG from "react-inlinesvg";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import countryList from "react-select-country-list";
-import { useLocale } from "next-intl";
-const ContactForm = () => {
-  const locale = useLocale();
-  const isArabic = locale === "ar";
+
+const SubscriptionForm = () => {
+  const [formValid, setFormValid] = useState(true);
   const options = useMemo(() => countryList().getData(), []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (e.target.checkValidity()) {
+      window.location.href = "/pricing/subscription/verification";
+    } else {
+      setFormValid(false);
+    }
+  };
 
   return (
     <section className="section-style x-spacing xl:px-40 mx-auto">
-      <div className="flex flex-col-reverse md:flex-row gap-10 items-center">
-        <div className="w-full md:w-[50%] lg:w-[45%] order-2 md:order-1 relative z-10">
-          <form className="flex flex-col gap-4 p-6 md:p-8 bg-textWhite text-secondaryColor rounded-[24px] shadow-xl relative">
+      <h2 className="main-heading text-center text-secondaryColor mb-15">
+        Subscriptions <span className="text-mainColor">Form</span>
+      </h2>
+      <div className="flex justify-center items-center">
+        <div className="w-full md:w-[50%] relative z-10 pb-10">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4 p-6 md:p-8 bg-textWhite text-secondaryColor rounded-[24px] shadow-xl relative"
+            noValidate={!formValid}
+          >
+            {!formValid && (
+              <div className="bg-red-50 p-4 rounded-lg mb-4">
+                <p className="text-red-700">
+                  Please fill in all required fields correctly.
+                </p>
+              </div>
+            )}
+
             <div className="flex flex-col md:flex-row gap-4">
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1">
                   First Name *
                 </label>
                 <input
-                  name="firstName"
                   type="text"
                   required
                   className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
-                <p
-                  className="error-message text-red-500 text-xs mt-1"
-                  id="firstName-error"
-                ></p>
               </div>
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1">
                   Last Name *
                 </label>
                 <input
-                  name="lastName"
                   type="text"
                   required
                   className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
-                <p
-                  className="error-message text-red-500 text-xs mt-1"
-                  id="lastName-error"
-                ></p>
               </div>
             </div>
 
@@ -55,15 +68,10 @@ const ContactForm = () => {
                 Email *
               </label>
               <input
-                name="email"
                 type="email"
                 required
                 className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
               />
-              <p
-                className="error-message text-red-500 text-xs mt-1"
-                id="email-error"
-              ></p>
             </div>
 
             <div>
@@ -75,11 +83,9 @@ const ContactForm = () => {
                 enableSearch={true}
                 inputProps={{
                   required: true,
-                  dir: isArabic ? "rtl" : "ltr",
+                  name: "phone",
                 }}
-                containerClass={`phone-input-container ${
-                  isArabic ? "rtl" : "ltr"
-                }`}
+                containerClass="phone-input-container"
                 inputClass="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 buttonClass="phone-dropdown-button"
                 dropdownClass="phone-dropdown"
@@ -91,15 +97,10 @@ const ContactForm = () => {
                 Business Name *
               </label>
               <input
-                name="businessName"
                 type="text"
                 required
                 className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
               />
-              <p
-                className="error-message text-red-500 text-xs mt-1"
-                id="businessName-error"
-              ></p>
             </div>
 
             <div className="flex flex-col md:flex-row gap-4">
@@ -108,32 +109,22 @@ const ContactForm = () => {
                   Number of CDS *
                 </label>
                 <input
-                  name="cdsCount"
                   type="number"
                   required
                   min="1"
                   className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
-                <p
-                  className="error-message text-red-500 text-xs mt-1"
-                  id="cdsCount-error"
-                ></p>
               </div>
               <div className="flex-1">
                 <label className="block text-sm font-medium text-secondaryColor mb-1 whitespace-nowrap">
                   Number of KDS *
                 </label>
                 <input
-                  name="kdsCount"
                   type="number"
                   required
                   min="1"
                   className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
                 />
-                <p
-                  className="error-message text-red-500 text-xs mt-1"
-                  id="kdsCount-error"
-                ></p>
               </div>
             </div>
 
@@ -142,9 +133,8 @@ const ContactForm = () => {
                 Country Name *
               </label>
               <select
-                name="country"
-                required
                 className="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor bg-textWhite"
+                required
               >
                 {options.map((option) => (
                   <option key={option.value} value={option.value}>
@@ -155,70 +145,36 @@ const ContactForm = () => {
             </div>
 
             <div className="flex items-start gap-2 mt-2">
-              <input
-                type="checkbox"
-                name="termsAccepted"
-                required
-                className="mt-1"
-              />
+              <input type="checkbox" className="mt-1" required />
               <label className="text-xs text-secondaryColor">
                 By checking this box, I confirm that I have read, understood and
                 agree to the Terms and Conditions. *
               </label>
             </div>
-            <p
-              className="error-message text-red-500 text-xs mt-1"
-              id="termsAccepted-error"
-            ></p>
 
             <div className="flex items-start gap-2">
-              <input
-                type="checkbox"
-                name="privacyAccepted"
-                required
-                className="mt-1"
-              />
+              <input type="checkbox" className="mt-1" required />
               <label className="text-xs text-secondaryColor">
                 By using this form you agree with the storage and handling of
                 your data by this website in accordance with our Privacy Policy
                 *
               </label>
             </div>
-            <p
-              className="error-message text-red-500 text-xs mt-1"
-              id="privacyAccepted-error"
-            ></p>
 
             <button
               type="submit"
-              className="w-[120px] mt-4 px-6 py-2 bg-mainColor text-textWhite rounded-xl hover:bg-sky-700 transition-colors"
+              className="w-[120px] mt-4 px-6 py-2 bg-mainColor text-textWhite rounded-xl hover:bg-lightBlue transition-colors"
             >
               Submit
             </button>
-            <Image
-              src="/assets/images/home/svgs/contactVector.svg"
-              width={500}
-              height={300}
+            <SVG
+              src="/assets/images/home/svgs/featuresTables/firstTableVector.svg"
               alt="Contact Vector"
-              unoptimized
-              className={`absolute top-[-35px] -left-[20px] md:top-[-55px] md:-left-[20px] w-[100] md:w-[132px] -z-10 ${styles.vectorIcon}`}
+              className="absolute top-[-35px]  -left-[20px] md:top-[-55px] md:-left-[54px] w-[100] md:w-[132px] -z-10 svg-main-color"
+              width={100}
+              height={100}
             />
           </form>
-        </div>
-
-        <div className="w-full md:w-[50%] lg:w-[55%] order-2 flex flex-col items-center">
-          <SVG
-            src="/assets/images/home/svgs/sida-logo.svg"
-            width={500}
-            height={300}
-            alt="Sida-Logo"
-            className="w-[200px] md:w-[292px] h-auto mb-8 svg-main-color"
-          />
-          <h2 className="main-heading text-center text-secondaryColor">
-            <span className="text-mainColor">Request</span> a free demo of{" "}
-            <span className="text-mainColor">SIDA</span> restaurant management
-            system
-          </h2>
         </div>
       </div>
 
@@ -246,38 +202,9 @@ const ContactForm = () => {
         .phone-dropdown {
           width: 300px;
         }
-
-        /* RTL Support */
-        .phone-input-container.rtl .form-control {
-          padding-right: 48px;
-          padding-left: 12px;
-          text-align: right;
-        }
-        .phone-input-container.rtl .flag-dropdown {
-          right: 0;
-          left: auto;
-        }
-        .phone-input-container.rtl .selected-flag {
-          border-radius: 0 0.75rem 0.75rem 0;
-          border-left: 1px solid #e5e7eb;
-          border-right: none;
-        }
-        .phone-dropdown.rtl {
-          text-align: right;
-        }
-        .phone-dropdown.rtl .country-list {
-          text-align: right;
-        }
-        .phone-dropdown.rtl .search-box {
-          padding-right: 10px;
-          padding-left: 30px;
-        }
-        .phone-dropdown.rtl .search-box::placeholder {
-          text-align: right;
-        }
       `}</style>
     </section>
   );
 };
 
-export default ContactForm;
+export default SubscriptionForm;

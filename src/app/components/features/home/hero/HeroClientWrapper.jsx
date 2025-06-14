@@ -29,7 +29,7 @@ const HeroClientWrapper = ({  isDashes }) => {
         initial="hidden"
         animate="visible"
         variants={dashAnimation}
-        className="absolute z-0 w-[50px] sm:w-[60px] lg:w-[75px] h-auto aspect-[0.92] bottom-[9%] left-[-6%] transform translate-x-0 translate-y-0 pointer-events-none"
+        className="absolute z-0 w-[50px] sm:w-[60px] lg:w-[75px] h-auto aspect-[0.92] bottom-[9%] left-[-3%] md:left-[-6%] transform translate-x-0 translate-y-0 pointer-events-none"
       >
         <SVG
           src="/assets/images/home/svgs/dashes.svg"

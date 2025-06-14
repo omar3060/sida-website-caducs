@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import RotatingGradientCircleLeft from "./RotatingGradientCircleLeft";
 import SVG from "react-inlinesvg";
+import FixedGradientCircleLeft from "./FixedGradientCircleLeft";
 
 const DownloadSida = () => {
   return (
@@ -66,16 +67,7 @@ const DownloadSida = () => {
           </div>
         </div>
       </div>
-      <div className="absolute left-[-32px] sm:left-[-32px] md:left-[-383px] -bottom-10 sm:-bottom-20 md:top-[294px] lg:hidden block overflow-hidden -z-10">
-        <SVG
-          src="/assets/images/home/svgs/halfCircleRight.svg"
-          className="w-[200px] sm:w-[250px] md:w-[1000px] svg-gradient"
-          alt="Circle illustration"
-          width={204}
-          height={414}
-          preserveAspectRatio="xMidYMin meet"
-        />
-      </div>
+      <FixedGradientCircleLeft />
     </section>
   );
 };

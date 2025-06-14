@@ -3,8 +3,12 @@ import React, { useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import SVG from "react-inlinesvg";
+import { useLocale } from "next-intl";      
 
 const SidaOffersCarousel = ({ sliderData }) => {
+  
+  const locale = useLocale();
+  const isArabic = locale === "ar";
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     dragFree: false,
@@ -36,12 +40,14 @@ const SidaOffersCarousel = ({ sliderData }) => {
         <div className="flex">
           {sliderData.map((slide, index) => (
             <div key={index} className="flex-[0_0_100%] min-w-0 relative mx-20">
-              <div className="grid grid-cols-2 gap-4 md:gap-8 items-start">
+              {/* <div className="grid grid-cols-2 gap-4 md:gap-8 items-start"> */}
+              <div className="grid grid-cols-2 gap-4 md:gap-8">
                 <div className="space-y-4 md:mb-15 flex flex-col md:self-center basis-[45%]">
                   <div className="relative">
                     <h3 className="text-[40px] md:text-[55px] lg:text-[65px] font-bold text-mainColor">
                       {slide.title}
                     </h3>
+                    {/* TODO: Add slant image */}
                     {/* <div
                       className="absolute top-[-25px] md:top-[-42px] lg:top-[-40px] xl:top-[-100px] left-[80px] md:left-[115px] lg:left-[127px] xl:left-[150px] w-[918px] h-[251px]"
                     >
