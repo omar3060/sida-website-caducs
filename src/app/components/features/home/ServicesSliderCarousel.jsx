@@ -2,14 +2,16 @@
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
 
 const ServicesSliderCarousel = ({ slides }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const emblaOptions = useEmblaRtlConfig({
     loop: true,
     dragFree: false,
     containScroll: "trimSnaps",
     draggable: true
   });
+  const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {

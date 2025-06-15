@@ -1,15 +1,17 @@
 "use client";
 import React, { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
 
 const PartnersCarousel = ({ partners }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const emblaOptions = useEmblaRtlConfig({
     loop: true,
     align: "center",
     skipSnaps: false,
     dragFree: true,
     containScroll: "trimSnaps",
   });
+  const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions);
 
   useEffect(() => {
     if (!emblaApi) return;

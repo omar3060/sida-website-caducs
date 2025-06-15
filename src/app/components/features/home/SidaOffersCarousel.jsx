@@ -2,14 +2,16 @@
 import React, { useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
 
 const SidaOffersCarousel = ({ sliderData }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const emblaOptions = useEmblaRtlConfig({
     loop: true,
     dragFree: false,
     containScroll: "trimSnaps",
     draggable: true,
   });
+  const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions);
 
   const containerRef = useRef(null);
 

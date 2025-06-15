@@ -1,17 +1,18 @@
 "use client";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect } from "react";
-
-import React from 'react'
+import React from 'react';
 import TestimonialCard from "./TestimonialCard";
+import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
 
 const TestimonialCarousel = ({testimonials}) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+  const emblaOptions = useEmblaRtlConfig({ 
     loop: true,
     dragFree: true,
     containScroll: "trimSnaps",
     align: "center"
   });
+  const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions);
 
   useEffect(()=> {
     const staticTestimonials = document.querySelector(".static-testimonials");
@@ -35,6 +36,7 @@ const TestimonialCarousel = ({testimonials}) => {
     const interval = setInterval(autoplay, 3000);
     return () => clearInterval(interval);
   }, [emblaApi]);
+  
   return (
     <div className="mt-16 overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4 ">

@@ -4,17 +4,20 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import SVG from "react-inlinesvg";
 import { useLocale } from "next-intl";      
+import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
 
 const SidaOffersCarousel = ({ sliderData }) => {
   
   const locale = useLocale();
   const isArabic = locale === "ar";
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const emblaOptions = useEmblaRtlConfig({
     loop: true,
     dragFree: false,
     containScroll: "trimSnaps",
     draggable: true,
   });
+  
+  const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions);
 
   const containerRef = useRef(null);
 
