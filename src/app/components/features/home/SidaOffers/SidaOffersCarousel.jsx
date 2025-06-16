@@ -3,20 +3,21 @@ import React, { useCallback, useEffect, useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import SVG from "react-inlinesvg";
-import { useLocale } from "next-intl";      
+import { useLocale } from "next-intl";
 import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
+import { useTheme } from "@/app/context/ThemeContext";
 
 const SidaOffersCarousel = ({ sliderData }) => {
-  
   const locale = useLocale();
   const isArabic = locale === "ar";
+  const { theme } = useTheme();
   const emblaOptions = useEmblaRtlConfig({
     loop: true,
     dragFree: false,
     containScroll: "trimSnaps",
     draggable: true,
   });
-  
+
   const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions);
 
   const containerRef = useRef(null);
@@ -98,18 +99,26 @@ const SidaOffersCarousel = ({ sliderData }) => {
         </div>
       </div>
 
-      <div className="hidden lg:flex justify-center gap-[415px] mt-8">
+      <div className="flex justify-center gap-6 md:gap-20 lg:gap-40 xl:gap-[415px] mt-8">
         <button
           onClick={scrollPrev}
           className="flex items-center justify-center cursor-pointer"
           aria-label="Previous slide"
         >
-          <SVG
-            src="/assets/images/home/SidaOffers/leftArrow.svg"
+          <Image
+            src={
+              theme === "dark"
+                ? `/assets/images/home/SidaOffers/${
+                    isArabic ? "right" : "left"
+                  }ArrowGreen.svg`
+                : `/assets/images/home/SidaOffers/${
+                    isArabic ? "right" : "left"
+                  }ArrowBlue.svg`
+            }
             alt="Previous"
-            width={100}
-            height={100}
-            className="object-contain shrink-0 aspect-square w-[67px] svg-gradient"
+            width={67}
+            height={67}
+            className="object-contain shrink-0 aspect-square w-[67px]"
           />
         </button>
         <button
@@ -117,12 +126,20 @@ const SidaOffersCarousel = ({ sliderData }) => {
           className="flex items-center justify-center cursor-pointer"
           aria-label="Next slide"
         >
-          <SVG
-            src="/assets/images/home/SidaOffers/rightArrow.svg"
+          <Image
+            src={
+              theme === "dark"
+                ? `/assets/images/home/SidaOffers/${
+                    isArabic ? "left" : "right"
+                  }ArrowGreen.svg`
+                : `/assets/images/home/SidaOffers/${
+                    isArabic ? "left" : "right"
+                  }ArrowBlue.svg`
+            }
             alt="Next"
-            width={100}
-            height={100}
-            className="object-contain shrink-0 aspect-[0.99] w-[66px] svg-gradient"
+            width={66}
+            height={66}
+            className="object-contain shrink-0 aspect-[0.99] w-[66px]"
           />
         </button>
       </div>

@@ -157,11 +157,15 @@ const ContactForm = () => {
             <div className="flex items-start gap-2 mt-2">
               <input
                 type="checkbox"
+                id="termsAccepted"
                 name="termsAccepted"
                 required
                 className="mt-1"
               />
-              <label className="text-xs text-secondaryColor">
+              <label
+                htmlFor="termsAccepted"
+                className="text-xs text-secondaryColor"
+              >
                 By checking this box, I confirm that I have read, understood and
                 agree to the Terms and Conditions. *
               </label>
@@ -174,11 +178,15 @@ const ContactForm = () => {
             <div className="flex items-start gap-2">
               <input
                 type="checkbox"
+                id="privacyAccepted"
                 name="privacyAccepted"
                 required
                 className="mt-1"
               />
-              <label className="text-xs text-secondaryColor">
+              <label
+                htmlFor="privacyAccepted"
+                className="text-xs text-secondaryColor"
+              >
                 By using this form you agree with the storage and handling of
                 your data by this website in accordance with our Privacy Policy
                 *

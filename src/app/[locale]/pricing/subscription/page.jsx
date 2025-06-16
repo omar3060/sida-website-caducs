@@ -145,16 +145,16 @@ const SubscriptionForm = () => {
             </div>
 
             <div className="flex items-start gap-2 mt-2">
-              <input type="checkbox" className="mt-1" required />
-              <label className="text-xs text-secondaryColor">
+              <input type="checkbox" id="terms" className="mt-1" required />
+              <label htmlFor="terms" className="text-xs text-secondaryColor">
                 By checking this box, I confirm that I have read, understood and
                 agree to the Terms and Conditions. *
               </label>
             </div>
 
             <div className="flex items-start gap-2">
-              <input type="checkbox" className="mt-1" required />
-              <label className="text-xs text-secondaryColor">
+              <input type="checkbox" id="privacy" className="mt-1" required />
+              <label htmlFor="privacy" className="text-xs text-secondaryColor">
                 By using this form you agree with the storage and handling of
                 your data by this website in accordance with our Privacy Policy
                 *
