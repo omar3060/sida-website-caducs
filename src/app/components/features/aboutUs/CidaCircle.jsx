@@ -14,7 +14,34 @@ const CidaCircle = () => {
 
           <div className="w-full md:w-[50%] flex items-center md:ml-5 order-2 md:order-2">
             <div className="flex flex-col self-stretch my-auto text-secondaryColor">
-              <h2 className="main-heading text-center md:text-left">
+            <h2 className="main-heading text-center md:text-left">
+                  {(() => {
+                    const text = "SIDA is the leader in Restaurant Enterprise Management";
+                    const words = text.split(" ");
+                    return words.map((word, index) => {
+                      if (index === words.length - 1) {
+                        return (
+                          <span key={index} className={`relative inline-block ${index % 2 === 0 ? 'text-mainColor' : ''}`}>
+                            {word}
+                            <SVG
+                              src="/assets/images/home/svgs/hero-vector.svg"
+                              className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] svg-main-color"
+                              alt="underline element vector"
+                              width={50}
+                              height={30}
+                            />
+                          </span>
+                        );
+                      }
+                      return (
+                        <span key={index} className={index % 2 === 0 ? 'text-mainColor' : 'text-secondaryColor'}>
+                          {word}{' '}
+                        </span>
+                      );
+                    });
+                  })()}
+            </h2>
+              {/* <h2 className="main-heading text-center md:text-left">
                 <span className="text-mainColor">SIDA </span>
                 is the leader in{" "}
                 <span className="text-mainColor">Restaurant </span>
@@ -29,7 +56,7 @@ const CidaCircle = () => {
                     height={30}
                   />
                 </span>
-              </h2>
+              </h2> */}
               <p className="main-paragraph text-center md:text-left">
                 We are transforming the industry for restaurant concepts
                 nationwide. SDA pioneered the Restaurant Enterprise Management

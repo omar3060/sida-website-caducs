@@ -44,10 +44,19 @@ const WhoWeServe = () => {
   return (
     <section className="section-style x-spacing py-6">
       <div className="flex flex-col items-center">
-        <h2 className="main-heading mb-12 text-secondaryColor">
+      <h2 className="main-heading mb-12 text-secondaryColor">
+                  {"Who We Serve".split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index}>{word} </span>
+            )
+          ))}
+      </h2>
+        {/* <h2 className="main-heading mb-12 text-secondaryColor">
           Who <span className="text-mainColor">We</span> Serve{" "}
           <span className="text-mainColor">?</span>
-        </h2>
+        </h2> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-[992px]">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />

@@ -71,7 +71,7 @@ const ContactForm = () => {
                 Phone Number *
               </label>
               <PhoneInput
-                country={"eg"}
+                country={"sa"}
                 enableSearch={true}
                 inputProps={{
                   required: true,
@@ -80,7 +80,7 @@ const ContactForm = () => {
                 containerClass={`phone-input-container ${
                   isArabic ? "rtl" : "ltr"
                 }`}
-                inputClass="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor"
+                inputClass="w-full px-4 py-2 rounded-xl border border-gray-200 focus:outline-none focus:border-mainColor text-secondaryColor"
                 buttonClass="phone-dropdown-button"
                 dropdownClass="phone-dropdown"
               />
@@ -157,15 +157,11 @@ const ContactForm = () => {
             <div className="flex items-start gap-2 mt-2">
               <input
                 type="checkbox"
-                id="termsAccepted"
                 name="termsAccepted"
                 required
                 className="mt-1"
               />
-              <label
-                htmlFor="termsAccepted"
-                className="text-xs text-secondaryColor"
-              >
+              <label className="text-xs text-secondaryColor">
                 By checking this box, I confirm that I have read, understood and
                 agree to the Terms and Conditions. *
               </label>
@@ -178,15 +174,11 @@ const ContactForm = () => {
             <div className="flex items-start gap-2">
               <input
                 type="checkbox"
-                id="privacyAccepted"
                 name="privacyAccepted"
                 required
                 className="mt-1"
               />
-              <label
-                htmlFor="privacyAccepted"
-                className="text-xs text-secondaryColor"
-              >
+              <label className="text-xs text-secondaryColor">
                 By using this form you agree with the storage and handling of
                 your data by this website in accordance with our Privacy Policy
                 *
@@ -199,7 +191,7 @@ const ContactForm = () => {
 
             <button
               type="submit"
-              className="w-[120px] mt-4 px-6 py-2 bg-mainColor text-textWhite rounded-xl hover:bg-sky-700 transition-colors"
+              className="w-[120px] mt-4 px-6 py-2 bg-mainColor text-textWhite rounded-xl hover:bg-lightBlue transition-colors"
             >
               Submit
             </button>
@@ -222,11 +214,20 @@ const ContactForm = () => {
             alt="Sida-Logo"
             className="w-[200px] md:w-[292px] h-auto mb-8 svg-main-color"
           />
-          <h2 className="main-heading text-center text-secondaryColor">
+                    <h2 className="main-heading text-center text-secondaryColor">
+                  {"Request a free demo of SIDA restaurant management system".split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index}>{word} </span>
+            )
+          ))}
+      </h2>
+          {/* <h2 className="main-heading text-center text-secondaryColor">
             <span className="text-mainColor">Request</span> a free demo of{" "}
             <span className="text-mainColor">SIDA</span> restaurant management
             system
-          </h2>
+          </h2> */}
         </div>
       </div>
 
@@ -283,6 +284,37 @@ const ContactForm = () => {
         .phone-dropdown.rtl .search-box::placeholder {
           text-align: right;
         }
+          /* Phone Input Dark Mode Styles */
+.dark .react-tel-input .form-control {
+  background-color: var(--color-textWhite);
+}
+
+.dark .react-tel-input .selected-flag,
+.dark .react-tel-input .country-list {
+  background-color: var(--color-textWhite);
+}
+
+.dark .react-tel-input .country-list .country {
+  color: var(--color-secondaryColor);
+}
+
+.dark .react-tel-input .country-list .country.highlight,
+.dark .react-tel-input .country-list .country:hover {
+  background-color: #374151;
+}
+
+.dark .react-tel-input .selected-flag:hover,
+.dark .react-tel-input .selected-flag:focus {
+  background-color: #374151;
+}
+
+.dark .react-tel-input .country-list .search {
+  background-color: var(--color-textWhite);
+}
+
+.dark .react-tel-input .country-list .search-box {
+  background-color: var(--color-textWhite);
+}
       `}</style>
     </section>
   );

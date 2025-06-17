@@ -78,8 +78,17 @@ export default function OTPPage() {
       </div>
 
       <h2 className="main-heading self-center text-mainColor text-center">
-        OTP <span className="text-secondaryColor">Verification</span>
+                   {"OTP Verification".split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index}>{word} </span>
+            )
+          ))}
       </h2>
+      {/* <h2 className="main-heading self-center text-mainColor text-center">
+        OTP <span className="text-secondaryColor">Verification</span>
+      </h2> */}
       <p className="main-paragraph self-center text-center text-secondaryColor w-[30%] mr-0">
         Enter the verification code we just sent to your email address
       </p>

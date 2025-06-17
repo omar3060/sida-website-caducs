@@ -23,8 +23,17 @@ const SubscriptionForm = () => {
   return (
     <section className="section-style x-spacing xl:px-40 mx-auto">
       <h2 className="main-heading text-center text-secondaryColor mb-15">
-        Subscriptions <span className="text-mainColor">Form</span>
+                   {"Subscription Form".split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index}>{word} </span>
+            )
+          ))}
       </h2>
+      {/* <h2 className="main-heading text-center text-secondaryColor mb-15">
+        Subscriptions <span className="text-mainColor">Form</span>
+      </h2> */}
       <div className="flex justify-center items-center">
         <div className="w-full md:w-[50%] relative z-10 pb-10">
           <form
@@ -145,16 +154,16 @@ const SubscriptionForm = () => {
             </div>
 
             <div className="flex items-start gap-2 mt-2">
-              <input type="checkbox" id="terms" className="mt-1" required />
-              <label htmlFor="terms" className="text-xs text-secondaryColor">
+              <input type="checkbox" className="mt-1" required />
+              <label className="text-xs text-secondaryColor">
                 By checking this box, I confirm that I have read, understood and
                 agree to the Terms and Conditions. *
               </label>
             </div>
 
             <div className="flex items-start gap-2">
-              <input type="checkbox" id="privacy" className="mt-1" required />
-              <label htmlFor="privacy" className="text-xs text-secondaryColor">
+              <input type="checkbox" className="mt-1" required />
+              <label className="text-xs text-secondaryColor">
                 By using this form you agree with the storage and handling of
                 your data by this website in accordance with our Privacy Policy
                 *

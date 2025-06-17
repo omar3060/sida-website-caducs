@@ -8,10 +8,19 @@ const FeaturesTables = () => {
       <div className="flex flex-wrap gap-10 items-center mt-10 text-secondaryColor max-md:max-w-full relative">
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full">
           <article className="self-stretch my-auto min-w-60 w-full md:w-[45%] lg:w-[626px] order-1 md:order-2">
-            <h2 className="main-heading self-start">
+          <h2 className="main-heading self-start">
+                  {"Stay in Control, Whenever, Wherever".split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index}>{word} </span>
+            )
+          ))}
+      </h2>
+            {/* <h2 className="main-heading self-start">
               Stay in <span className="text-mainColor">Control</span>, Whenever,{" "}
               <span className="text-mainColor">Wherever</span>.
-            </h2>
+            </h2> */}
             <p className="main-paragraph">
               Integrate your front of house & kitchen staff seamlessly leaving no
               room for unnecessary delays or mistakes.
@@ -39,10 +48,19 @@ const FeaturesTables = () => {
       <div className="flex flex-wrap gap-10 items-center mt-20 text-secondaryColor max-md:max-w-full">
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full">
           <article className="self-stretch my-auto min-w-60 w-full md:w-[45%] lg:w-[626px]">
-            <h2 className="main-heading self-start">
+          <h2 className="main-heading self-start">
+                  {"Streamline Your Operations".split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index}>{word} </span>
+            )
+          ))}
+      </h2>
+            {/* <h2 className="main-heading self-start">
               <span className="text-mainColor">Streamline</span> Your Operations
               Even More with <span className="text-mainColor">SIDA</span>
-            </h2>
+            </h2> */}
             <p className="main-paragraph">
               Integrate your front of house & kitchen staff seamlessly leaving no
               room for unnecessary delays or mistakes.

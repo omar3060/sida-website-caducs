@@ -50,12 +50,21 @@ const PricingSection = async ({ searchParams }) => {
 
   return (
     <section className="section-style x-spacing mb-15">
-      <h2 className="main-heading self-center text-mainColor text-center">
+      <h2 className="main-heading self-center text-secondaryColor text-center">
+                   {"Choose the Perfect Plan for you".split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index}>{word} </span>
+            )
+          ))}
+      </h2>
+      {/* <h2 className="main-heading self-center text-mainColor text-center">
         Choose <span className="text-secondaryColor">the Perfect </span> Plan{" "}
         <span className="text-secondaryColor relative inline-block">
           for you
         </span>
-      </h2>
+      </h2> */}
       <p className="main-paragraph self-center text-center text-secondaryColor w-full md:w-[70%] lg:w-[30%] mr-0">
         We designed our billing plans & features to fit your financial and
         operational requirements.

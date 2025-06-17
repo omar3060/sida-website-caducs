@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import SidaOffersCarousel from "./SidaOffersCarousel";
 
-
 const sliderData = [
   {
     title: "POS",
@@ -25,11 +24,23 @@ const sliderData = [
 const SidaOffers = () => {
   return (
     <section className="overflow-hidden section-style py-16 x-spacing md:px-30 relative">
-      <div className="relative text-center md:text-left pb-5" style={{ zIndex: 1 }}>
-        <h2 className="main-heading text-secondaryColor">
+      <div
+        className="relative text-center md:text-left pb-5"
+        style={{ zIndex: 1 }}
+      >
+                  <h2 className="main-heading ">
+                  {"What SIDA Offers".split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index} className="text-secondaryColor">{word} </span>
+            )
+          ))}
+      </h2>
+        {/* <h2 className="main-heading text-secondaryColor">
           What <span className="text-mainColor">SIDA</span> Offers{" "}
           <span className="text-mainColor">?</span>
-        </h2>
+        </h2> */}
         <p className="main-paragraph text-secondaryColor max-w-2xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
           placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit
@@ -88,8 +99,8 @@ const SidaOffers = () => {
                 <Image
                   src={slide.image}
                   alt={slide.title}
-                      height={50}
-                      width={100}
+                  height={50}
+                  width={100}
                   className="w-full h-full min-h-[300px] max-h-[566px] rounded-lg object-cover"
                   priority
                 />

@@ -109,16 +109,16 @@ const ContactForm = () => {
             </div>
 
             <div className="flex items-start gap-2 mt-2">
-              <input type="checkbox" id="homeTerms" className="mt-1" />
-              <label htmlFor="homeTerms" className="text-xs text-gray-600">
+              <input type="checkbox" className="mt-1" />
+              <label className="text-xs text-gray-600">
                 By checking this box, I confirm that I have read, understood and
                 agree to the Terms and Conditions.
               </label>
             </div>
 
             <div className="flex items-start gap-2">
-              <input type="checkbox" id="homePrivacy" className="mt-1" />
-              <label htmlFor="homePrivacy" className="text-xs text-gray-600">
+              <input type="checkbox" className="mt-1" />
+              <label className="text-xs text-gray-600">
                 By using this form you agree with the storage and handling of
                 your data by this website in accordance with our Privacy Policy
               </label>

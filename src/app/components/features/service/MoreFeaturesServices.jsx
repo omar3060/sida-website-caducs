@@ -9,7 +9,34 @@ const MoreFeaturesServices = () => {
       <div className="flex flex-wrap gap-10 items-center mt-20 text-secondaryColor max-md:max-w-full">
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full">
           <article className="self-stretch my-auto min-w-60 w-full md:w-[45%] lg:w-[626px]">
-            <h2 className="main-heading self-center text-mainColor text-center">
+          <h2 className="main-heading">
+                  {(() => {
+                    const text = "CRM (Customer Relationship Manager)";
+                    const words = text.split(" ");
+                    return words.map((word, index) => {
+                      if (index === words.length - 1) {
+                        return (
+                          <span key={index} className={`relative inline-block ${index % 2 === 0 ? 'text-mainColor' : ''}`}>
+                            {word}
+                            <SVG
+                              src="/assets/images/home/svgs/hero-vector.svg"
+                              className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] svg-main-color"
+                              alt="underline element vector"
+                              width={50}
+                              height={30}
+                            />
+                          </span>
+                        );
+                      }
+                      return (
+                        <span key={index} className={index % 2 === 0 ? 'text-mainColor' : 'text-secondaryColor'}>
+                          {word}{' '}
+                        </span>
+                      );
+                    });
+                  })()}
+            </h2>
+            {/* <h2 className="main-heading self-center text-mainColor text-center">
               CRM <span className="text-secondaryColor">(Customer</span>{" "}
               Relationship
               <span className="text-secondaryColor relative inline-block">
@@ -22,7 +49,7 @@ const MoreFeaturesServices = () => {
                   height={30}
                 />
               </span>
-            </h2>
+            </h2> */}
             <p className="main-paragraph">
               Collect your customers’ data and easily edit information or add
               more than one address. Get insight on their purchases and tailor
@@ -46,10 +73,37 @@ const MoreFeaturesServices = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-10 items-center mt-10 text-mainColor max-md:max-w-full relative">
+      <div className="flex flex-wrap gap-10 items-center mt-10 text-secondaryColor max-md:max-w-full relative">
         <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full">
           <article className="self-stretch my-auto min-w-60 w-full md:w-[45%] lg:w-[626px] order-1 md:order-2">
-            <h2 className="main-heading self-start">
+          <h2 className="main-heading">
+                  {(() => {
+                    const text = "Menu Engineering";
+                    const words = text.split(" ");
+                    return words.map((word, index) => {
+                      if (index === words.length - 1) {
+                        return (
+                          <span key={index} className={`relative inline-block ${index % 2 === 0 ? 'text-mainColor' : ''}`}>
+                            {word}
+                            <SVG
+                              src="/assets/images/home/svgs/hero-vector.svg"
+                              className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] justify-self-end svg-main-color"
+                              alt="underline element vector"
+                              width={50}
+                              height={30}
+                            />
+                          </span>
+                        );
+                      }
+                      return (
+                        <span key={index} className={index % 2 === 0 ? 'text-mainColor' : 'text-secondaryColor'}>
+                          {word}{' '}
+                        </span>
+                      );
+                    });
+                  })()}
+            </h2>
+            {/* <h2 className="main-heading self-start">
               Menu{" "}
               <span className="text-secondaryColor">
                 Engineering
@@ -61,7 +115,7 @@ const MoreFeaturesServices = () => {
                   height={30}
                 />
               </span>
-            </h2>
+            </h2> */}
             <p className="main-paragraph text-secondaryColor">
               Get a full scale analysis of your menu based on each menu item’s
               performance. Keep track of your menu’s profitability, sales,

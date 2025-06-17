@@ -15,6 +15,33 @@ const Hero = async () => {
         <div className="w-full md:w-[50%]">
           <div className="flex flex-col mt-6 md:mt-8 lg:mt-11 w-full text-secondaryColor">
             <h1 className="main-heading">
+                  {(() => {
+                    const text = "Designing the Future of Point of Sale & Restaurant Management Systems";
+                    const words = text.split(" ");
+                    return words.map((word, index) => {
+                      if (index === words.length - 1) {
+                        return (
+                          <span key={index} className={`relative inline-block ${index % 2 === 0 ? 'text-mainColor' : ''}`}>
+                            {word}
+                            <SVG
+                              src="/assets/images/home/svgs/hero-vector.svg"
+                              className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] svg-main-color"
+                              alt="underline element vector"
+                              width={50}
+                              height={30}
+                            />
+                          </span>
+                        );
+                      }
+                      return (
+                        <span key={index} className={index % 2 === 0 ? 'text-mainColor' : 'text-secondaryColor'}>
+                          {word}{' '}
+                        </span>
+                      );
+                    });
+                  })()}
+            </h1>
+            {/* <h1 className="main-heading">
               <span className="text-mainColor">Designing</span> the Future of{" "}
               <span className="text-mainColor">Point</span> of Sale & Restaurant
               Management{" "}
@@ -28,7 +55,7 @@ const Hero = async () => {
                   height={30}
                 />
               </span>
-            </h1>
+            </h1> */}
             <p className="main-paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
               placerat eget est sed fringilla. Etiam vestibulum ex non elit
