@@ -30,34 +30,7 @@ const Features = () => {
           </div>
           <div className="w-full md:w-[50%] md:ml-5 order-1 md:order-2">
             <div className="flex flex-col self-stretch my-auto text-secondaryColor">
-            <h2 className="main-heading">
-                  {(() => {
-                    const text = "Restaurant Software to Power Your Passion, Profit, and Growth";
-                    const words = text.split(" ");
-                    return words.map((word, index) => {
-                      if (index === words.length - 1) {
-                        return (
-                          <span key={index} className={`relative inline-block ${index % 2 === 0 ? 'text-mainColor' : ''}`}>
-                            {word}
-                            <SVG
-                              src="/assets/images/home/svgs/hero-vector.svg"
-                              className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%] svg-main-color"
-                              alt="underline element vector"
-                              width={50}
-                              height={30}
-                            />
-                          </span>
-                        );
-                      }
-                      return (
-                        <span key={index} className={index % 2 === 0 ? 'text-mainColor' : ''}>
-                          {word}{' '}
-                        </span>
-                      );
-                    });
-                  })()}
-            </h2>
-              {/* <h2 className="main-heading text-center md:text-left">
+              <h2 className="main-heading text-center md:text-left">
                 <span className="text-mainColor">Restaurant</span> Software to{" "}
                 <span className="text-mainColor">Power</span> Your Passion,
                 Profit, and{" "}
@@ -71,7 +44,7 @@ const Features = () => {
                     height={30}
                   />
                 </span>
-              </h2> */}
+              </h2>
               <p className="main-paragraph text-center md:text-left">
                 Trusted by more than 40,000 restaurants, Restaurant365's
                 back-office software brings together your accounting, inventory,

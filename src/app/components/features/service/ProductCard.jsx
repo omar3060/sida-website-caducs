@@ -25,7 +25,7 @@ const ProductCard = ({ title, image, description, serviceId }) => {
             Subscribe
           </button>
           </Link>
-          <Link href={`/services/${serviceId}`} className="w-1/2">
+          <Link href={`/service/${serviceId}`} className="w-1/2">
             <button className="primary-button py-3 md:py-4 lg:py-5 w-full">
               Learn More
             </button>

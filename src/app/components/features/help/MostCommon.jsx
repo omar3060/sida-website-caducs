@@ -51,18 +51,9 @@ const MostCommon = () => {
   return (
     <section className="section-style x-spacing py-6">
     <div className="flex flex-col items-center ">
-    <h2 className="main-heading mb-12 text-4xl text-secondaryColor">
-                   {"Most Common".split(' ').map((word, index) => (
-            index % 2 === 0 ? (
-              <span key={index} className="text-mainColor">{word} </span>
-            ) : (
-              <span key={index}>{word} </span>
-            )
-          ))}
-      </h2>
-        {/* <h2 className="main-heading mb-12 text-4xl text-secondaryColor">
+        <h2 className="main-heading mb-12 text-4xl text-secondaryColor">
             <span className="text-mainColor">Most</span> Common{" "}
-        </h2> */}
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full lg:max-w-[992px] sm:max-w-[700px] justify-items-center">
             {topics.map((topic, index) => (
                 <TopicCard key={index} {...topic} />

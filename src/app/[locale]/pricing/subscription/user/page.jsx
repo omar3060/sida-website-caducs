@@ -28,18 +28,9 @@ const PricingTransitionPage = () => {
       /> */}
 
       <div className="text-center mb-12">
-      <h1 className="main-heading text-secondaryColor mb-4">
-                   {"SIDA Subscription".split(' ').map((word, index) => (
-            index % 2 === 0 ? (
-              <span key={index} className="text-mainColor">{word} </span>
-            ) : (
-              <span key={index}>{word} </span>
-            )
-          ))}
-      </h1>
-        {/* <h1 className="main-heading text-mainColor mb-4">
+        <h1 className="main-heading text-mainColor mb-4">
           SIDA <span className="text-secondaryColor">Subscription</span>
-        </h1> */}
+        </h1>
         <p className="main-paragraph text-center max-w-2xl mx-auto">
           Choose an option below to continue with your SIDA restaurant
           management system subscription

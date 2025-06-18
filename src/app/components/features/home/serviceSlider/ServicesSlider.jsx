@@ -38,19 +38,10 @@ const slides = [
 const ServicesSlider = () => {
   return (
     <section className="section-style items-center x-spacing py-10 min-h-[60vh]">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8 text-center text-secondaryColor">
-                  {"SIDA Provides A lot of Features".split(' ').map((word, index) => (
-            index % 2 === 0 ? (
-              <span key={index} className="text-mainColor">{word} </span>
-            ) : (
-              <span key={index}>{word} </span>
-            )
-          ))}
-      </h1>
-      {/* <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8 text-center">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8 text-center">
         <span className="text-mainColor">SIDA</span> Provides{" "}
         <span className="text-mainColor">A lot</span> of Features
-      </h1> */}
+      </h1>
 
       <ServicesSliderCarousel slides={slides} />
 

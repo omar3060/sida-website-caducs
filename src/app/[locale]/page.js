@@ -10,6 +10,7 @@ import DownloadSida from "@/app/components/features/home/DownloadSida/DownloadSi
 import ContactForm from "@/app/components/common/shared/ContactForm/ContactForm";
 import PricingSection from "@/app/components/features/home/PricingSection";
 import SidaOffers from "../components/features/home/SidaOffers/SidaOffers";
+import Testimonial from "../components/features/services/Testimonial";
 
 export const metadata = {
   title: "SIDA",
@@ -26,14 +27,15 @@ const Home = () => {
       <Hero />
       <Features />
       <Partners />
-      <FeaturesTables />
+      <Testimonial />
       <SidaOffers />
-      <WhoWeServe />
-      <ImageComparison />
+      <FeaturesTables />
       <ServicesSlider />
-      <DownloadSida />
-      <ContactForm />
+      <ImageComparison />
+      <WhoWeServe />
       <PricingSection />
+      <ContactForm />
+      <DownloadSida />
     </div>
   );
 };

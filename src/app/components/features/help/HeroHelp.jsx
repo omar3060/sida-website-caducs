@@ -12,11 +12,11 @@ const HeroHelp = () => {
         <HeroAnimation />
 
         {/* Content without animations */}
-        <h1 className="main-heading hero-Heading relative z-10 text-secondaryColor">
+        <h1 className="main-heading hero-Heading relative z-10">
           Hello! How We May Help You?
         </h1>
 
-        <p className="main-paragraph hero-Paragraph mt-0 mr-0 w-[75%] relative z-10 text-secondaryColor">
+        <p className="main-paragraph hero-Paragraph mt-0 mr-0 w-[75%] relative z-10">
           The Complete Guide to Foodics Products and Services
         </p>
 

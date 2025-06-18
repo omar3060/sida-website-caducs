@@ -15,6 +15,7 @@ const ServiceLayout = () => {
             description={service.description}
             image={service.image}
             reverse={index % 2 === 1}
+            id={service.id}
           />
         ))}
       </div>

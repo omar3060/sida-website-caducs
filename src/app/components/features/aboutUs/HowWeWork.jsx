@@ -10,34 +10,7 @@ const HowWeWork = () => {
         <div className="flex flex-col md:flex-row gap-5 justify-center">
           <div className="w-full md:w-[50%] flex items-center md:ml-5 order-2 md:order-1">
             <div className="flex flex-col self-stretch my-auto text-secondaryColor">
-            <h2 className="main-heading text-center md:text-left">
-                  {(() => {
-                    const text = "How We Work";
-                    const words = text.split(" ");
-                    return words.map((word, index) => {
-                      if (index === words.length - 1) {
-                        return (
-                          <span key={index} className={`relative inline-block ${index % 2 === 0 ? 'text-mainColor' : ''}`}>
-                            {word}
-                            <SVG
-                              src="/assets/images/home/svgs/hero-vector.svg"
-                              className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%] svg-main-color"
-                              alt="underline element vector"
-                              width={50}
-                              height={30}
-                            />
-                          </span>
-                        );
-                      }
-                      return (
-                        <span key={index} className={index % 2 === 0 ? 'text-mainColor' : 'text-secondaryColor'}>
-                          {word}{' '}
-                        </span>
-                      );
-                    });
-                  })()}
-            </h2>
-              {/* <h2 className="main-heading text-center md:text-left">
+              <h2 className="main-heading text-center md:text-left">
                 <span className="text-mainColor">How </span>
                 We{" "}
                 <span className="relative inline-block">
@@ -50,7 +23,7 @@ const HowWeWork = () => {
                     height={30}
                   />
                 </span>
-              </h2> */}
+              </h2>
               <p className="main-paragraph text-center md:text-left">
                 Our workplace culture is built around the notion of empowering
                 employees to do their best work. From benefits and perks, to

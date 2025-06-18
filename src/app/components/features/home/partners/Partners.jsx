@@ -29,34 +29,7 @@ const partners = [
 const Partners = () => {
   return (
     <section className="section-style x-spacing">
-      <h2 className="main-heading self-center text-center text-secondaryColor">
-                  {(() => {
-                    const text = "Partnering with Restaurants Everywhere";
-                    const words = text.split(" ");
-                    return words.map((word, index) => {
-                      if (index === words.length - 1) {
-                        return (
-                          <span key={index} className={`relative inline-block ${index % 2 === 0 ? 'text-mainColor' : ''}`}>
-                            {word}
-                            <SVG
-                              src="/assets/images/home/svgs/hero-vector.svg"
-                              className="object-contain mt-1 md:mt-2 lg:mt-3 w-[150px] md:w-[200px] lg:w-[250px] svg-main-color"
-                              alt="underline element vector"
-                              width={50}
-                              height={30}
-                            />
-                          </span>
-                        );
-                      }
-                      return (
-                        <span key={index} className={index % 2 === 0 ? 'text-mainColor' : ''}>
-                          {word}{' '}
-                        </span>
-                      );
-                    });
-                  })()}
-            </h2>
-      {/* <h2 className="main-heading self-center text-mainColor text-center">
+      <h2 className="main-heading self-center text-mainColor text-center">
         Partnering <span className="text-secondaryColor">with</span> Restaurants{" "}
         <span className="text-secondaryColor relative inline-block">
           Everywhere
@@ -68,7 +41,7 @@ const Partners = () => {
             height={30}
           />
         </span>
-      </h2> */}
+      </h2>
 
       <p className="main-paragraph self-center text-center text-secondaryColor w-full md:w-[70%] lg:w-[50%]">
         Thousands of local and international F&B brands trust SIDA to manage

@@ -5,10 +5,12 @@ import Image from "next/image";
 import SVG from "react-inlinesvg";
 import { useLocale } from "next-intl";
 import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
+import { useTheme } from "@/app/context/ThemeContext";
 
 const SidaOffersCarousel = ({ sliderData }) => {
   const locale = useLocale();
   const isArabic = locale === "ar";
+  const { theme } = useTheme();
   const emblaOptions = useEmblaRtlConfig({
     loop: true,
     dragFree: false,
@@ -97,48 +99,49 @@ const SidaOffersCarousel = ({ sliderData }) => {
         </div>
       </div>
 
-      <div className="relative overflow-visible mt-8">
-        <div className="flex justify-center gap-6 md:gap-20 lg:gap-40 xl:gap-[415px] overflow-visible">
-          <button
-            onClick={scrollPrev}
-            className="flex items-center justify-center cursor-pointer overflow-visible"
-            aria-label="Previous slide"
-          >
-            <svg
-              width="128"
-              height="104"
-              viewBox="0 0 128 104"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-[67px] lg:w-[80px]"
-            >
-              <path
-                d="M64.1234 103.531L1.4553 54.0479C0.452482 53.2561 0.439198 51.7398 1.42798 50.9305L59.3795 3.49959L64.2734 0.320915C65.6039 -0.543297 67.3628 0.411598 67.3628 1.99817V26.3943C67.3628 27.4416 68.1666 28.3114 69.2109 28.3905C75.4116 28.86 95.415 30.4059 101.292 31.2454C106.947 32.2703 119.653 37.0063 125.242 47.7514C129.892 55.1457 127.319 77.816 125.938 87.5738C125.692 89.3057 123.478 89.8662 122.299 88.5738C111.482 76.7142 96.7757 72.9093 69.2754 74.0681C68.21 74.113 67.3628 74.9932 67.3628 76.0595V101.961C67.3628 103.632 65.4349 104.567 64.1234 103.531Z"
-                fill="#018ed5"
-              />
-              
-            </svg>
-          </button>
-          <button
-            onClick={scrollNext}
-            className="flex items-center justify-center cursor-pointer overflow-visible"
-            aria-label="Next slide"
-          >
-            <svg
-              width="129"
-              height="104"
-              viewBox="0 0 129 104"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-[66px] lg:w-[80px]"
-            >
-              <path
-                d="M64.6821 103.531L127.35 54.0479C128.353 53.2561 128.366 51.7398 127.378 50.9305L69.426 3.49959L64.5321 0.320915C63.2016 -0.543297 61.4427 0.411598 61.4427 1.99817V26.3943C61.4427 27.4416 60.6389 28.3114 59.5946 28.3905C53.394 28.86 33.3906 30.4059 27.5137 31.2454C21.8588 32.2703 9.15216 37.0063 3.56384 47.7514C-1.08636 55.1457 1.48665 77.816 2.86795 87.5738C3.11311 89.3057 5.32753 89.8662 6.50628 88.5738C17.3235 76.7142 32.0298 72.9093 59.5302 74.0681C60.5955 74.113 61.4427 74.9932 61.4427 76.0595V101.961C61.4427 103.632 63.3706 104.567 64.6821 103.531Z"
-                fill="#018ed5"
-              />
-            </svg>
-          </button>
-        </div>
+      <div className="flex justify-center gap-6 md:gap-20 lg:gap-40 xl:gap-[415px] mt-8">
+        <button
+          onClick={scrollPrev}
+          className="flex items-center justify-center cursor-pointer"
+          aria-label="Previous slide"
+        >
+          <Image
+            src={
+              theme === "dark"
+                ? `/assets/images/home/SidaOffers/${
+                    isArabic ? "right" : "left"
+                  }ArrowGreen.svg`
+                : `/assets/images/home/SidaOffers/${
+                    isArabic ? "right" : "left"
+                  }ArrowBlue.svg`
+            }
+            alt="Previous"
+            width={67}
+            height={67}
+            className="object-contain shrink-0 aspect-square w-[67px]"
+          />
+        </button>
+        <button
+          onClick={scrollNext}
+          className="flex items-center justify-center cursor-pointer"
+          aria-label="Next slide"
+        >
+          <Image
+            src={
+              theme === "dark"
+                ? `/assets/images/home/SidaOffers/${
+                    isArabic ? "left" : "right"
+                  }ArrowGreen.svg`
+                : `/assets/images/home/SidaOffers/${
+                    isArabic ? "left" : "right"
+                  }ArrowBlue.svg`
+            }
+            alt="Next"
+            width={66}
+            height={66}
+            className="object-contain shrink-0 aspect-[0.99] w-[66px]"
+          />
+        </button>
       </div>
     </div>
   );

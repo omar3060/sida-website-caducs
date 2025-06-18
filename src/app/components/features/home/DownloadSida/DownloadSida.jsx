@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import RotatingGradientCircleLeft from "./RotatingGradientCircleLeft";
 import SVG from "react-inlinesvg";
-import FixedGradientCircleLeft from "./FixedGradientCircleLeft";
 
 const DownloadSida = () => {
   return (
@@ -18,9 +16,9 @@ const DownloadSida = () => {
             className="object-contain w-full"
           />
         </div>
-        <div className="hidden lg:block relative w-0 ">
+        {/* <div className="hidden lg:block relative w-0 ">
           <RotatingGradientCircleLeft />
-        </div>
+        </div> */}
         <div className="w-full md:w-[55%] lg:w-[60%] md:mb-50 order-1 md:order-2">
           <div className="flex flex-col self-stretch xl:gap-5">
           <h2 className="main-heading">
@@ -94,7 +92,7 @@ const DownloadSida = () => {
           </div>
         </div>
       </div>
-      <FixedGradientCircleLeft />
+      
     </section>
   );
 };

@@ -1,9 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import SVG from "react-inlinesvg";
-const ServiceCard = ({ title, icon, description, image, reverse }) => {
+const ServiceCard = ({ title, icon, description, image, reverse, id }) => {
   return (
-    <div className={`section-style ${reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-center gap-10 w-full p-6 rounded-lg`}>
+    <div
+      className={`section-style ${
+        reverse ? "md:flex-row-reverse" : "md:flex-row"
+      } items-center justify-center gap-10 w-full p-6 rounded-lg scroll-mt-24`}
+      id={id}
+    >
       <article className="self-stretch my-auto min-w-60 w-full md:w-[45%] lg:w-[626px]">
         <div className="flex items-center justify-center gap-3 mb-6 ">
           <SVG
