@@ -37,7 +37,8 @@ export default function LanguageToggle() {
     <button
       onClick={handleToggleLanguage}
       aria-label={locale === "en" ? "Switch to Arabic" : "Switch to English"}
-      className="cursor-pointer"
+      className="cursor-pointer flex items-center justify-center relative"
+      
     >
       <SVG
         src="/assets/images/home/svgs/global-icon-svg.svg"
@@ -46,6 +47,9 @@ export default function LanguageToggle() {
         alt="Language Selector Icon"
         className="p-1 w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px] svg-main-color flex-shrink-0"
       />
+      <span className="absolute -top-1 -right-1 bg-mainColor text-textWhite text-xs rounded-full w-5 h-5 flex items-center justify-center">
+        {locale === "en" ? "ع" : "E"}
+      </span>
     </button>
   );
 }

@@ -14,6 +14,7 @@ const ServicesSection = () => {
             title={card.hero.title}
             image={card.hero.image}
             description={card.hero.description}
+            reverse={index % 2 === 1}
             serviceId={card.id}
           />
         ))}

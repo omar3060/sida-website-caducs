@@ -31,14 +31,14 @@ const HeroServices = () => {
               aliquet vel. Ut
             </p>
 
-            <div className="buttons-container text-text-textCard w-[80%] ">
+            <div className="buttons-container text-textCard w-[80%] ">
               <button
                 role="button"
-                className="primary-button flex-1 border-text-textCard text-text-textCard border-4"
+                className="primary-button flex-1 border-textCard text-textCard border-4"
               >
                 Get Demo
               </button>
-              <button className="primary-button flex-1 border-text-textCard text-text-textCard border-4">
+              <button className="primary-button flex-1 border-textCard text-textCard border-4">
                 Subscribe
               </button>
             </div>

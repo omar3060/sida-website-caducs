@@ -1,17 +1,40 @@
 // src/app/components/menus/MobileMenuToggle.jsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ResourcesDropdown from "./ResourcesDropdown";
 
 export default function MobileMenuToggle({ navLinks }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null)
+  const buttonRef = useRef(null)
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false)
+        console.log('clicked'); 
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMenuOpen])
   return (
     <>
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
+        ref={buttonRef}
         type="button"
         className="lg:hidden inline-flex items-center p-1 pr-0 focus:pr-1 w-10 h-10 justify-center text-sm text-mainColor rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-mainColor"
         aria-label="Toggle menu"
@@ -33,6 +56,7 @@ export default function MobileMenuToggle({ navLinks }) {
         </svg>
       </button>
       <div
+      ref={menuRef}
         className={`lg:hidden fixed top-[60px] sm:top-[70px] md:top-[80px] left-0 w-full bg-textWhite shadow-md transition-all duration-300 z-40  ${
           isMenuOpen
             ? "translate-y-0 opacity-100"

@@ -126,7 +126,7 @@ const ContactForm = () => {
       .required("Last name is required")
       .min(2, "Last name must be at least 2 characters"),
     email: Yup.string()
-      .email("Invalid email address")
+      .email("Invalid email address (e.g., example@email.com)")
       .required("Email is required"),
     phoneNumber: Yup.string().required("Phone number is required"),
     businessName: Yup.string().required("Business name is required"),

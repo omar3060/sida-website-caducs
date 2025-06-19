@@ -4,7 +4,7 @@ import ServicesSection from "../../components/features/services/ServicesSection"
 import Testimonial from "../../components/features/services/Testimonial";
 import Features from "../../components/common/shared/Features";
 import HeroServices from "../../components/features/services/HeroServices";
-
+import ServicesCards from "../../components/features/services/ServicesCards";
 export const metadata = {
   title: "SIDA - Services",
   description:
@@ -19,6 +19,7 @@ const ServicesPage = () => {
     <main>
       <HeroServices />
       <Features />
+      <ServicesCards />
       <ServicesSection />
       <Testimonial />
     </main>

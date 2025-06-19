@@ -36,10 +36,10 @@ const Hero = async () => {
               aliquet vel. Ut
             </p>
 
-            <div className="buttons-container md:w-[80%]">
-              <button role="button" className="primary-button flex-1">
+            <div className="buttons-container md:w-[40%] ">
+              {/* <button role="button" className="primary-button flex-1">
                 Get Demo
-              </button>
+              </button> */}
               <HeroClientWrapper />
             </div>
           </div>

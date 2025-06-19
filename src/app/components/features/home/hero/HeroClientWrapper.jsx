@@ -42,7 +42,7 @@ const HeroClientWrapper = ({  isDashes }) => {
 
   return (
     <div className="relative flex-1 group">
-      <button className="primary-button w-full">Subscribe</button>
+      <button className="primary-button w-full hover:bg-lightBlue">Subscribe</button>
       <motion.div
         initial="hidden"
         animate="visible"
