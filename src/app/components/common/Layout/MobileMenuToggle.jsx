@@ -4,11 +4,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ResourcesDropdown from "./ResourcesDropdown";
+import ServicesDropdown from "./ServicesDropdown";
 
 export default function MobileMenuToggle({ navLinks }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null)
-  const buttonRef = useRef(null)
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -19,17 +20,26 @@ export default function MobileMenuToggle({ navLinks }) {
         buttonRef.current &&
         !buttonRef.current.contains(event.target)
       ) {
-        setIsMenuOpen(false)
-        console.log('clicked'); 
+        setIsMenuOpen(false);
       }
-    }
+    };
 
-    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isMenuOpen])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // For mobile, we need to modify the ServicesDropdown behavior
+  const MobileServicesDropdown = () => {
+    return (
+      <div className=" py-3 text-secondaryColor font-medium text-base">
+        <ServicesDropdown closeMobileMenu={() => setIsMenuOpen(false)} />
+      </div>
+    );
+  };
+
   return (
     <>
       <button
@@ -56,7 +66,7 @@ export default function MobileMenuToggle({ navLinks }) {
         </svg>
       </button>
       <div
-      ref={menuRef}
+        ref={menuRef}
         className={`lg:hidden fixed top-[60px] sm:top-[70px] md:top-[80px] left-0 w-full bg-textWhite shadow-md transition-all duration-300 z-40  ${
           isMenuOpen
             ? "translate-y-0 opacity-100"
@@ -64,6 +74,7 @@ export default function MobileMenuToggle({ navLinks }) {
         }`}
       >
         <ul className="flex flex-col max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 divide-y divide-gray-100">
+          <MobileServicesDropdown />
           {navLinks.map((link, index) => (
             <li key={index}>
               <Link

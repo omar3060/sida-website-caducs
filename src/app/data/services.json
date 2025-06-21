@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "POS",
+    "path": "/services/pos"
+  },
+  {
+    "id": 2,
+    "name": "CDS",
+    "path": "/services/cds"
+  },
+  {
+    "id": 3,
+    "name": "KDS",
+    "path": "/services/kds"
+  }
+]

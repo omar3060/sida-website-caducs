@@ -4,18 +4,17 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import MobileMenuToggle from "./MobileMenuToggle";
 import ResourcesDropdown from "./ResourcesDropdown";
+import ServicesDropdown from "./ServicesDropdown";
 import ThemeToggle from "../shared/ThemeToggle";
 import SVG from "react-inlinesvg";
 import LanguageToggle from "../shared/LanguageToggle";
-
-
 
 export default async function Navbar() {
   const t = await getTranslations("navigation");
 
   const navLinks = [
     // { name: "Products", path: "/products" },
-    { name: t("services"), path: "/services" },
+    // { name: t("services"), path: "/services" },
     { name: t("aboutUs"), path: "/aboutus" },
     { name: t("whoWeServe"), path: "/whoweserve" },
     { name: t("pricing"), path: "/pricing" },
@@ -36,6 +35,10 @@ export default async function Navbar() {
             />
           </Link>
           <ul className="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-4">
+            <li>
+              <ServicesDropdown />
+            </li>
+
             {navLinks.map((link, index) => (
               <li key={index}>
                 <Link
@@ -53,7 +56,7 @@ export default async function Navbar() {
         <div className="flex items-center gap-1 sm:gap-2 md:gap-2 lg:gap-2 xl:gap-3">
           <ThemeToggle />
           <LanguageToggle />
-          
+
           <Link href="/pricing/subscription">
             {" "}
             <button className="border-mainColor text-mainColor hover:bg-mainColor hover:text-textWhite transition-colors duration-300 px-1 sm:px-2 md:px-2 lg:px-5 xl:px-8 py-2 border rounded-xl text-xs sm:text-xs md:text-sm lg:text-sm xl:text-base cursor-pointer whitespace-nowrap">

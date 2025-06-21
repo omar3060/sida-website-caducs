@@ -68,7 +68,7 @@ const PricingSection = () => {
               height={20}
               className="svg-main-color w-[33px] h-[33px]"
             />
-            <span className="font-medium">30 days money back Guarantee</span>
+            <span className="font-medium">Visa</span>
           </div>
           <div className="flex items-center gap-4">
             <SVG
@@ -79,9 +79,7 @@ const PricingSection = () => {
               className="svg-main-color w-[33px] h-[33px]"
             />
             <span className="font-medium">
-              No setup fees
-              <br />
-              100% hassle-free
+              Mastercard
             </span>
           </div>
           <div className="flex items-center gap-4">
@@ -93,9 +91,7 @@ const PricingSection = () => {
               className="svg-main-color w-[33px] h-[33px]"
             />
             <span className="font-medium">
-              No monthly subscription
-              <br />
-              Pay once and for all
+              PayPal
             </span>
           </div>
         </div>

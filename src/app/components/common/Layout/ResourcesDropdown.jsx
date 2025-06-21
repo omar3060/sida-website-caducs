@@ -1,11 +1,12 @@
 // src/app/components/menus/ResourcesDropdown.jsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function ResourcesDropdown({ closeMobileMenu }) {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   const closeDropdown = () => {
@@ -13,12 +14,24 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
     if (closeMobileMenu) closeMobileMenu();
   };
 
+  // Handle clicks outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative">
+    <div className="relative" ref={dropdownRef}>
       <button
         onClick={toggleDropdown}
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
         className="flex items-center text-secondaryColor hover:text-mainColor font-medium transition-colors 
           md:text-base lg:text-lg 2xl:text-xl
 
@@ -45,8 +58,6 @@ export default function ResourcesDropdown({ closeMobileMenu }) {
         className={`absolute z-10 mt-0 ${
           isOpen ? "block" : "hidden"
         } font-normal bg-textWhite divide-y divide-gray-100 rounded-lg shadow-md w-44`}
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
       >
         <ul className="py-2 text-sm text-secondaryColor">
           <li>

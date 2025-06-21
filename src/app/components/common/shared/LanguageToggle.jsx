@@ -47,7 +47,7 @@ export default function LanguageToggle() {
         alt="Language Selector Icon"
         className="p-1 w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] md:w-[32px] md:h-[32px] lg:w-[35px] lg:h-[35px] svg-main-color flex-shrink-0"
       />
-      <span className="absolute -top-1 -right-1 bg-mainColor text-textWhite text-xs rounded-full w-5 h-5 flex items-center justify-center">
+      <span className="absolute -top-1 -right-0.5 md:-right-1 bg-mainColor text-textWhite text-xs rounded-full w-4 h-4 md:w-5 md:h-5 flex items-center justify-center">
         {locale === "en" ? "ع" : "E"}
       </span>
     </button>

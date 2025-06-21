@@ -1,9 +1,10 @@
 import React from "react";
 import { PricingToggle } from "./PricingToggle";
 import PricingCard from "./PricingCard";
+import MobilePricingCard from "./MobilePricingCard";
 
 const PricingSection = async ({ searchParams }) => {
-  const billing = (await searchParams)?.billing ?? "quarterly"; 
+  const billing = (await searchParams)?.billing ?? "quarterly";
   const isYearly = billing === "yearly";
   const pricingPlans = [
     {
@@ -34,7 +35,7 @@ const PricingSection = async ({ searchParams }) => {
       activeFeatures: [0, 1, 2],
     },
     {
-      title: "Enterprise",
+      title: "Enterprise Pro",
       price: "99",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
@@ -61,7 +62,9 @@ const PricingSection = async ({ searchParams }) => {
         operational requirements.
       </p>
       <PricingToggle />
-      <div className="box-border flex flex-wrap relative gap-6 justify-center p-0 m-0 max-md:flex-col max-md:items-center">
+
+      {/* Desktop View */}
+      <div className="hidden md:flex flex-wrap relative gap-6 justify-center p-0 m-0">
         {pricingPlans.map((plan, index) => (
           <PricingCard
             key={index}
@@ -69,6 +72,23 @@ const PricingSection = async ({ searchParams }) => {
             price={isYearly ? String(Number(plan.price) * 10) : plan.price}
             isYearly={isYearly}
           />
+        ))}
+      </div>
+
+      {/* Mobile View - Using CSS order to put Enterprise first */}
+      <div className="flex flex-col md:hidden relative gap-6 items-center p-0 m-0 self-center">
+        {pricingPlans.map((plan, index) => (
+          <div
+            key={index}
+            className={`w-full ${plan.isHighlighted ? "order-first" : ""} `}
+          >
+            <MobilePricingCard
+              {...plan}
+              price={isYearly ? String(Number(plan.price) * 10) : plan.price}
+              isYearly={isYearly}
+              expandedByDefault={plan.isHighlighted} // Enterprise plan is expanded by default
+            />
+          </div>
         ))}
       </div>
     </section>
