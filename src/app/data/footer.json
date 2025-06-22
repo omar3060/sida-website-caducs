@@ -1,0 +1,98 @@
+{
+  "logo": {
+    "path": "/assets/images/home/svgs/sida-logo.svg"
+  },
+  "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam",
+  "socialMedia": [
+    {
+      "id": 1,
+      "name": "Facebook",
+      "icon": "/assets/images/home/svgs/social-icons/facebook.svg",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "name": "Twitter",
+      "icon": "/assets/images/home/svgs/social-icons/x.svg",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "name": "Instagram",
+      "icon": "/assets/images/home/svgs/social-icons/insta.svg",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "name": "LinkedIn",
+      "icon": "/assets/images/home/svgs/social-icons/linkedin.svg",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "name": "YouTube",
+      "icon": "/assets/images/home/svgs/social-icons/youtube.svg",
+      "link": "#"
+    }
+  ],
+  "navigation": [
+    {
+      "id": 1,
+      "title": "Services",
+      "links": [
+        { "id": 1, "name": "Features", "path": "#features" },
+        { "id": 2, "name": "Pricing", "path": "/pricing" },
+        { "id": 3, "name": "Reviews", "path": "#reviews" },
+        { "id": 4, "name": "Updates", "path": "#updates" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Company",
+      "links": [
+        { "id": 1, "name": "About", "path": "/aboutus" },
+        { "id": 2, "name": "Careers", "path": "#careers" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Support",
+      "links": [
+        { "id": 1, "name": "Help center", "path": "/help" },
+        { "id": 2, "name": "Blog", "path": "/blog" },
+        { "id": 3, "name": "Case studies", "path": "#case-studies" }
+      ]
+    }
+  ],
+  "contact": {
+    "email": "info@sida.com",
+    "phone": "(302) 837 - 9280",
+    "address": "131 Continental Dr, suite 305, City of Newark, Country of New Castle, Delware 19713"
+  },
+  "downloads": [
+    {
+      "id": 1,
+      "name": "Apple Store",
+      "image": "/assets/images/home/svgs/google-apple/apple.svg",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "name": "Google Play",
+      "image": "/assets/images/home/svgs/google-apple/google.svg",
+      "link": "#"
+    }
+  ],
+  "copyright": {
+    "text": "Copyright © 2022 BRIX Templates",
+    "allRights": "All Rights Reserved",
+    "terms": {
+      "name": "Terms and Conditions",
+      "link": "#terms"
+    },
+    "privacy": {
+      "name": "Privacy Policy",
+      "link": "#privacy"
+    }
+  }
+}

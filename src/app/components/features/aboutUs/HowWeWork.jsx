@@ -33,13 +33,12 @@ const HowWeWork = () => {
             </div>
           </div>
           <div className="relative order-2 md:order-2 w-full md:w-[45%] lg:w-[40%]">
-            <div className="relative">
+            <div className="relative w-full aspect-square">
               <Image
                 src="/assets/images/aboutUs/howWeWork.svg"
                 alt="Feature illustration"
+                fill={true}
                 className="object-contain self-stretch my-auto w-full"
-                width={100}
-                height={100}
               />
               <ClientDashWrapper className="absolute z-0 w-[35px] sm:w-[45px] lg:w-[55px] h-auto aspect-[0.92] -top-7 -right-[5%] transform translate-x-0 translate-y-0 pointer-events-none rotate-180"></ClientDashWrapper>
             </div>

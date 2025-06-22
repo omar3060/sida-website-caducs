@@ -7,6 +7,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import ScrollToTop from "../components/common/shared/ScrollToTop";
+import ContactWhatsapp from "../components/common/shared/ContactWhatsapp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,6 +44,7 @@ export default async function RootLayout({ children, params }) {
             <Navbar />
             {children}
             <ScrollToTop />
+            <ContactWhatsapp />
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>

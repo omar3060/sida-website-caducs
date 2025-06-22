@@ -3,7 +3,9 @@ import React from "react";
 import { coFounders } from "./membersData";
 import TeamMember from "./TeamMember";
 import SVG from "react-inlinesvg";
+
 const CoFounder = () => {
+  
   return (
     <section className="section-style x-spacing py-6">
       <div className="flex flex-col items-center justify-center">

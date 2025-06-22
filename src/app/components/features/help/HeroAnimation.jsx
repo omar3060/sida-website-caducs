@@ -27,6 +27,7 @@ const HeroAnimation = () => {
         <Image
           src="/assets/images/help/animation/firstVector.svg"
           alt="Vector animation"
+          className="rotate-90"
           width={473}
           height={496}
           priority
@@ -53,6 +54,7 @@ const HeroAnimation = () => {
         <Image
           src="/assets/images/help/animation/secondVector.svg"
           alt="Vector animation"
+          className="rotate-90"
           width={473}
           height={496}
           priority
@@ -79,6 +81,7 @@ const HeroAnimation = () => {
         <Image
           src="/assets/images/help/animation/thirdVector.svg"
           alt="Vector animation"
+          className="rotate-270"
           width={473}
           height={496}
           priority
