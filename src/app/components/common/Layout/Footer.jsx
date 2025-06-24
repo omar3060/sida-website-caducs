@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import SVG from "react-inlinesvg";
 import footerData from "../../../data/footer.json";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
   const {
@@ -40,19 +41,11 @@ const Footer = () => {
             <p className="text-lg leading-8 text-textGray">{description}</p>
             <div className="flex gap-6 items-center self-start mt-6 ">
               {socialMedia.map((social) => (
-                <Link key={social.id} href={social.link}>
-                  <SVG
-                    src={social.icon}
-                    className="object-contain shrink-0 self-stretch my-auto w-[11px] svg-main-color"
-                    alt="social icon"
-                    width={21}
-                    height={15}
-                    style={{
-                      width: "19px",
-                      height: "18px",
-                      display: "block",
-                    }}
-                  />
+                <Link key={social.id} href={social.link} aria-label={social.name}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="svg-main-color hover:opacity-70 transition">
+                  <FontAwesomeIcon icon={['fab', social.icon]} className="w-5 h-5" />
                 </Link>
               ))}
             </div>

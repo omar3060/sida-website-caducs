@@ -1,15 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import AnimatedHeroWrapper from "./AnimatedHeroWrapper";
+import { heroServicesData } from "@/data/servicesPageData";
 
-const HeroServices = () => {
+const   HeroServices = async () => {
+  const data = await heroServicesData();    
   return (
     <AnimatedHeroWrapper>
       <section className="relative section-style x-spacing text-textCard min-h-[100vh]">
         {/* Background Image */}
         <div className="absolute inset-0 size-full hero-image">
           <Image
-            src="/assets/images/services/heroImage.svg"
+            src={data.images[0].secure_url}
             fill
             alt="Hero Background"
             className="object-cover absolute inset-0 size-full"
@@ -20,25 +22,20 @@ const HeroServices = () => {
         <div className="flex relative flex-col max-w-full lg:w-1/2 text-left mx-0 my-auto hero-content">
           <div className="flex flex-col w-full mb-[190px]">
             <h1 className="main-heading">
-              Designing the Future of Point of Sale &
-              <br />
-              Restaurant Management Systems
+              {data.title}
             </h1>
             <p className="main-paragraph">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              placerat eget est sed fringilla. Etiam vestibulum ex non elit
-              blandit commodo. Vestibulum sodales neque erat, a porta diam
-              aliquet vel. Ut
+              {data.content}
             </p>
 
             <div className="buttons-container text-textCard w-[80%] ">
               <button
                 role="button"
-                className="primary-button flex-1 border-textCard text-textCard border-4"
+                className="primary-button flex-1 border-textCard text-textCard border-2 transition-all duration-300"
               >
                 Get Demo
               </button>
-              <button className="primary-button flex-1 border-textCard text-textCard border-4">
+              <button className="primary-button flex-1 border-textCard text-textCard border-2 transition-all duration-300">
                 Subscribe
               </button>
             </div>

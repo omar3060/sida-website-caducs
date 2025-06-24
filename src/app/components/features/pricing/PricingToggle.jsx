@@ -5,37 +5,63 @@ import React from "react";
 export const PricingToggle = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const isYearly = searchParams.get("billing") === "yearly";
+  const billing = searchParams.get("billing") || "quarterly";
 
-  const handleToggle = () => {
+  const handleBillingChange = (newBillingType) => {
     const newParams = new URLSearchParams(searchParams);
-    if (isYearly) {
-      newParams.set("billing", "quarterly");
-    } else {
-      newParams.set("billing", "yearly");
-    }
+    newParams.set("billing", newBillingType);
     router.push(`?${newParams.toString()}`);
   };
 
   return (
     <div className="x-spacing">
-      <div className="box-border flex gap-3.5 justify-center items-center p-0 m-0 mb-10 max-sm:flex-col">
-        <label className="inline-flex items-center my-5">
-          <span className="me-3 text-sm font-medium text-secondaryColor">
-            Quarterly
-          </span>
-          <input 
-            type="checkbox" 
-            checked={isYearly}
-            onChange={handleToggle}
-            className="sr-only peer" 
-          />
-          <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-lightBlue rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-mainColor cursor-pointer"> </div>
-          <span className="ms-3 text-sm font-medium text-secondaryColor">
-            Yearly
-          </span>
-          <span className="text-sm font-medium text-mainColor ml-1">( Save 17% )</span>
-        </label>
+      <div className="box-border flex gap-5 justify-center items-center p-0 m-0 mb-10 max-sm:flex-col">
+        <div className="flex items-center space-x-8">
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="radio"
+              name="billing"
+              value="monthly"
+              checked={billing === "monthly"}
+              onChange={() => handleBillingChange("monthly")}
+              className="form-radio h-4 w-4 text-mainColor"
+            />
+            <span className="ml-2 text-sm font-medium text-secondaryColor">
+              Monthly
+            </span>
+          </label>
+
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="radio"
+              name="billing"
+              value="quarterly"
+              checked={billing === "quarterly"}
+              onChange={() => handleBillingChange("quarterly")}
+              className="form-radio h-4 w-4 text-mainColor"
+            />
+            <span className="ml-2 text-sm font-medium text-secondaryColor">
+              Quarterly
+            </span>
+          </label>
+
+          <label className="inline-flex items-center cursor-pointer">
+            <input
+              type="radio"
+              name="billing"
+              value="yearly"
+              checked={billing === "yearly"}
+              onChange={() => handleBillingChange("yearly")}
+              className="form-radio h-4 w-4 text-mainColor"
+            />
+            <span className="ml-2 text-sm font-medium text-secondaryColor">
+              Yearly
+            </span>
+            <span className="text-sm font-medium text-mainColor ml-1">
+              ( Save 17% )
+            </span>
+          </label>
+        </div>
       </div>
     </div>
   );

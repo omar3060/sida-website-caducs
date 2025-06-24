@@ -6,6 +6,9 @@ import MobilePricingCard from "./MobilePricingCard";
 const PricingSection = async ({ searchParams }) => {
   const billing = (await searchParams)?.billing ?? "quarterly";
   const isYearly = billing === "yearly";
+  const isMonthly = billing === "monthly";
+
+  // Base prices are quarterly
   const pricingPlans = [
     {
       title: "Start",
@@ -34,20 +37,30 @@ const PricingSection = async ({ searchParams }) => {
       isHighlighted: true,
       activeFeatures: [0, 1, 2],
     },
-    {
-      title: "Enterprise Pro",
-      price: "99",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
-      features: [
-        "Lorem ipsum dolor",
-        "Lorem ipsum dolor",
-        "Lorem ipsum dolor",
-        "Lorem ipsum dolor",
-      ],
-      activeFeatures: [0, 1, 2, 3],
-    },
+    // {
+    //   title: "Enterprise Pro",
+    //   price: "99",
+    //   description:
+    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce placerat eget est sed fringill",
+    //   features: [
+    //     "Lorem ipsum dolor",
+    //     "Lorem ipsum dolor",
+    //     "Lorem ipsum dolor",
+    //     "Lorem ipsum dolor",
+    //   ],
+    //   activeFeatures: [0, 1, 2, 3],
+    // },
   ];
+
+  // Helper function to calculate price based on billing period
+  const calculatePrice = (basePrice) => {
+    if (isYearly) {
+      return String(Number(basePrice) * 10); // Annual price (10x quarterly)
+    } else if (isMonthly) {
+      return String(Math.round(Number(basePrice) / 3)); // Monthly price (quarterly / 3)
+    }
+    return basePrice; // Quarterly price (default)
+  };
 
   return (
     <section className="section-style x-spacing mb-15">
@@ -69,8 +82,10 @@ const PricingSection = async ({ searchParams }) => {
           <PricingCard
             key={index}
             {...plan}
-            price={isYearly ? String(Number(plan.price) * 10) : plan.price}
+            price={calculatePrice(plan.price)}
             isYearly={isYearly}
+            isMonthly={isMonthly}
+            billing={billing}
           />
         ))}
       </div>
@@ -84,8 +99,10 @@ const PricingSection = async ({ searchParams }) => {
           >
             <MobilePricingCard
               {...plan}
-              price={isYearly ? String(Number(plan.price) * 10) : plan.price}
+              price={calculatePrice(plan.price)}
               isYearly={isYearly}
+              isMonthly={isMonthly}
+              billing={billing}
               expandedByDefault={plan.isHighlighted} // Enterprise plan is expanded by default
             />
           </div>

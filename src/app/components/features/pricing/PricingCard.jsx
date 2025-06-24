@@ -10,8 +10,13 @@ const PricingCard = ({
   features,
   isHighlighted,
   isYearly,
+  isMonthly,
+  billing,
   activeFeatures,
 }) => {
+  // Determine the billing period text
+  const billingPeriodText = isYearly ? "year" : isMonthly ? "month" : "quarter";
+
   return (
     <article className="box-border rounded-2xl bg-opacity-0 w-[297px]  text-center bg-textWhite text-secondaryColor">
       <div
@@ -29,9 +34,7 @@ const PricingCard = ({
           </span>
           <div className="box-border p-0 m-0 ml-2.5 text-sm text-left">
             <p className="box-border p-0 m-0">per user</p>
-            <p className="box-border p-0 m-0">
-              per {isYearly ? "year" : "month"}
-            </p>
+            <p className="box-border p-0 m-0">per {billingPeriodText}</p>
           </div>
         </div>
         <p className="box-border p-0 mt-7 text-sm leading-5">{description}</p>
@@ -64,7 +67,6 @@ const PricingCard = ({
         })}
       </ul>
       <button
-        
         className={`box-border py-3.5 px-[15px]  text-lg rounded-lg border-[#EBEAED] border-solid cursor-pointer border-[1.106px] w-1/2
           ${isHighlighted ? "text-white bg-mainColor" : ""}`}
       >

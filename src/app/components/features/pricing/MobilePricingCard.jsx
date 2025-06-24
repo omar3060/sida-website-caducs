@@ -11,10 +11,15 @@ const MobilePricingCard = ({
   features,
   isHighlighted,
   isYearly,
+  isMonthly,
+  billing,
   activeFeatures,
   expandedByDefault = false,
 }) => {
   const [isExpanded, setIsExpanded] = useState(expandedByDefault);
+
+  // Determine the billing period text
+  const billingPeriodText = isYearly ? "year" : isMonthly ? "month" : "quarter";
 
   return (
     <article className="box-border rounded-2xl bg-opacity-0 w-full max-w-[297px] text-center bg-textWhite text-secondaryColor">
@@ -33,9 +38,7 @@ const MobilePricingCard = ({
           </span>
           <div className="box-border p-0 m-0 ml-2.5 text-sm text-left">
             <p className="box-border p-0 m-0">per user</p>
-            <p className="box-border p-0 m-0">
-              per {isYearly ? "year" : "month"}
-            </p>
+            <p className="box-border p-0 m-0">per {billingPeriodText}</p>
           </div>
         </div>
         <p className="box-border p-0 mt-4 text-sm leading-5">{description}</p>

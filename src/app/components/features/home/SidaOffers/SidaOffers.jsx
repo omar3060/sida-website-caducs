@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import SidaOffersCarousel from "./SidaOffersCarousel";
-
+import { sidaOffersData } from "@/data/homeData";
 
 const sliderData = [
   {
@@ -22,18 +22,22 @@ const sliderData = [
   },
 ];
 
-const SidaOffers = () => {
+const SidaOffers = async () => {
+  const data = await sidaOffersData();
   return (
     <section className="overflow-hidden section-style py-16 x-spacing md:px-30 relative">
       <div className="relative text-center md:text-left pb-5" style={{ zIndex: 1 }}>
-        <h2 className="main-heading text-secondaryColor">
-          What <span className="text-mainColor">SIDA</span> Offers{" "}
-          <span className="text-mainColor">?</span>
-        </h2>
+      <h2 className="main-heading ">
+                  {data.title.split(' ').map((word, index) => (
+            index % 2 === 0 ? (
+              <span key={index} className="text-mainColor">{word} </span>
+            ) : (
+              <span key={index} className="text-secondaryColor">{word} </span>
+            )
+          ))}
+      </h2>
         <p className="main-paragraph text-secondaryColor max-w-2xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          placerat eget est sed fringilla. Etiam vestibulum ex non elit blandit
-          commodo. Vestibulum sodales neque erat.
+          {data.content}
         </p>
       </div>
 

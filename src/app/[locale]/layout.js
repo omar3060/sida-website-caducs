@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import ScrollToTop from "../components/common/shared/ScrollToTop";
 import ContactWhatsapp from "../components/common/shared/ContactWhatsapp";
+import "../lib/fontawesome"
 
 const inter = Inter({ subsets: ["latin"] });
 

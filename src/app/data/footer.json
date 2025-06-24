@@ -1,3 +1,4 @@
+
 {
   "logo": {
     "path": "/assets/images/home/svgs/sida-logo.svg"
@@ -7,31 +8,31 @@
     {
       "id": 1,
       "name": "Facebook",
-      "icon": "/assets/images/home/svgs/social-icons/facebook.svg",
+      "icon": "facebook",
       "link": "#"
     },
     {
       "id": 2,
       "name": "Twitter",
-      "icon": "/assets/images/home/svgs/social-icons/x.svg",
+      "icon": "x-twitter",
       "link": "#"
     },
     {
       "id": 3,
       "name": "Instagram",
-      "icon": "/assets/images/home/svgs/social-icons/insta.svg",
+      "icon": "instagram",
       "link": "#"
     },
     {
       "id": 4,
       "name": "LinkedIn",
-      "icon": "/assets/images/home/svgs/social-icons/linkedin.svg",
+      "icon": "linkedin",
       "link": "#"
     },
     {
       "id": 5,
       "name": "YouTube",
-      "icon": "/assets/images/home/svgs/social-icons/youtube.svg",
+      "icon": "youtube",
       "link": "#"
     }
   ],

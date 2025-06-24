@@ -1,36 +1,24 @@
 import Image from "next/image";
 import React from "react";
 import SVG from "react-inlinesvg";
-
-// pages/your-page.js
-export async function getServerSideProps(context) {
-  // Fetch data from external API
-  const res = await fetch(
-    "https://super-admin-eta.vercel.app/section/home/features"
-  );
-  const data = await res.json();
-
-  // Pass data to the page via props
-  return data;
-}
+import { featuresData } from "@/data/homeData";
 
 const Features = async () => {
-  let data = await getServerSideProps();
-  let title = data.section.title.split("/");
+  let data = await featuresData();
   return (
     <section id="services" className="section-style x-spacing">
       <div className="">
         <div className="flex flex-col md:flex-row gap-5">
           <div className="relative order-2 md:order-1 w-full md:w-[50%]">
             <Image
-              src={data.section.images[1].secure_url}
+              src={data.images[1].secure_url}
               alt="restaurant software features"
               className="object-contain my-auto w-full"
               width={100}
               height={100}
             />
             <SVG
-              src={data.section.images[0].secure_url}
+              src={data.images[0].secure_url}
               alt="restaurant software features"
               className="object-contain absolute svg-main-color 
                 w-[80px] sm:w-[100px] md:w-[120px] lg:w-[131.75px] 
@@ -44,22 +32,43 @@ const Features = async () => {
           </div>
           <div className="w-full md:w-[50%] md:ml-5 order-1 md:order-2">
             <div className="flex flex-col self-stretch my-auto text-secondaryColor">
-              <h2 className="main-heading text-center md:text-left">
-                <span className="text-mainColor">{title[0]}</span> {title[1]}{" "}
-                <span className="text-mainColor">{title[2]}</span> {title[3]}{" "}
-                <span className="relative inline-block">
-                  {title[4]}
-                  <SVG
-                    src="/assets/images/home/svgs/features-vector.svg"
-                    className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%] svg-main-color"
-                    alt="underline element vector"
-                    width={50}
-                    height={30}
-                  />
-                </span>
+              <h2 className="main-heading">
+                {(() => {
+                  const text = data.title;    
+                  const words = text.split(" ");
+                  return words.map((word, index) => {
+                    if (index === words.length - 1) {
+                      return (
+                        <span
+                          key={index}
+                          className={`relative inline-block ${
+                            index % 2 === 0 ? "text-mainColor" : ""
+                          }`}
+                        >
+                          {word}
+                          <SVG
+                            src="/assets/images/home/svgs/hero-vector.svg"
+                            className="absolute -bottom-4 md:-bottom-5 lg:-bottom-6 left-0 w-[120%] md:w-[130%] lg:w-[140%] svg-main-color"
+                            alt="underline element vector"
+                            width={50}
+                            height={30}
+                          />
+                        </span>
+                      );
+                    }
+                    return (
+                      <span
+                        key={index}
+                        className={index % 2 === 0 ? "text-mainColor" : ""}
+                      >
+                        {word}{" "}
+                      </span>
+                    );
+                  });
+                })()}
               </h2>
               <p className="main-paragraph text-center md:text-left">
-                {data.section.content}
+                {data.content}
               </p>
             </div>
           </div>
