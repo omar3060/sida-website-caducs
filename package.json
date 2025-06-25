@@ -13,6 +13,8 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@tailwindcss/postcss": "^4.1.6",
+    "@tanstack/react-query": "^5.81.2",
+    "@tanstack/react-query-devtools": "^5.81.2",
     "autoprefixer": "^10.4.19",
     "embla-carousel-react": "^8.6.0",
     "formik": "^2.4.6",
