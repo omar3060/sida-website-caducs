@@ -4,6 +4,7 @@ import CidaCircle from "../../components/features/aboutUs/CidaCircle";
 import HowWeWork from "../../components/features/aboutUs/HowWeWork";
 import CoFounder from "../../components/features/aboutUs/CoFounder";
 import Leaders from "../../components/features/aboutUs/Leaders";
+import ValueAdded from "@/app/components/features/aboutUs/ValueAdded";
 
 export const metadata = {
   title: "SIDA - About Us",
@@ -19,6 +20,7 @@ const AboutUs = () => {
       <AboutUsHero />
       <CidaCircle />
       <HowWeWork />
+      <ValueAdded />
       <CoFounder />
       <Leaders />
     </main>
