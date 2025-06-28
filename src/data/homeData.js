@@ -1,3 +1,4 @@
+"use cache";
 // Base API URL
 const API_BASE_URL = "https://super-admin-eta.vercel.app";
 

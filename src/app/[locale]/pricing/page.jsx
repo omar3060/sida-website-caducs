@@ -10,13 +10,13 @@ export const metadata = {
   },
 };
 
-const PricingPlans = async ({ searchParams }) => {
+const PricingPlans = async ({ searchParams, params }) => {
+  const locale = params?.locale || "en";
   return (
     <main>
-      <PricingSection searchParams={searchParams} />
+      <PricingSection searchParams={searchParams} locale={locale} />
     </main>
   );
 };
 
 export default PricingPlans;
-

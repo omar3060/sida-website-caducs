@@ -3,6 +3,11 @@ import Link from "next/link";
 import React from "react";
 import SVG from "react-inlinesvg";
 
+const arabicNumbers = (str) =>
+  str.replace(/[0-9]/g, (d) =>
+    String.fromCharCode(d.charCodeAt(0) + 0x0660 - 0x0030)
+  );
+
 const PricingCard = ({
   title,
   price,
@@ -13,9 +18,29 @@ const PricingCard = ({
   isMonthly,
   billing,
   activeFeatures,
+  isArabic = false,
 }) => {
   // Determine the billing period text
-  const billingPeriodText = isYearly ? "year" : isMonthly ? "month" : "quarter";
+  let billingPeriodText = isYearly
+    ? isArabic
+      ? "سنة"
+      : "year"
+    : isMonthly
+    ? isArabic
+      ? "شهر"
+      : "month"
+    : isArabic
+    ? "ربع سنة"
+    : "quarter";
+
+  const perUser = isArabic ? "لكل مستخدم" : "per user";
+  const perPeriod = isArabic
+    ? `لكل ${billingPeriodText}`
+    : `per ${billingPeriodText}`;
+  const subscribeText = isArabic ? "اشترك" : "Subscribe";
+
+  // Format price in Arabic if needed
+  const displayPrice = isArabic ? arabicNumbers(price) : price;
 
   return (
     <article className="box-border rounded-2xl bg-opacity-0 w-[297px]  text-center bg-textWhite text-secondaryColor">
@@ -30,11 +55,15 @@ const PricingCard = ({
         <div className="box-border flex justify-center items-start p-0 m-0 mb-5">
           <span className="box-border p-0 m-0 mt-0 text-sm">$</span>
           <span className="box-border p-0 m-0 text-5xl font-bold tracking-tighter leading-[40px]">
-            {price}
+            {displayPrice}
           </span>
-          <div className="box-border p-0 m-0 ml-2.5 text-sm text-left">
-            <p className="box-border p-0 m-0">per user</p>
-            <p className="box-border p-0 m-0">per {billingPeriodText}</p>
+          <div
+            className={`box-border p-0 m-0 -mt-1 ${
+              isArabic ? "mr-2.5" : "ml-2.5"
+            } text-sm text-left`}
+          >
+            <p className="box-border p-0 m-0">{perUser}</p>
+            <p className="box-border p-0 m-0">{perPeriod}</p>
           </div>
         </div>
         <p className="box-border p-0 mt-7 text-sm leading-5">{description}</p>
@@ -61,7 +90,7 @@ const PricingCard = ({
                   style={{ width: "16px", height: "16px" }}
                 />
               )}
-              <span>{feature}</span>
+              <span className="">{feature}</span>
             </li>
           );
         })}
@@ -70,7 +99,7 @@ const PricingCard = ({
         className={`box-border py-3.5 px-[15px]  text-lg rounded-lg border-[#EBEAED] border-solid cursor-pointer border-[1.106px] w-1/2
           ${isHighlighted ? "text-white bg-mainColor" : ""}`}
       >
-        <Link href="/pricing/subscription/user">Subscribe</Link>
+        <Link href="/pricing/subscription/user">{subscribeText}</Link>
       </button>
     </article>
   );

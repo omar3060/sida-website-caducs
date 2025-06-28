@@ -1,3 +1,4 @@
+// "use cache"
 function createSlug(title) {
   return title
     .toLowerCase() 
