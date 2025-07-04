@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import ScrollToTop from "../components/common/shared/ScrollToTop";
 import ContactWhatsapp from "../components/common/shared/ContactWhatsapp";
-import "../lib/fontawesome"
+import "../lib/fontawesome";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,11 +42,11 @@ export default async function RootLayout({ children, params }) {
       <body className={`${inter.className} bg-[var(--color-cardColor)]`}>
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider>
-            <Navbar />
+            <Navbar params={{ locale }} />
             {children}
             <ScrollToTop />
             <ContactWhatsapp />
-            <Footer />
+            <Footer params={{ locale }} />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

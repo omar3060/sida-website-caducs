@@ -21,21 +21,21 @@ export const metadata = {
   },
 };
 
-const Home = () => {
+const Home = async ({ params }) => {
   return (
     <div>
-      <Hero />
-      <Features />
-      <Partners />
-      <Testimonial />
-      <SidaOffers />
-      <FeaturesTables />
-      <ServicesSlider />
-      <ImageComparison />
-      <WhoWeServe />
-      <PricingSection />
-      <ContactForm />
-      <DownloadSida />
+      <Hero params={params} />
+      <Features params={params} />
+      <Partners params={params} />
+      <Testimonial params={params} />
+      <SidaOffers params={params} />
+      <FeaturesTables params={params} />
+      <ServicesSlider params={params} />
+      <ImageComparison params={params} />
+      <WhoWeServe params={params} />
+      <PricingSection params={params} />
+      <ContactForm params={params} />
+      <DownloadSida params={params} />
     </div>
   );
 };

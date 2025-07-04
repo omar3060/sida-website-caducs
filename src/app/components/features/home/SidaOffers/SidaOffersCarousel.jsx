@@ -7,7 +7,7 @@ import { useLocale } from "next-intl";
 import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
 import { useTheme } from "@/app/context/ThemeContext";
 
-const SidaOffersCarousel = ({ sliderData }) => {
+const SidaOffersCarousel = ({ sliderData,  }) => {
   const locale = useLocale();
   const isArabic = locale === "ar";
   const { theme } = useTheme();
@@ -49,7 +49,7 @@ const SidaOffersCarousel = ({ sliderData }) => {
                 <div className="space-y-4 md:mb-15 flex flex-col md:self-center basis-[45%]">
                   <div className="relative">
                     <h3 className="text-[40px] md:text-[55px] lg:text-[65px] font-bold text-mainColor">
-                      {slide.title}
+                      {isArabic ? slide.arabic.title : slide.english.title}
                     </h3>
                     {/* TODO: Add slant image */}
                     {/* <div
@@ -67,7 +67,7 @@ const SidaOffersCarousel = ({ sliderData }) => {
                   </div>
 
                   <p className="text-secondaryColor text-[18.5px] md:text-2xl lg:text-4xl w-full max-w-[700px]">
-                    {slide.description}
+                    {isArabic ? slide.arabic.content : slide.english.content}
                   </p>
 
                   <div className="flex gap-3 md:gap-5 items-center md:mt-8">
@@ -75,18 +75,18 @@ const SidaOffersCarousel = ({ sliderData }) => {
                       role="button"
                       className="primary-button text-[14px] md:text-2xl"
                     >
-                      {slide.buttonText1}
+                      {isArabic ? "اشترك" : "Subscribe"}
                     </button>
                     <button className="primary-button text-[14px] md:text-2xl">
-                      {slide.buttonText2}
+                      {isArabic ? "التسعير" : "Pricing"}
                     </button>
                   </div>
                 </div>
 
                 <div className="basis-[55%]">
                   <Image
-                    src={slide.image}
-                    alt={slide.title}
+                    src={slide.image.secure_url}
+                    alt={isArabic ? slide.arabic.title : slide.english.title}
                     width={100}
                     height={100}
                     className="w-full h-full min-h-[300px] max-h-[566px] rounded-lg object-cover"
@@ -109,10 +109,10 @@ const SidaOffersCarousel = ({ sliderData }) => {
             src={
               theme === "dark"
                 ? `/assets/images/home/SidaOffers/${
-                    isArabic ? "right" : "left"
+                  isArabic ? "right" : "left"
                   }ArrowGreen.svg`
                 : `/assets/images/home/SidaOffers/${
-                    isArabic ? "right" : "left"
+                  isArabic ? "right" : "left"
                   }ArrowBlue.svg`
             }
             alt="Previous"
@@ -130,10 +130,10 @@ const SidaOffersCarousel = ({ sliderData }) => {
             src={
               theme === "dark"
                 ? `/assets/images/home/SidaOffers/${
-                    isArabic ? "left" : "right"
+                  isArabic ? "left" : "right"
                   }ArrowGreen.svg`
                 : `/assets/images/home/SidaOffers/${
-                    isArabic ? "left" : "right"
+                  isArabic ? "left" : "right"
                   }ArrowBlue.svg`
             }
             alt="Next"

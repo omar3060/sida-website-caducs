@@ -37,7 +37,7 @@ const PartnersCarousel = ({ partners }) => {
             className="embla__slide min-w-[150px] md:min-w-[180px] lg:min-w-[200px] px-2 md:px-3 lg:px-4"
           >
             <img
-              src={partner.src}
+              src={partner.image.secure_url}
               className="object-contain mx-auto"
               alt={`Partner ${partner.id}`}
             />

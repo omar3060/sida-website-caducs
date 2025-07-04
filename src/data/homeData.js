@@ -1,6 +1,6 @@
-"use cache";
+// "use cache";
 // Base API URL
-const API_BASE_URL = "https://super-admin-eta.vercel.app";
+const API_BASE_URL = process.env.API_BASE_URL;
 
 // Hero section data
 export const heroData = async () => {
@@ -9,22 +9,12 @@ export const heroData = async () => {
     const data = await res.json();
 
     return {
-      title: data.section.title,
-      content: data.section.content,
+      arabic: data.section.arabic,
+      english: data.section.english,
       images: data.section.images,
     };
   } catch (error) {
     console.error("Error fetching hero data:", error);
-    // Fallback data if fetch fails
-    // return {
-    //   title: ["Empower", "Your Business", "With", "Modern Solutions"],
-    //   content:
-    //     "We provide innovative digital solutions to help your business thrive in today's competitive market.",
-    //   images: [
-    //     { secure_url: "/images/hero-illustration.png" },
-    //     { secure_url: "/images/underline-vector.svg" },
-    //   ],
-    // };
   }
 };
 
@@ -41,13 +31,6 @@ export const aboutData = async () => {
     };
   } catch (error) {
     console.error("Error fetching about data:", error);
-    // // Fallback data if fetch fails
-    // return {
-    //   title: "About Our Company",
-    //   content:
-    //     "Founded in 2020, we've been helping businesses transform their digital presence.",
-    //   images: [{ secure_url: "/images/about-image.png" }],
-    // };
   }
 };
 // Features section data
@@ -57,109 +40,118 @@ export const featuresData = async () => {
     const data = await res.json();
 
     return {
-      title: data.section.title,
-      content: data.section.content,
+      arabic: data.section.arabic,
+      english: data.section.english,
       images: data.section.images,
     };
   } catch (error) {
     console.error("Error fetching about data:", error);
-    // // Fallback data if fetch fails
-    // return {
-    //   title: "About Our Company",
-    //   content:
-    //     "Founded in 2020, we've been helping businesses transform their digital presence.",
-    //   images: [{ secure_url: "/images/about-image.png" }],
-    // };
   }
 };
 
 // Partners section data
 export const partnersData = async () => {
   try {
-    const res = await fetch(`${API_BASE_URL}/section/home/partners`);
+    const res = await fetch(`${API_BASE_URL}/section/slider/home/partners`);
     const data = await res.json();
+    console.log(data);
 
-    return {
-      title: data.section.title,
-      content: data.section.content,
-      images: data.section.images,
-    };
+    return data.slider;
   } catch (error) {
     console.error("Error fetching about data:", error);
-    // // Fallback data if fetch fails
-    // return {
-    //   title: "About Our Company",
-    //   content:
-    //     "Founded in 2020, we've been helping businesses transform their digital presence.",
-    //   images: [{ secure_url: "/images/about-image.png" }],
-    // };
   }
 };
 // Testimonial section data
+// export const testimonialData = async () => {
+//   try {
+//     const res = await fetch(`${API_BASE_URL}/section/home/testimonial`);
+//     const data = await res.json();
+
+//     return {
+//       title: data.section.title,
+//       content: data.section.content,
+//       images: data.section.images,
+
+//     };
+//   } catch (error) {
+//     console.error("Error fetching about data:", error);
+//   }
+// };
+
 export const testimonialData = async () => {
   try {
-    const res = await fetch(`${API_BASE_URL}/section/home/testimonial`);
+    const res = await fetch(`${API_BASE_URL}/testimonials`);
     const data = await res.json();
 
-    return {
-      title: data.section.title,
-      content: data.section.content,
-      images: data.section.images,
-    };
+    return data.testimonials;
   } catch (error) {
-    console.error("Error fetching about data:", error);
-    // // Fallback data if fetch fails
-    // return {
-    //   title: "About Our Company",
-    //   content:
-    //     "Founded in 2020, we've been helping businesses transform their digital presence.",
-    //   images: [{ secure_url: "/images/about-image.png" }],
-    // };
+    console.error("Error fetching testimonials data:", error);
   }
 };
+
+// Hero Services section data
+export const plansData = async () => {
+  try {
+    const res = await fetch(`${API_BASE_URL}/plan`);
+    const data = await res.json();
+
+    return data.plans;
+  } catch (error) {
+    console.error("Error fetching plans data:", error);
+  }
+};
+
 // SidaOffers section data
 export const sidaOffersData = async () => {
   try {
-    const res = await fetch(`${API_BASE_URL}/section/home/sidaOffers`);
+    const res = await fetch(`${API_BASE_URL}/section/slider/home/sidaoffers`);
     const data = await res.json();
 
     return {
-      title: data.section.title,
-      content: data.section.content,
-      images: data.section.images,
+      title: data.slider.title,
+      content: data.slider.content,
+      slides: data.slider.slides,
+      _id: data.slider._id,
     };
   } catch (error) {
-    console.error("Error fetching about data:", error);
-    // // Fallback data if fetch fails
-    // return {
-    //   title: "About Our Company",
-    //   content:
-    //     "Founded in 2020, we've been helping businesses transform their digital presence.",
-    //   images: [{ secure_url: "/images/about-image.png" }],
-    // };
+    console.error("Error fetching sidaOffers data:", error);
+  }
+};
+
+// FeaturesTables section data
+export const featuresTablesData = async () => {
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/section/slider/home/featurestables`
+    );
+    const data = await res.json();
+
+    return {
+      title: data.slider.title,
+      content: data.slider.content,
+      slides: data.slider.slides,
+      _id: data.slider._id,
+    };
+  } catch (error) {
+    console.error("Error fetching featuresTablesData:", error);
   }
 };
 
 // ServicesSlider section data
 export const servicesSliderData = async () => {
   try {
-    const res = await fetch(`${API_BASE_URL}/section/home/servicesSlider`);
+    const res = await fetch(
+      `${API_BASE_URL}/section/slider/home/servicesslider`
+    );
     const data = await res.json();
 
     return {
-      title: data.section.title,
-      content: data.section.content,
-      images: data.section.images,
+      title: data.slider.title,
+      slides: data.slider.slides,
+      _id: data.slider._id,
     };
   } catch (error) {
-    console.error("Error fetching about data:", error);
-    // // Fallback data if fetch fails
-    // return {
-    //   title: "About Our Company",
-    //   content:
-    //     "Founded in 2020, we've been helping businesses transform their digital presence.",
-    //   images: [{ secure_url: "/images/about-image.png" }],
-    // };
+    console.error("Error fetching servicesSliderData:", error);
   }
 };
 
@@ -231,5 +223,3 @@ export const downloadSidaData = async () => {
     // };
   }
 };
-
-

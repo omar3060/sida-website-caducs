@@ -3,22 +3,25 @@ import React from "react";
 import SVG from "react-inlinesvg";
 import { featuresData } from "@/data/homeData";
 
-const Features = async () => {
+const Features = async ({params}) => {
+  const locale = params?.locale || "en";
+  const isArabic = locale === "ar";
   let data = await featuresData();
+  console.log(data);
   return (
     <section id="services" className="section-style x-spacing">
       <div className="">
         <div className="flex flex-col md:flex-row gap-5">
           <div className="relative order-2 md:order-1 w-full md:w-[50%]">
-            <Image
-              src={data.images[1].secure_url}
+            <SVG
+              src={data.images[0].secure_url}
               alt="restaurant software features"
               className="object-contain my-auto w-full"
               width={100}
               height={100}
             />
             <SVG
-              src={data.images[0].secure_url}
+              src='/assets/images/home/svgs/contactVector.svg'
               alt="restaurant software features"
               className="object-contain absolute svg-main-color 
                 w-[80px] sm:w-[100px] md:w-[120px] lg:w-[131.75px] 
@@ -34,7 +37,7 @@ const Features = async () => {
             <div className="flex flex-col self-stretch my-auto text-secondaryColor">
               <h2 className="main-heading">
                 {(() => {
-                  const text = data.title;    
+                  const text = isArabic ? data.arabic.title : data.english.title;    
                   const words = text.split(" ");
                   return words.map((word, index) => {
                     if (index === words.length - 1) {
@@ -67,8 +70,8 @@ const Features = async () => {
                   });
                 })()}
               </h2>
-              <p className="main-paragraph text-center md:text-left">
-                {data.content}
+              <p className="main-paragraph mr-0 md:mr-0 lg:mr-0 text-center md:text-justify">
+                {isArabic ? data.arabic.content : data.english.content}
               </p>
             </div>
           </div>

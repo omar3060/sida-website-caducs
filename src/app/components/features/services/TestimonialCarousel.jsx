@@ -37,10 +37,14 @@ const TestimonialCarousel = ({testimonials}) => {
     return () => clearInterval(interval);
   }, [emblaApi]);
   
+  let data = new Array(10)
+  data.fill(...testimonials)
+  // console.log(data);
+  
   return (
     <div className="mt-16 overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4 ">
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
+          {data.map((testimonial, index) => (
             <div key={index} className="flex-none last:pr-4">
               <TestimonialCard {...testimonial} />
             </div>

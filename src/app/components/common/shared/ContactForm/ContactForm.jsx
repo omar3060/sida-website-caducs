@@ -121,32 +121,32 @@ const ContactForm = () => {
   // Validation schema using Yup
   const validationSchema = Yup.object({
     firstName: Yup.string()
-      .required("First name is required")
-      .min(2, "First name must be at least 2 characters"),
+      .required(`${isArabic ? "الاسم الاول مطلوب" : "First name is required"}`)
+      .min(2, `${isArabic ? "الاسم الاول يجب ان يكون اكثر من 2 حرف" : "First name must be at least 2 characters"}`),
     lastName: Yup.string()
-      .required("Last name is required")
-      .min(2, "Last name must be at least 2 characters"),
+      .required(`${isArabic ? "الاسم الاخير مطلوب" : "Last name is required"}`)
+      .min(2, `${isArabic ? "الاسم الاخير يجب ان يكون اكثر من 2 حرف" : "Last name must be at least 2 characters"}`),
     email: Yup.string()
-      .email("Invalid email address (e.g., example@email.com)")
-      .required("Email is required"),
-    phoneNumber: Yup.string().required("Phone number is required"),
-    businessName: Yup.string().required("Business name is required"),
+      .email(`${isArabic ? "البريد الالكتروني غير صالح (مثال@البريد.com)" : "Invalid email address (e.g., example@email.com)"}`)
+      .required(`${isArabic ? "البريد الالكتروني مطلوب" : "Email is required"}`),
+    phoneNumber: Yup.string().required(`${isArabic ? "رقم الهاتف مطلوب" : "Phone number is required"}`),
+    businessName: Yup.string().required(`${isArabic ? "اسم الشركة مطلوب" : "Business name is required"}`),
     cdsCount: Yup.number()
-      .required("Number of CDS is required")
-      .positive("Must be a positive number")
-      .integer("Must be a whole number"),
+      .required(`${isArabic ? "عدد الـ CDS مطلوب" : "Number of CDS is required"}`)
+      .positive(`${isArabic ? "يجب ان يكون رقم موجب" : "Must be a positive number"}`)
+      .integer(`${isArabic ? "يجب ان يكون رقم صحيح" : "Must be a whole number"}`),
     kdsCount: Yup.number()
-      .required("Number of KDS is required")
-      .positive("Must be a positive number")
-      .integer("Must be a whole number"),
-    country: Yup.string().required("Country is required"),
+      .required(`${isArabic ? "عدد الـ KDS مطلوب" : "Number of KDS is required"}`)
+      .positive(`${isArabic ? "يجب ان يكون رقم موجب" : "Must be a positive number"}`)
+      .integer(`${isArabic ? "يجب ان يكون رقم صحيح" : "Must be a whole number"}`),
+    country: Yup.string().required(`${isArabic ? "الدولة مطلوبة" : "Country is required"}`),
     termsAccepted: Yup.boolean().oneOf(
       [true],
-      "You must accept the terms and conditions"
+      `${isArabic ? "يجب عليك قبول الشروط والاحكام" : "You must accept the terms and conditions"}`
     ),
     privacyAccepted: Yup.boolean().oneOf(
       [true],
-      "You must accept the privacy policy"
+      `${isArabic ? "يجب عليك قبول السياسة الخاصة" : "You must accept the privacy policy"}` 
     ),
   });
 
@@ -178,7 +178,7 @@ const ContactForm = () => {
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
                     <label className="block text-sm font-medium text-secondaryColor mb-1">
-                      First Name *
+                      {isArabic ? "الاسم الاول *" : "First Name *"}
                     </label>
                     <FormikField
                       name="firstName"
@@ -192,7 +192,7 @@ const ContactForm = () => {
                   </div>
                   <div className="flex-1">
                     <label className="block text-sm font-medium text-secondaryColor mb-1">
-                      Last Name *
+                      {isArabic ? "الاسم الاخير *" : "Last Name *"}
                     </label>
                     <FormikField
                       name="lastName"
@@ -208,7 +208,7 @@ const ContactForm = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-secondaryColor mb-1">
-                    Email *
+                    {isArabic ? "البريد الالكتروني *" : "Email *"}
                   </label>
                   <FormikField
                     name="email"
@@ -223,7 +223,7 @@ const ContactForm = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-secondaryColor mb-1">
-                    Phone Number *
+                    {isArabic ? "رقم الهاتف *" : "Phone Number *"}
                   </label>
                   <PhoneInput
                     country={"sa"}
@@ -256,7 +256,7 @@ const ContactForm = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-secondaryColor mb-1">
-                    Business Name *
+                    {isArabic ? "اسم الشركة *" : "Business Name *"}
                   </label>
                   <FormikField
                     name="businessName"
@@ -272,7 +272,7 @@ const ContactForm = () => {
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="flex-1">
                     <label className="block text-sm font-medium text-secondaryColor mb-1">
-                      Number of CDS *
+                      {isArabic ? "عدد الـ CDS *" : "Number of CDS *"}
                     </label>
                     <FormikField
                       name="cdsCount"
@@ -287,7 +287,7 @@ const ContactForm = () => {
                   </div>
                   <div className="flex-1">
                     <label className="block text-sm font-medium text-secondaryColor mb-1 whitespace-nowrap">
-                      Number of KDS *
+                      {isArabic ? "عدد الـ KDS *" : "Number of KDS *"}
                     </label>
                     <FormikField
                       name="kdsCount"
@@ -304,7 +304,7 @@ const ContactForm = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-secondaryColor mb-1">
-                    Country Name *
+                    {isArabic ? "اسم الدولة *" : "Country Name *"}
                   </label>
                   <Field
                     name="country"
@@ -331,8 +331,7 @@ const ContactForm = () => {
                     }`}
                   />
                   <label className="text-xs text-secondaryColor">
-                    By checking this box, I confirm that I have read, understood and
-                    agree to the Terms and Conditions. *
+                    {isArabic ? "بالاختيار هذا الخيار، أوافق على الشروط والأحكام" : "By checking this box, I confirm that I have read, understood and agree to the Terms and Conditions. *"}
                   </label>
                 </div>
                 <div className="h-5 -mt-2">
@@ -352,9 +351,7 @@ const ContactForm = () => {
                     }`}
                   />
                   <label className="text-xs text-secondaryColor">
-                    By using this form you agree with the storage and handling of
-                    your data by this website in accordance with our Privacy Policy
-                    *
+                      {isArabic ? "بالاختيار هذا الخيار، أوافق على السياسة الخاصة" : "By using this form you agree with the storage and handling of your data by this website in accordance with our Privacy Policy *"}     
                   </label>
                 </div>
                 <div className="h-5 -mt-2">
@@ -372,7 +369,7 @@ const ContactForm = () => {
                       : "bg-gray-400 cursor-not-allowed"
                   }`}
                 >
-                  Submit
+                  {isArabic ? "ارسال" : "Submit"}
                 </button>
                 <Image
                   src="/assets/images/home/svgs/contactVector.svg"
@@ -397,7 +394,7 @@ const ContactForm = () => {
             className="w-[200px] md:w-[292px] h-auto mb-8 svg-main-color"
           />
           <h2 className="main-heading text-center text-secondaryColor">
-            {"Request a free demo of SIDA restaurant management system".split(' ').map((word, index) => (
+            {isArabic ? "طلب عرض مجاني لنظام إدارة المطعم SIDA" : "Request a free demo of SIDA restaurant management system".split(' ').map((word, index) => (
               index % 2 === 0 ? (
                 <span key={index} className="text-mainColor">{word} </span>
               ) : (

@@ -2,7 +2,7 @@ const TestimonialCard = ({ image, text, name, company }) => {
   return (
     <article className="px-7 py-4 bg-gray-900 rounded-xl w-[346px] h-[231px] flex flex-col">
       <img
-        src={image}
+        src={image.secure_url}
         alt={`${name}'s profile`}
         className="object-contain w-12 rounded-full aspect-square"
       />

@@ -3,8 +3,11 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useEmblaRtlConfig } from "@/app/lib/useEmblaRtlConfig";
+import { useLocale } from "next-intl";
 
 const ServicesSliderCarousel = ({ slides }) => {
+  const locale = useLocale();
+  const isArabic = locale === "ar";
   const emblaOptions = useEmblaRtlConfig({
     loop: true,
     dragFree: false,
@@ -67,18 +70,20 @@ const ServicesSliderCarousel = ({ slides }) => {
             <div key={index} className="flex-[0_0_100%] min-w-0 relative">
               <div className="flex flex-col items-start px-4 md:px-8 pt-32 md:pt-[250px] lg:pt-[300px] pb-8 md:pb-14 w-full min-h-[300px] md:max-h-[400px]">
                 <Image
-                  src={slide.image}
-                  alt={`${slide.title} background`}
+                  src={slide.image.secure_url}
+                  alt={`${
+                    isArabic ? slide.arabic.title : slide.english.title
+                  } background`}
                   fill
                   className="object-cover absolute inset-0"
                   priority={index === 0}
                 />
                 <div className="relative max-w-full w-full md:w-[700px] md:-mt-22 text-textCard">
                   <h2 className="text-xl md:text-3xl font-extrabold">
-                    {slide.title}
+                    {isArabic ? slide.arabic.title : slide.english.title}
                   </h2>
                   <p className="mt-2 md:mt-4 text-base md:text-2xl font-semibold max-md:max-w-full">
-                    {slide.description}
+                    {isArabic ? slide.arabic.content : slide.english.content}
                   </p>
                 </div>
               </div>
