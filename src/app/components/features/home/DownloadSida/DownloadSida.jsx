@@ -108,8 +108,7 @@ import Link from "next/link";
 import React from "react";
 import SVG from "react-inlinesvg";
 
-const DownloadSida = async ({ params }) => {
-  const locale = params?.locale || "en";
+const DownloadSida = async ({ locale }) => {
   const isArabic = locale === "ar";
   return (
     <section className="section-style x-spacing relative">

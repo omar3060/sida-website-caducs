@@ -5,12 +5,16 @@ import SVG from "react-inlinesvg";
 import { FooterData } from "@/data/footerData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Footer = async ({ params }) => {
-  const locale = params?.locale || "en";
-
+const Footer = async ({ locale }) => {
   const isArabic = locale === "ar";
 
   const { section, images, dataFooter, dataSocial } = await FooterData();
+
+  // Safety check to ensure data is available
+  if (!section || !images || !dataFooter || !dataSocial) {
+    return <div>Loading...</div>;
+  }
+
   const socialArray = dataSocial.socialLinks;
   const footerLinks = dataFooter.links;
   // console.log("locale:", locale);
@@ -140,12 +144,13 @@ const Footer = async ({ params }) => {
                 <Link
                   key={link.arabic.title}
                   href={link.link}
-                  className={`flex items-center mt-${index === 0 ? 9 : 6} ${index === -1 ? "leading-1" : "leading-8"} hover:text-mainColor`}
+                  className={`flex items-center mt-${index === 0 ? 9 : 6} ${
+                    index === -1 ? "leading-1" : "leading-8"
+                  } hover:text-mainColor`}
                 >
                   {isArabic ? link.arabic.title : link.english.title}
                 </Link>
               ))}
-            
           </div>
 
           {/* <div className="flex flex-col text-lg leading-none text-textGray w-[227px]">

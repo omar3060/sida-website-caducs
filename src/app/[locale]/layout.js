@@ -42,11 +42,11 @@ export default async function RootLayout({ children, params }) {
       <body className={`${inter.className} bg-[var(--color-cardColor)]`}>
         <NextIntlClientProvider locale={locale}>
           <ThemeProvider>
-            <Navbar params={{ locale }} />
+            <Navbar locale={locale} />
             {children}
             <ScrollToTop />
             <ContactWhatsapp />
-            <Footer params={{ locale }} />
+            <Footer locale={locale} />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

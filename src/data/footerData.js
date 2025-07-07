@@ -19,6 +19,67 @@ export const FooterData = async () => {
       dataSocial,
     };
   } catch (error) {
-    console.error("Error fetching hero data:", error);
+    console.error("Error fetching footer data:", error);
+    // Fallback data if fetch fails
+    return {
+      section: {
+        arabic: {
+          content: "سيدا - نظام إدارة مطاعم شامل"
+        },
+        english: {
+          content: "SIDA - Complete Restaurant Management System"
+        },
+        images: [
+          { secure_url: "/assets/images/home/svgs/sida-logo.svg" }
+        ]
+      },
+      images: [
+        { secure_url: "/assets/images/home/svgs/sida-logo.svg" }
+      ],
+      dataFooter: {
+        links: [
+          {
+            category: "services",
+            arabic: { title: "نقاط البيع" },
+            english: { title: "POS System" },
+            link: "/services/pos"
+          },
+          {
+            category: "company",
+            arabic: { title: "من نحن" },
+            english: { title: "About Us" },
+            link: "/aboutus"
+          },
+          {
+            category: "support",
+            arabic: { title: "المساعدة" },
+            english: { title: "Help" },
+            link: "/help"
+          },
+          {
+            category: "contactus",
+            arabic: { title: "info@sida.com" },
+            english: { title: "info@sida.com" },
+            link: "mailto:info@sida.com"
+          }
+        ]
+      },
+      dataSocial: {
+        socialLinks: [
+          {
+            icon: "facebook",
+            link: "#"
+          },
+          {
+            icon: "twitter",
+            link: "#"
+          },
+          {
+            icon: "instagram",
+            link: "#"
+          }
+        ]
+      }
+    };
   }
 };

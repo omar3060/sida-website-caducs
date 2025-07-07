@@ -15,6 +15,20 @@ export const heroData = async () => {
     };
   } catch (error) {
     console.error("Error fetching hero data:", error);
+    // Fallback data if fetch fails
+    return {
+      arabic: {
+        title: "نظام إدارة مطاعم متكامل",
+        content: "سيدا يوفر حلول شاملة لإدارة المطاعم بكفاءة عالية"
+      },
+      english: {
+        title: "Complete Restaurant Management System",
+        content: "SIDA provides comprehensive solutions for efficient restaurant management"
+      },
+      images: [
+        { secure_url: "/assets/images/home/svgs/hero-right.svg" }
+      ]
+    };
   }
 };
 
@@ -45,7 +59,21 @@ export const featuresData = async () => {
       images: data.section.images,
     };
   } catch (error) {
-    console.error("Error fetching about data:", error);
+    console.error("Error fetching features data:", error);
+    // Fallback data if fetch fails
+    return {
+      arabic: {
+        title: "مميزات سيدا",
+        content: "نوفر أفضل الحلول لإدارة مطعمك"
+      },
+      english: {
+        title: "SIDA Features",
+        content: "We provide the best solutions for managing your restaurant"
+      },
+      images: [
+        { secure_url: "/assets/images/home/svgs/features-vector.svg" }
+      ]
+    };
   }
 };
 
@@ -58,7 +86,16 @@ export const partnersData = async () => {
 
     return data.slider;
   } catch (error) {
-    console.error("Error fetching about data:", error);
+    console.error("Error fetching partners data:", error);
+    // Fallback data if fetch fails
+    return {
+      slides: [
+        {
+          title: "Partner 1",
+          image: "/assets/images/home/svgs/partners/partner-1.svg"
+        }
+      ]
+    };
   }
 };
 // Testimonial section data
@@ -115,6 +152,19 @@ export const sidaOffersData = async () => {
     };
   } catch (error) {
     console.error("Error fetching sidaOffers data:", error);
+    // Fallback data if fetch fails
+    return {
+      title: "SIDA Offers",
+      content: "Explore our amazing offers",
+      slides: [
+        {
+          title: "Special Offer",
+          description: "Get the best deals on our services",
+          image: "/assets/images/home/SidaOffers/slide1.svg"
+        }
+      ],
+      _id: "fallback"
+    };
   }
 };
 
@@ -134,6 +184,19 @@ export const featuresTablesData = async () => {
     };
   } catch (error) {
     console.error("Error fetching featuresTablesData:", error);
+    // Fallback data if fetch fails
+    return {
+      title: "Features Tables",
+      content: "Compare our features",
+      slides: [
+        {
+          title: "Feature Table",
+          description: "See all our amazing features",
+          image: "/assets/images/home/svgs/featuresTables/firstTable.svg"
+        }
+      ],
+      _id: "fallback"
+    };
   }
 };
 
@@ -152,6 +215,21 @@ export const servicesSliderData = async () => {
     };
   } catch (error) {
     console.error("Error fetching servicesSliderData:", error);
+    // Fallback data if fetch fails
+    return {
+      title: JSON.stringify({
+        arabic: "توفر سيدا الكثير من الميزات",
+        english: "SIDA Provides A lot of Features"
+      }),
+      slides: [
+        {
+          title: "POS System",
+          description: "Complete point of sale solution for your restaurant",
+          image: "/assets/images/home/ServicesSlider/service1.svg"
+        }
+      ],
+      _id: "fallback"
+    };
   }
 };
 

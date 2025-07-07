@@ -3,8 +3,10 @@ import React from "react";
 import AnimatedHeroWrapper from "./AnimatedHeroWrapper";
 import { heroServicesData } from "@/data/servicesPageData";
 
-const   HeroServices = async () => {
-  const data = await heroServicesData();    
+const HeroServices = async ({ locale }) => {
+  const isArabic = locale === "ar";
+  const data = await heroServicesData();
+
   return (
     <AnimatedHeroWrapper>
       <section className="relative section-style x-spacing text-textCard min-h-[100vh]">
@@ -21,11 +23,19 @@ const   HeroServices = async () => {
         {/* Content */}
         <div className="flex relative flex-col max-w-full lg:w-1/2 text-left mx-0 my-auto hero-content">
           <div className="flex flex-col w-full mb-[190px]">
-            <h1 className="main-heading">
-              {data.title}
+            <h1
+              className={`main-heading ${
+                isArabic ? "text-right" : "text-left"
+              }`}
+            >
+              {isArabic ? data.arabic.title : data.english.title}
             </h1>
-            <p className="main-paragraph">
-              {data.content}
+            <p
+              className={`main-paragraph mr-0 md:mr-0 lg:mr-0 ${
+                isArabic ? "text-right" : "text-left"
+              }`}
+            >
+              {isArabic ? data.arabic.content : data.english.content}
             </p>
 
             <div className="buttons-container text-textCard w-[80%] ">
@@ -33,10 +43,10 @@ const   HeroServices = async () => {
                 role="button"
                 className="primary-button flex-1 border-textCard text-textCard border-2 transition-all duration-300"
               >
-                Get Demo
+                {isArabic ? "احصل على التوصيل" : "Get Demo"}
               </button>
               <button className="primary-button flex-1 border-textCard text-textCard border-2 transition-all duration-300">
-                Subscribe
+                {isArabic ? "اشترك" : "Subscribe"}
               </button>
             </div>
           </div>

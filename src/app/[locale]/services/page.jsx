@@ -5,6 +5,7 @@ import Testimonial from "../../components/features/services/Testimonial";
 import Features from "../../components/common/shared/Features";
 import HeroServices from "../../components/features/services/HeroServices";
 import ServicesCards from "../../components/features/services/ServicesCards";
+import LocaleProvider from "../../components/common/shared/LocaleProvider";
 export const metadata = {
   title: "SIDA - Services",
   description:
@@ -14,14 +15,16 @@ export const metadata = {
   },
 };
 
-const ServicesPage = () => {
+const ServicesPage = async ({ params }) => {
   return (
     <main>
-      <HeroServices />
-      <Features />
-      <ServicesCards />
-      <ServicesSection />
-      <Testimonial />
+      <LocaleProvider params={params}>
+        <HeroServices />
+        <Features />
+        <ServicesCards />
+        <ServicesSection />
+        <Testimonial />
+      </LocaleProvider>
     </main>
   );
 };

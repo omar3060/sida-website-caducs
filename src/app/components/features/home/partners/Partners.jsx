@@ -27,8 +27,7 @@ import { partnersData } from "@/data/homeData";
 //   },
 // ];
 
-const Partners = async ({ params }) => {
-  const locale = params?.locale || "en";
+const Partners = async ({ locale }) => {
   const isArabic = locale === "ar";
   const data = await partnersData();
 

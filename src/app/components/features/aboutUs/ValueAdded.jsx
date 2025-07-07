@@ -1,15 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import SVG from "react-inlinesvg";
+import { valueAddedData } from "@/data/aboutusData";
 
-const AboutUsHero = () => {
+const ValueAdded = async ({ locale }) => {
+  const { arabic, english, images } = await valueAddedData();
+  const isArabic = locale === "ar";
   return (
-    <section id="services" className="section-style x-spacing">
+    <section id="services" className="section-style x-spacing mb-20">
       <div className="">
         <div className="flex flex-col md:flex-row gap-5 justify-center">
           <div className="relative order-2 md:order-1 w-full md:w-[45%] lg:w-[40%]">
             <Image
-              src="/assets/images/aboutUs/valueImage.svg"
+              src={images[0].secure_url}
               alt="Feature illustration"
               className="object-contain self-stretch my-auto w-full"
               width={100}
@@ -25,9 +28,11 @@ const AboutUsHero = () => {
           </div>
           <div className="w-full md:w-[50%] flex items-center md:ml-5  order-2 md:order-2">
             <div className="flex flex-col self-stretch my-auto text-secondaryColor">
-              <h2 className="main-heading text-center md:text-left">
+              <h2 className={`main-heading text-center ${isArabic ? "text-right" : "text-left"}`}>
                 {(() => {
-                  const text = "Value Added";
+                  const text = isArabic
+                    ? arabic.title
+                    : english.title;
                   const words = text.split(" ");
                   return words.map((word, index) => {
                     if (index === words.length - 2) {
@@ -58,18 +63,14 @@ const AboutUsHero = () => {
                             : "text-secondaryColor"
                         }
                       >
-                        {word}{" "}
+                        {" "}{word}{" "}
                       </span>
                     );
                   });
                 })()}
               </h2>
-              <p className="main-paragraph text-center md:text-left">
-                A precise and flexible system for managing inventory and
-                operations from a single platform Real-time reports that support
-                faster and more informed decision-making Full compliance with
-                ZATCA and e-invoicing regulations Fast, responsive technical
-                support to keep your operations running smoothly
+                <p className={`main-paragraph mr-0 md:mr-0 lg:mr-0 text-center ${isArabic ? "text-right" : "text-left"}`}>
+                {isArabic ? arabic.content : english.content}
               </p>
             </div>
           </div>
@@ -79,4 +80,4 @@ const AboutUsHero = () => {
   );
 };
 
-export default AboutUsHero;
+export default ValueAdded;

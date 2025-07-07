@@ -11,6 +11,7 @@ import ContactForm from "@/app/components/common/shared/ContactForm/ContactForm"
 import PricingSection from "@/app/components/features/home/PricingSection";
 import SidaOffers from "../components/features/home/SidaOffers/SidaOffers";
 import Testimonial from "../components/features/services/Testimonial";
+import LocaleProvider from "../components/common/shared/LocaleProvider";
 
 export const metadata = {
   title: "SIDA",
@@ -24,18 +25,20 @@ export const metadata = {
 const Home = async ({ params }) => {
   return (
     <div>
-      <Hero params={params} />
-      <Features params={params} />
-      <Partners params={params} />
-      <Testimonial params={params} />
-      <SidaOffers params={params} />
-      <FeaturesTables params={params} />
-      <ServicesSlider params={params} />
-      <ImageComparison params={params} />
-      <WhoWeServe params={params} />
-      <PricingSection params={params} />
-      <ContactForm params={params} />
-      <DownloadSida params={params} />
+      <LocaleProvider params={params}>
+        <Hero />
+        <Features />
+        <Partners />
+        <Testimonial />
+        <SidaOffers />
+        <FeaturesTables />
+        <ServicesSlider />
+        <ImageComparison />
+        <WhoWeServe />
+        <PricingSection />
+        <ContactForm />
+        <DownloadSida />
+      </LocaleProvider>
     </div>
   );
 };

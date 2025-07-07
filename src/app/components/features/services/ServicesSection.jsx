@@ -1,21 +1,25 @@
 import React from "react";
 
 
-import { servicesData } from "../../../../data/servicesData";
+import { servicesData } from "../../../../data/servicesPageData";
 import ProductCard from "../service/ProductCard";
 
-const ServicesSection = () => {
+const ServicesSection = async ({locale}) => {
+  const isArabic = locale === "ar";
+  const data = await servicesData();
+  const {text, slides, _id} = data;
   return (
     <section className="section-style pt-10 md:pt-16 lg:pt-20">
       <div className="flex flex-wrap gap-10 justify-center items-center w-full max-md:max-w-full x-spacing">
-        {servicesData.map((card, index) => (
+        {slides.map((card, index) => (
           <ProductCard
             key={index}
-            title={card.hero.title}
-            image={card.hero.image}
-            description={card.hero.description}
+            title={isArabic ? card.arabic.title : card.english.title}
+            image={card.image.secure_url}
+            content={isArabic ? card.arabic.content : card.english.content}
             reverse={index % 2 === 1}
-            serviceId={card.id}
+            serviceId={card.text}
+            locale={locale}
           />
         ))}
       </div>

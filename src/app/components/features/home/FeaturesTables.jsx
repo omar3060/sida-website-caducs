@@ -3,8 +3,7 @@ import React from "react";
 import SVG from "react-inlinesvg";
 import { featuresTablesData } from "@/data/homeData";
 
-const FeaturesTables = async ({ params }) => {
-  const locale = params?.locale || "en";
+const FeaturesTables = async ({ locale }) => {
   const isArabic = locale === "ar";
   const data = await featuresTablesData();
 

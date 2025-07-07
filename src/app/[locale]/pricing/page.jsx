@@ -1,5 +1,6 @@
 import React from "react";
 import PricingSection from "../../components/features/pricing/PricingSection";
+import LocaleProvider from "../../components/common/shared/LocaleProvider";
 
 export const metadata = {
   title: "SIDA - Pricing Plans",
@@ -11,10 +12,11 @@ export const metadata = {
 };
 
 const PricingPlans = async ({ searchParams, params }) => {
-  const locale = params?.locale || "en";
   return (
     <main>
-      <PricingSection searchParams={searchParams} locale={locale} />
+      <LocaleProvider params={params}>
+        <PricingSection searchParams={searchParams} />
+      </LocaleProvider>
     </main>
   );
 };

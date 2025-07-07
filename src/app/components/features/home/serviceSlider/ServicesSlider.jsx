@@ -3,8 +3,7 @@ import Image from "next/image";
 import ServicesSliderCarousel from "./ServicesSliderCarousel";
 import { servicesSliderData } from "@/data/homeData";
 
-const ServicesSlider = async ({ params }) => {
-  const locale = params?.locale || "en";
+const ServicesSlider = async ({ locale }) => {
   const isArabic = locale === "ar";
   const data = await servicesSliderData();
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-const ProductCard = ({ title, description, image, reverse, serviceId }) => {
+const ProductCard = ({ title, content, image, reverse, serviceId, locale}) => {
+  const isArabic = locale === "ar";
   return (
     <div
       className={`section-style ${
@@ -14,8 +15,8 @@ const ProductCard = ({ title, description, image, reverse, serviceId }) => {
             {title}
           </h2>
         </div>
-        <p className="mb-3 text-lg text-secondaryColor text-center md:text-left">
-          {description}
+        <p className={`mb-3 text-lg text-secondaryColor text-center ${isArabic ? "text-right" : "text-left"}`}>
+          {content}
         </p>
         <div className="buttons-container w-full text-textWhite text-[18px] md:text-xl lg:text-2xl flex gap-4">
           <Link href="/pricing/subscription/user" className="w-1/2">
@@ -23,12 +24,12 @@ const ProductCard = ({ title, description, image, reverse, serviceId }) => {
               role="button"
               className="primary-button py-3 md:py-4 lg:py-5 w-full"
             >
-              Subscribe
+              {isArabic ? "اشترك" : "Subscribe"}
             </button>
           </Link>
           <Link href={`/services/${serviceId}`} className="w-1/2">
             <button className="primary-button py-3 md:py-4 lg:py-5 w-full">
-              Learn More
+              {isArabic ? "اعرف المزيد" : "Learn More"}
             </button>
           </Link>
         </div>
@@ -39,8 +40,8 @@ const ProductCard = ({ title, description, image, reverse, serviceId }) => {
           alt={`${title} Background`}
           className=" object-contain self-stretch my-auto w-full h-full rounded-lg shrink-0"
         />
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl font-bold text-secondaryColor">
-          {serviceId.toUpperCase()}
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-5xl font-bold text-white">
+        {serviceId.toUpperCase()}
         </div>
       </div>
     </div>

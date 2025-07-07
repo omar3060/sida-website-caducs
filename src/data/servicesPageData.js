@@ -1,6 +1,6 @@
 // "use cache";
 // Base API URL
-const API_BASE_URL = "https://super-admin-eta.vercel.app";
+const API_BASE_URL = process.env.API_BASE_URL;
 
 // Hero Services section data
 export const heroServicesData = async () => {
@@ -9,21 +9,42 @@ export const heroServicesData = async () => {
     const data = await res.json();
 
     return {
-      title: data.section.title,
-      content: data.section.content,
+      arabic: data.section.arabic,
+      english: data.section.english,
       images: data.section.images,
     };
   } catch (error) {
-    console.error("Error fetching hero data:", error);
+    console.error("Error fetching hero services data:", error);
     // Fallback data if fetch fails
-    // return {
-    //   title: ["Empower", "Your Business", "With", "Modern Solutions"],
-    //   content:
-    //     "We provide innovative digital solutions to help your business thrive in today's competitive market.",
-    //   images: [
-    //     { secure_url: "/images/hero-illustration.png" },
-    //     { secure_url: "/images/underline-vector.svg" },
-    //   ],
-    // };
+    return {
+      arabic: {
+        title: "خدماتنا المتميزة",
+        content: "نوفر مجموعة شاملة من الخدمات لإدارة مطعمك بكفاءة",
+      },
+      english: {
+        title: "Our Outstanding Services",
+        content:
+          "We provide a comprehensive suite of services to manage your restaurant efficiently",
+      },
+      images: [{ secure_url: "/assets/images/services/heroImage.svg" }],
+    };
+  }
+};
+
+// servicesData section data
+export const servicesData = async () => {
+  try {
+    const res = await fetch(`${API_BASE_URL}/section/slider/services/servicescards`);
+    const data = await res.json();
+
+    return {
+      title: data.slider.title,
+      content: data.slider.content,
+      text: data.slider.text,
+      slides: data.slider.slides,
+      _id: data.slider._id,
+    };
+  } catch (error) {
+    console.error("Error fetching servicesData data:", error);
   }
 };

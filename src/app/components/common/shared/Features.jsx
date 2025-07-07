@@ -3,17 +3,22 @@ import React from "react";
 import SVG from "react-inlinesvg";
 import { featuresData } from "@/data/homeData";
 
-const Features = async ({params}) => {
-  const locale = params?.locale || "en";
+const Features = async ({locale}) => {
   const isArabic = locale === "ar";
   let data = await featuresData();
   console.log(data);
+  
+  // Safety check to ensure data is available
+  if (!data || !data.arabic || !data.english) {
+    return <div>Loading...</div>;
+  }
+  
   return (
     <section id="services" className="section-style x-spacing">
       <div className="">
         <div className="flex flex-col md:flex-row gap-5">
           <div className="relative order-2 md:order-1 w-full md:w-[50%]">
-            <SVG
+            <Image
               src={data.images[0].secure_url}
               alt="restaurant software features"
               className="object-contain my-auto w-full"

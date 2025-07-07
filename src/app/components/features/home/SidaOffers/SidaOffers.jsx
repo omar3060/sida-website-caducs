@@ -4,8 +4,7 @@ import SidaOffersCarousel from "./SidaOffersCarousel";
 import SVG from "react-inlinesvg";
 import { sidaOffersData } from "@/data/homeData";
 
-const SidaOffers = async ({ params }) => {
-  const locale = params?.locale || "en";
+const SidaOffers = async ({ locale }) => {
   const isArabic = locale === "ar";
   const data = await sidaOffersData();
 
