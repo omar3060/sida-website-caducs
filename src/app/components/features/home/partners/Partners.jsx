@@ -34,25 +34,12 @@ const Partners = async ({ locale }) => {
   // Parse JSON strings
   let title, content;
   try {
-    title = JSON.parse(data.title);
-    content = JSON.parse(data.content);
+    title = data.title;
+    content = data.content;
   } catch (error) {
     console.error("Error parsing JSON:", error);
-    // Fallback values
-    title = {
-      arabic: "شريك المطاعم في كل مكان",
-      english: "partnering with restaurants everywhere.",
-    };
-    content = {
-      arabic: "عشرات المطاعم يعتمدون على سيدا للسيطرة على التكاليف",
-      english: "Dozens of restaurants trust SIDA to reduce costs",
-    };
   }
 
-  console.log("Raw data:", data);
-  console.log("Parsed title:", title);
-  console.log("Parsed content:", content);
-  console.log("isArabic:", isArabic);
   return (
     <section className="section-style x-spacing">
       <h2 className="main-heading self-center text-center text-secondaryColor">
@@ -99,9 +86,9 @@ const Partners = async ({ locale }) => {
         <div className="w-full order-2 md:order-1">
           <PartnersClientWrapper partners={data.slides} />
           <div className="static-partners flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8">
-            {data.slides.map((partner) => (
+            {data.slides.map((partner, index) => (
               <div
-                key={partner.id}
+                key={index}
                 className="min-w-[150px] md:min-w-[180px] lg:min-w-[200px] px-2 md:px-3 lg:px-4"
               >
                 <Image

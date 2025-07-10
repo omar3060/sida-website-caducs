@@ -10,14 +10,16 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  if (!params?.slug) {
+  const { slug } = await params;
+
+  if (!slug) {
     return {
       title: "Blog",
       description: "SIDA Blog Posts",
     };
   }
 
-  const blog = blogData.find((blog) => blog.slug === params.slug);
+  const blog = blogData.find((blog) => blog.slug === slug);
 
   if (!blog) {
     return {
@@ -35,9 +37,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-
 async function PostSlug({ params }) {
-  const blog = blogData.find((blog) => blog.slug === params.slug);
+  const { slug } = await params;
+  const blog = blogData.find((blog) => blog.slug === slug);
+
   if (!blog) {
     notFound();
   }

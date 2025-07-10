@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useLocale } from "next-intl";
+import { imageComparisonData } from "@/data/homeData";
 
 const SNAP_POINTS = [0, 0.5, 1];
 
@@ -12,6 +13,29 @@ function getClosestSnap(frac) {
 }
 
 const ImageComparison = () => {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const result = await imageComparisonData();
+        console.log("ImageComparison data:", result);
+        setData(result);
+        setError(null);
+      } catch (error) {
+        console.error("Error in ImageComparison component:", error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const locale = useLocale();
   const isArabic = locale === "ar";
   const [slideAmount, setSlideAmount] = useState({ frac: 0.5 });
@@ -20,6 +44,41 @@ const ImageComparison = () => {
   const animationRef = useRef();
 
   const dragState = useRef({});
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center mt-10 px-7 x-spacing">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-mainColor mx-auto"></div>
+          <p className="mt-2 text-gray-600">Loading image comparison...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state
+  if (error) {
+    return (
+      <div className="flex items-center justify-center mt-10 px-7 x-spacing">
+        <div className="text-center">
+          <p className="text-red-500 mb-2">Error loading image comparison</p>
+          <p className="text-sm text-gray-600">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Show fallback if no data
+  if (!data || !data.images || data.images.length < 2) {
+    return (
+      <div className="flex items-center justify-center mt-10 px-7 x-spacing">
+        <div className="text-center">
+          <p className="text-gray-600">No image comparison data available</p>
+        </div>
+      </div>
+    );
+  }
 
   const handleMove = (clientX) => {
     const rect = imageContainer.current.getBoundingClientRect();
@@ -87,14 +146,14 @@ const ImageComparison = () => {
         onClick={handleClick}
       >
         <Image
-          src="/assets/images/home/imageComparison/after.svg"
+          src={data.images[0].secure_url}
           alt="After"
           fill
           className="object-cover select-none pointer-events-none"
           // sizes="(max-width: 768px) 100vw, 800px"
         />
         <Image
-          src="/assets/images/home/imageComparison/before.svg"
+          src={data.images[1].secure_url}
           alt="Before"
           fill
           className="object-cover select-none pointer-events-none absolute top-0 left-0"
@@ -156,7 +215,9 @@ const ImageComparison = () => {
                   alt="Left Arrow"
                   width={48}
                   height={48}
-                  className={`relative right-[18px] rotate-180 ${isArabic ? 'right-[32px]' : 'right-[18px]'}`}
+                  className={`relative right-[18px] rotate-180 ${
+                    isArabic ? "right-[32px]" : "right-[18px]"
+                  }`}
                   draggable={false}
                 />
                 <Image
@@ -164,7 +225,9 @@ const ImageComparison = () => {
                   alt="Right Arrow"
                   width={48}
                   height={48}
-                  className={`relative ${isArabic ? 'left-[62px]' : 'right-[18px]'}`}
+                  className={`relative ${
+                    isArabic ? "left-[62px]" : "right-[18px]"
+                  }`}
                   draggable={false}
                 />
               </div>

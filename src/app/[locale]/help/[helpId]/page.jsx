@@ -2,7 +2,8 @@ import React from "react";
 import { helpPageData } from "@/data/helpPageData";
 
 export async function generateMetadata({ params }) {
-  const help = helpPageData.find((help) => help.id === Number(params.helpId));
+  const { helpId } = await params;
+  const help = helpPageData.find((help) => help.id === Number(helpId));
 
   if (!help) {
     return {
@@ -30,10 +31,13 @@ export async function generateStaticParams() {
 }
 
 export default async function HelpPage({ params }) {
-  const help = helpPageData.find((help) => help.id === Number(params.helpId));
+  const { helpId } = await params;
+  const help = helpPageData.find((help) => help.id === Number(helpId));
+
   if (!help) {
     return <div>Help page not found</div>;
   }
+
   return (
     <>
       <section className="section-style x-spacing mb-15">
@@ -50,9 +54,7 @@ export default async function HelpPage({ params }) {
           )}
         </h2>
         <article className="mb-10 text-secondaryColor">
-          <h1 className="text-2xl font-bold max-sm:text-xl mb-10">
-            Steps
-          </h1>
+          <h1 className="text-2xl font-bold max-sm:text-xl mb-10">Steps</h1>
           <p className="text-xl max-md:w-full max-md:text-lg max-sm:text-base mb-10">
             {help.description}
           </p>

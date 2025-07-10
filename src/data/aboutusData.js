@@ -136,6 +136,64 @@ export const coFounderData = async () => {
     };
   }
 };
+// OurLeaders section data
+export const ourLeadersData = async () => {
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/section/slider/aboutus/ourleaders`
+    );
+    const data = await res.json();
+    console.log("API Response:", data);
+    console.log("Slides from API:", data.slider.slides);
+
+    return {
+      title: data.slider.title,
+      // content: data.slider.content,
+      slides: data.slider.slides,
+      _id: data.slider._id,
+    };
+  } catch (error) {
+      console.error("Error fetching ourLeadersData:", error);
+    // Fallback data if fetch fails
+    return {
+      title: {
+        arabic: "قادة المؤسسة",
+        english: "Our Leaders",
+      },
+      slides: [
+        {
+          arabic: {
+            title: "محمود علي",
+            content: "المؤسس المشارك والرئيس التنفيذي",
+          },
+          english: {
+            title: "Mahmoud Ali",
+            content: "Co-Founder & Chief Executive Officer",
+          },
+          image: {
+            secure_url: "/assets/images/aboutUs/coFounders/employee1.svg",
+          },
+          _id: "fallback1",
+        },
+        {
+          arabic: {
+            title: "عمر محمد",
+            content: "الشريك المؤسس ومدير التطوير",
+          },
+          english: {
+            title: "Omar Mohamed",
+            content: "Co-Founder & Development Manager",
+          },
+          image: {
+            secure_url: "/assets/images/aboutUs/coFounders/employee2.svg",
+          },
+          _id: "fallback2",
+        },
+      ],
+      _id: "fallback",
+    };
+  }
+};
 
 
 // export const coFounderData = async () => {

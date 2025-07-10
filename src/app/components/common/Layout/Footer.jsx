@@ -17,10 +17,6 @@ const Footer = async ({ locale }) => {
 
   const socialArray = dataSocial.socialLinks;
   const footerLinks = dataFooter.links;
-  // console.log("locale:", locale);
-  // console.log("isArabic:", isArabic);
-  // console.log("section:", section);
-  // console.log("footerLinks:", footerLinks);
 
   const content = isArabic ? section.arabic.content : section.english.content;
 
@@ -40,7 +36,7 @@ const Footer = async ({ locale }) => {
   ];
 
   return (
-    <footer className="overflow-hidden self-stretch pb-6 mt-3.5 w-full bg-textWhite">
+    <footer className="overflow-hidden self-stretch pb-6 mt-3.5 w-full bg-textWhite  ">
       <hr className="w-full h-px bg-gray-100 border border-gray-100 border-solid" />
 
       <div className="x-spacing flex flex-col items-start mt-28 w-full max-md:mt-10">
@@ -72,7 +68,7 @@ const Footer = async ({ locale }) => {
                   className="svg-main-color hover:opacity-70 transition"
                 >
                   <FontAwesomeIcon
-                    icon={["fab", social.icon]}
+                    icon={["fab", social.icon]} 
                     className="w-5 h-5"
                   />
                 </Link>

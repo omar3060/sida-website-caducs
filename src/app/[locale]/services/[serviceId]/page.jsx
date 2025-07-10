@@ -7,7 +7,8 @@ import RelatedServices from "@/app/components/features/service/RelatedServices";
 import ContactForm from "@/app/components/common/shared/ContactForm/ContactForm";
 
 export async function generateMetadata({ params }) {
-  const service = servicesData.find((s) => s.id === params.serviceId);
+  const { serviceId } = await params;
+  const service = servicesData.find((s) => s.id === serviceId);
 
   if (!service) {
     return {
@@ -35,7 +36,12 @@ export async function generateStaticParams() {
 }
 
 export default async function Service({ params }) {
-  const service = servicesData.find((s) => s.id === params.serviceId);
+  const { serviceId } = await params;
+  const service = servicesData.find((s) => s.id === serviceId);
+
+  if (!service) {
+    return <div>Service not found</div>;
+  }
 
   return (
     <main>

@@ -1,6 +1,7 @@
 import React from "react";
 import WhoWeServe from "../../components/common/shared/WhoWeServe";
 import ServiceLayout from "../../components/features/whoweserve/ServiceLayout";
+import LocaleProvider from "@/app/components/common/shared/LocaleProvider";
 
 export const metadata = {
   title: "SIDA - Who We Serve",
@@ -11,11 +12,13 @@ export const metadata = {
   },
 };
 
-const Page = () => {
+const Page = async ({ params }) => {
   return (
     <main className="section-style pt-18 md:pt-26 lg:pt-30">
-      <WhoWeServe />
-      <ServiceLayout />
+      <LocaleProvider params={params}>
+        <WhoWeServe />
+        <ServiceLayout />
+      </LocaleProvider>
     </main>
   );
 };

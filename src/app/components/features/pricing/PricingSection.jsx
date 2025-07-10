@@ -65,9 +65,11 @@ const PricingSection = async ({ searchParams, locale }) => {
     return basePrice; // Quarterly price (default)
   };
 
+  const ourPlans = plans.slice(1);
+
   const isArabic = locale === "ar";
 
-  const pricingPlans = plans.map((plan, index) => {
+  const pricingPlans = ourPlans.map((plan, index) => {
     const langData = isArabic ? plan.arabic : plan.english;
     return {
       title: langData.name,
